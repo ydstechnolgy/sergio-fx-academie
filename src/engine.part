@@ -1,18 +1,21 @@
 /* ===================== ASSEMBLAGE DES NIVEAUX ===================== */
-const LV1={n:1,icon:"coins",t:{fr:"Les bases du Forex",en:"Forex basics"},d:{fr:"Tu pars de zéro ? 10 chapitres pour comprendre le marché des devises, les ordres, la marge, la gestion du risque et MetaTrader 5.",en:"Starting from zero? 10 chapters to understand the currency market, orders, margin, risk management and MetaTrader 5."},chapters:[...CH_A,...CH_B,...CH_C]};
-LV3.chapters[4].lessons=[OLD3.lessons[3]];LV3.chapters[5].lessons=[OLD3.lessons[4]];
-LV3.chapters[4].lessons.forEach(x=>delete x.id);LV3.chapters[5].lessons.forEach(x=>delete x.id);
-const COURSE=[LV1,LV2,LV3];
+const strip=x=>{const y={...x};delete y.id;return y};
+const MT5CH=CH_C.pop();
+const LV1={n:1,icon:"coins",t:{fr:"Les bases du Forex",en:"Forex basics"},d:{fr:"Tu pars de zéro ? 9 chapitres pour comprendre le marché des devises, les paires, les pips et les lots, les ordres, la marge et la gestion du risque.",en:"Starting from zero? 9 chapters to understand the currency market, pairs, pips and lots, orders, margin and risk management."},chapters:[...CH_A,...CH_B,...CH_C]};
+LV2.chapters[0].lessons=LV2.chapters[0].lessons.map(x=>x=="OLD:0"?strip(OLD2.lessons[0]):x);
+MT5CH.lessons.splice(3,0,MT5_EXTRA[0]);MT5CH.lessons.push(MT5_EXTRA[1]);
+LV2.chapters[2]=MT5CH;
+LV3.chapters[0].lessons.splice(1,0,strip(OLD2.lessons[1]),strip(OLD2.lessons[2]));
+LV3.chapters[4].lessons=[strip(OLD3.lessons[3])];LV3.chapters[5].lessons=[strip(OLD3.lessons[4])];
+const COURSE=[LV1,LV2,LV3,LV4,LV5,LV6];
 COURSE.forEach(c=>{
- if(!c.chapters)c.chapters=[{t:c.t,d:c.d,lessons:c.lessons}];
- c.chapters.forEach((ch,ci)=>ch.lessons.forEach((x,li)=>{if(!x.id)x.id=`${c.n}-${ci+1}-${li+1}`;x.ch=ch;x.chi=ci+1}));
+ c.chapters.forEach((ch,ci)=>ch.lessons.forEach((x,li)=>{x.id=`${c.n}-${ci+1}-${li+1}`;x.ch=ch;x.chi=ci+1}));
  c.lessons=c.chapters.flatMap(ch=>ch.lessons);
 });
 
 /* ===================== MOTEUR DU SITE ===================== */
-let LANG='fr';try{LANG=localStorage.getItem('sfx_lang')||'fr'}catch(e){}
-let DONE={};try{DONE=JSON.parse(localStorage.getItem('sfx_done')||'{}')}catch(e){}
-const save=()=>{try{localStorage.setItem('sfx_done',JSON.stringify(DONE));localStorage.setItem('sfx_lang',LANG)}catch(e){}};
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let LANG=store.get('sfx_lang2','fr'), DONE=store.get('sfx_done',{}), BEST=store.get('sfx_best',{});
 const T=k=>UI[LANG][k];
 const all=COURSE.flatMap(c=>c.lessons.map(x=>({...x,lv:c})));
 const pct=c=>Math.round(100*c.lessons.filter(x=>DONE[x.id]).length/c.lessons.length);
@@ -24,39 +27,84 @@ function home(){
  <h1>${T('heroT')}</h1><p>${T('heroP')}</p>
  <a class="btn" href="#/level/1">${T('start')} →</a>
  <div class="stats"><div><b>${COURSE.length}</b>${T('statN')}</div><div><b>${all.length}</b>${T('statL')}</div><div><b>FR / EN</b>${T('statF')}</div></div></div></section>
- <div class="wrap"><h2 class="sec">${T('levels')}</h2><div class="levels">
- ${COURSE.map(c=>`<a class="lv" href="#/level/${c.n}">${badge(c.icon)}<div><small>${T('level')} ${c.n}</small><h3>${c.t[LANG]}</h3><p>${c.d[LANG]}</p><p style="margin-top:6px;font-size:13px">${c.lessons.length} ${T('lessons')} · ${pct(c)}% ${T('complete')}</p><div class="bar"><i style="width:${pct(c)}%"></i></div></div></a>`).join('')}
- <div class="lv soon">${badge('coins')}<div><small>${T('level')} ${COURSE.length+1}</small><h3>${T('soon')}</h3></div></div>
- </div>${cta()}</div>`;
+ <div class="wrap"><h2 class="sec">${T('goalsT')}</h2><div class="goals">${GOALS[LANG].map(g=>`<div class="goal"><i>${g[0]}</i><b>${g[1]}</b><p>${g[2]}</p></div>`).join('')}</div>
+ <h2 class="sec">${T('levels')}</h2><div class="path">${COURSE.map(c=>`<a href="#/level/${c.n}"><small>${T('level')} ${c.n}</small>${c.t[LANG]}</a>`).join('')}<a href="#/exam"><small>🎓</small>${T('exam')}</a></div>
+ <div class="levels">${COURSE.map(c=>`<a class="lv" href="#/level/${c.n}">${badge(c.icon)}<div><small>${T('level')} ${c.n}</small><h3>${c.t[LANG]}</h3><p>${c.d[LANG]}</p><p style="margin-top:6px;font-size:13px">${c.lessons.length} ${T('lessons')} · ${pct(c)}% ${T('complete')}${BEST[c.n]!=null?` · quiz ${BEST[c.n]}%`:''}</p><div class="bar"><i style="width:${pct(c)}%"></i></div></div></a>`).join('')}</div>${cta()}</div>`;
 }
 function level(n){
  const c=COURSE.find(x=>x.n==n);if(!c)return home();
- const multi=c.chapters.length>1;
- const chapters=c.chapters.map((ch,ci)=>`<section class="chap">${multi?`<div class="chap-h"><span class="num">${ci+1}</span><div><h3>${ch.t[LANG]}</h3><p>${ch.d[LANG]}</p></div></div>`:''}
+ const chapters=c.chapters.map((ch,ci)=>`<section class="chap"><div class="chap-h"><span class="num">${ci+1}</span><div><h3>${ch.t[LANG]}</h3><p>${ch.d[LANG]}</p></div></div>
   <ol>${ch.lessons.map(x=>`<li class="${DONE[x.id]?'done':''}"><a href="#/lesson/${x.id}">${x.t[LANG]}</a><p>${x.s[LANG]}</p></li>`).join('')}</ol></section>`).join('');
  return `<div class="wrap"><div class="lvhead">${badge(c.icon)}<div><small style="color:var(--muted)">${T('level')} ${c.n} ${T('of')} ${COURSE.length}</small><h1>${c.t[LANG]}</h1><p>${c.d[LANG]}</p><a class="btn" href="#/lesson/${c.lessons[0].id}">${T('startLv')} →</a></div></div>
- <div class="grid2"><div class="prog"><h4>${T('progress')}</h4><div class="pct">${pct(c)}%</div><div class="bar"><i style="width:${pct(c)}%"></i></div><p style="color:var(--muted);font-size:14px;margin-top:8px">${c.lessons.filter(x=>DONE[x.id]).length} / ${c.lessons.length} ${T('lessons')}</p>
- ${multi?`<nav class="toc">${c.chapters.map((ch,ci)=>`<a href="#/lesson/${ch.lessons[0].id}">${ci+1}. ${ch.t[LANG]}</a>`).join('')}</nav>`:''}</div>
- <div class="outline"><h4>${T('outline')}</h4>${chapters}</div></div>${cta()}</div>`;
+ <div class="grid2"><div class="prog"><h4>${T('progress')}</h4><div class="pct">${pct(c)}%</div><div class="bar"><i style="width:${pct(c)}%"></i></div><p style="color:var(--muted);font-size:14px;margin-top:8px">${c.lessons.filter(x=>DONE[x.id]).length} / ${c.lessons.length} ${T('lessons')}${BEST[c.n]!=null?` · quiz ${BEST[c.n]}%`:''}</p>
+ <nav class="toc">${c.chapters.map((ch,ci)=>`<a href="#/lesson/${ch.lessons[0].id}">${ci+1}. ${ch.t[LANG]}</a>`).join('')}<a href="#/quiz/${c.n}">📝 ${T('quiz')}</a></nav></div>
+ <div class="outline"><h4>${T('outline')}</h4>${chapters}<a class="btn" href="#/quiz/${c.n}">${T('quizGo')}</a></div></div>${cta()}</div>`;
 }
 function lesson(id){
  const i=all.findIndex(x=>x.id==id);if(i<0)return home();const x=all[i],p=all[i-1],nx=all[i+1];
- const multi=x.lv.chapters.length>1;
- return `<div class="wrap"><article class="lesson"><div class="crumb"><a href="#/">${T('home')}</a> › <a href="#/level/${x.lv.n}">${T('level')} ${x.lv.n} · ${x.lv.t[LANG]}</a>${multi?` › ${CHW[LANG]} ${x.chi} · ${x.ch.t[LANG]}`:''}</div>
+ const last=!nx||nx.lv.n!==x.lv.n;
+ return `<div class="wrap"><article class="lesson"><div class="crumb"><a href="#/">${T('home')}</a> › <a href="#/level/${x.lv.n}">${T('level')} ${x.lv.n} · ${x.lv.t[LANG]}</a> › ${CHW[LANG]} ${x.chi} · ${x.ch.t[LANG]}</div>
  <h1>${x.t[LANG]}</h1><p class="lead">${x.s[LANG]}</p>${x.b[LANG]}
  <button class="btn ${DONE[x.id]?'ghost':''} done-btn" onclick="toggleDone('${x.id}')">${DONE[x.id]?T('isDone'):T('markDone')}</button>
- <div class="pager">${p?`<a class="btn ghost sm" href="#/lesson/${p.id}">${T('prev')}</a>`:`<span></span>`}${nx?`<a class="btn sm" href="#/lesson/${nx.id}">${T('next')}</a>`:`<a class="btn sm" href="#/level/${x.lv.n}">${T('backLv')}</a>`}</div>
+ <div class="pager">${p?`<a class="btn ghost sm" href="#/lesson/${p.id}">${T('prev')}</a>`:`<span></span>`}${last?`<a class="btn sm" href="#/quiz/${x.lv.n}">📝 ${T('quiz')} →</a>`:`<a class="btn sm" href="#/lesson/${nx.id}">${T('next')}</a>`}</div>
  </article>${cta()}</div>`;
 }
-function toggleDone(id){DONE[id]=!DONE[id];if(!DONE[id])delete DONE[id];save();render()}
+
+/* ----- Quiz, examen, certificat ----- */
+let QZ=null;
+function quizView(qs,title,sub,key){
+ QZ={qs,ans:{},key};
+ return `<div class="wrap"><article class="lesson quiz"><div class="crumb"><a href="#/">${T('home')}</a> › ${title}</div><h1>${title}</h1><p class="lead">${sub}</p>
+ ${qs.map((q,k)=>`<div class="q" id="q${k}"><b>${k+1}. ${q[0]}</b>${q[1].map((o,j)=>`<button class="opt" onclick="pick(${k},${j})">${o}</button>`).join('')}<div class="exp"></div></div>`).join('')}
+ <div id="qres"></div></article></div>`;
+}
+function pick(k,j){if(!QZ||QZ.ans[k]!=null)return;QZ.ans[k]=j;const q=QZ.qs[k],el=document.getElementById('q'+k),bs=el.querySelectorAll('.opt');
+ bs[q[2]].classList.add('ok');if(j!=q[2])bs[j].classList.add('ko');el.querySelector('.exp').textContent=(j==q[2]?'✅ ':'❌ ')+q[3];
+ const n=Object.keys(QZ.ans).length;if(n<QZ.qs.length)return;
+ const good=QZ.qs.filter((q,i)=>QZ.ans[i]==q[2]).length,sc=Math.round(100*good/QZ.qs.length),r=document.getElementById('qres');
+ if(QZ.key=='exam'){r.innerHTML=`<div class="cta"><h3>${T('result')}</h3><div class="score">${sc}%</div><p>${sc>=70?T('pass'):T('fail')}</p>${sc>=70?`<input class="search" id="cname" placeholder="${T('name')}" maxlength="40"><button class="btn" onclick="makeCert(${sc})">${T('gen')}</button><div id="certbox"></div>`:`<a class="btn" href="#/exam" onclick="setTimeout(render,0)">${T('retry')}</a>`}</div>`}
+ else{BEST[QZ.key]=Math.max(BEST[QZ.key]||0,sc);store.set('sfx_best',BEST);const nl=COURSE.find(c=>c.n==+QZ.key+1);
+  r.innerHTML=`<div class="cta"><h3>${T('result')}</h3><div class="score">${sc}%</div><div class="row"><a class="btn ghost" href="#/quiz/${QZ.key}" onclick="setTimeout(render,0)">${T('retry')}</a>${nl?`<a class="btn" href="#/level/${nl.n}">${T('next2')}</a>`:`<a class="btn" href="#/exam">🎓 ${T('exam')}</a>`}</div></div>`}
+ r.scrollIntoView({behavior:'smooth'})}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function quizPage(n){const c=COURSE.find(x=>x.n==n);if(!c)return home();return quizView(QUIZ[n][LANG],`${T('quiz')} · ${T('level')} ${n}`,`${c.t[LANG]} — ${T('quizT')}`,String(n))}
+function examPage(){const pool=Object.keys(QUIZ).flatMap(k=>QUIZ[k][LANG]);return quizView(shuffle(pool).slice(0,20),'🎓 '+T('exam'),T('examP'),'exam')}
+function makeCert(sc){const nm=(document.getElementById('cname').value||'').trim()||'—';const cv=document.createElement('canvas');cv.width=1600;cv.height=1130;cv.className='cert';const g=cv.getContext('2d');
+ const bg=g.createLinearGradient(0,0,1600,1130);bg.addColorStop(0,'#1b1206');bg.addColorStop(1,'#050300');g.fillStyle=bg;g.fillRect(0,0,1600,1130);
+ g.strokeStyle='#f5b301';g.lineWidth=10;g.strokeRect(40,40,1520,1050);g.lineWidth=2;g.strokeRect(62,62,1476,1006);
+ g.textAlign='center';g.fillStyle='#f5b301';g.beginPath();g.arc(800,185,62,0,7);g.fill();g.fillStyle='#2a1a00';g.font='900 70px Arial';g.fillText('S',800,210);
+ g.fillStyle='#fff';g.font='900 54px Arial';g.fillText('SERGIO FX ACADÉMIE',800,320);
+ g.fillStyle='#ffd84d';g.font='700 34px Arial';g.fillText(LANG=='fr'?'CERTIFICAT DE RÉUSSITE':'CERTIFICATE OF COMPLETION',800,385);
+ g.fillStyle='#c9b88f';g.font='28px Arial';g.fillText(LANG=='fr'?'Ce certificat est décerné à':'This certificate is awarded to',800,480);
+ g.fillStyle='#fff';g.font='italic 800 78px Georgia';g.fillText(nm,800,580);g.fillStyle='#f5b301';g.fillRect(450,610,700,3);
+ g.fillStyle='#e9dfc6';g.font='28px Arial';g.fillText(LANG=='fr'?'pour avoir terminé la formation d\'initiation au trading Forex & Or':'for completing the Forex & Gold trading foundation course',800,680);
+ g.fillText((LANG=='fr'?'Score à l\'examen final : ':'Final exam score: ')+sc+' %',800,730);
+ g.fillStyle='#c9b88f';g.font='24px Arial';g.fillText(new Date().toLocaleDateString(LANG=='fr'?'fr-FR':'en-GB',{day:'numeric',month:'long',year:'numeric'}),800,850);
+ g.font='20px Arial';g.fillText(LANG=='fr'?'Contenu éducatif – le trading comporte des risques de perte en capital.':'Educational content – trading involves a risk of capital loss.',800,1010);
+ const box=document.getElementById('certbox');box.innerHTML='';box.appendChild(cv);const a=document.createElement('a');a.className='btn';a.textContent=T('dl');a.download='certificat-sergio-fx.png';a.href=cv.toDataURL('image/png');box.appendChild(a)}
+
+/* ----- Glossaire ----- */
+function glossPage(){return `<div class="wrap"><article class="lesson"><div class="crumb"><a href="#/">${T('home')}</a> › ${T('gloss')}</div><h1>📖 ${T('gloss')}</h1><p class="lead">${T('glossP')}</p>
+ <input class="search" id="gs" placeholder="${T('searchP')}" oninput="filterGloss(this.value)"><div class="gl" id="gl">${GLOSS.map(g=>`<div data-s="${(g[0]+' '+g[1]+' '+g[2]).toLowerCase()}"><b>${g[0]}</b> — ${LANG=='fr'?g[1]:g[2]}</div>`).join('')}</div></article></div>`}
+function filterGloss(v){v=v.toLowerCase();document.querySelectorAll('#gl>div').forEach(d=>d.style.display=d.dataset.s.includes(v)?'':'none')}
+
+/* ----- Cases à cocher (exercices, checklists) ----- */
+function wireChecks(){document.querySelectorAll('.check').forEach(box=>{const k='chk_'+box.dataset.k,st=store.get(k,[]),ins=[...box.querySelectorAll('input')],res=box.nextElementSibling;
+ const upd=()=>{if(res&&res.classList.contains('checkres'))res.textContent=`${ins.filter(i=>i.checked).length} / ${ins.length} ${T('checked')}`};
+ ins.forEach((inp,i)=>{inp.checked=!!st[i];inp.onchange=()=>{const s=ins.map(x=>x.checked);store.set(k,s);upd()}});upd()})}
+
+function toggleDone(id){DONE[id]=!DONE[id];if(!DONE[id])delete DONE[id];store.set('sfx_done',DONE);render()}
 function render(){
  const h=location.hash.replace('#','')||'/';const [,a,b]=h.split('/');
  document.documentElement.lang=LANG;
- document.getElementById('app').innerHTML=a=='level'?level(b):a=='lesson'?lesson(b):home();
+ const nv=T('nav'),links=`<a href="#/">${nv[0]}</a><a href="#/glossaire">${nv[1]}</a><a href="#/exam">${nv[2]}</a>`;
+ document.getElementById('navl').innerHTML=links;document.getElementById('mnav').innerHTML=links;
+ document.getElementById('app').innerHTML=a=='level'?level(b):a=='lesson'?lesson(b):a=='quiz'?quizPage(b):a=='exam'?examPage():a=='glossaire'?glossPage():home();
  document.getElementById('disc').textContent=T('disc');
  document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x.dataset.l==LANG));
+ wireChecks();
 }
-document.querySelectorAll('.lang button').forEach(x=>x.onclick=()=>{LANG=x.dataset.l;save();render()});
+document.querySelectorAll('.lang button').forEach(x=>x.onclick=()=>{LANG=x.dataset.l;store.set('sfx_lang2',LANG);render()});
 window.addEventListener('hashchange',()=>{render();scrollTo(0,0)});
 const thB=document.getElementById('theme');const setTh=()=>{thB.textContent=document.documentElement.dataset.theme=='light'?'🌙':'☀️'};setTh();
 thB.onclick=()=>{const d=document.documentElement;d.dataset.theme=d.dataset.theme=='light'?'dark':'light';try{localStorage.setItem('sfx_theme',d.dataset.theme)}catch(e){};setTh()};
