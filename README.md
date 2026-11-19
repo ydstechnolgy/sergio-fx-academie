@@ -11,8 +11,9 @@ Site en ligne : https://ydstechnolgy.github.io/sergio-fx-academie/
 | `index.html` | Le site complet (c'est ce fichier que GitHub Pages affiche). Il est **généré** à partir de `src/`. |
 | `src/head.part` | Design (couleurs, mise en page) et textes de l'interface FR/EN. |
 | `src/lv1a.js`, `lv1b.js`, `lv1c.js` | Niveau 1 · Les bases du Forex (chapitres 1 à 10). |
-| `src/lv23.js` | Niveaux 2 et 3. |
-| `src/svg.part` | Schémas (bougies, supports/résistances). |
+| `src/lv2.js` | Niveau 2 (et anciennes leçons moyennes mobiles / indicateurs). |
+| `src/lv3.js` | Niveau 3 · L'analyse technique (6 chapitres). |
+| `src/svg.part` | Graphiques et schémas dessinés en SVG (s'adaptent au thème clair/sombre). |
 | `src/engine.part` | Fonctionnement du site (navigation, progression, langue). |
 | `build.sh` | Reconstruit `index.html` à partir de `src/`. |
 

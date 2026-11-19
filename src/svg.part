@@ -1,13 +1,83 @@
-/* ===================== SCHÉMAS ===================== */
-function candleSVG(l){const o=l=='fr'?['Plus haut','Clôture','Ouverture','Plus bas','Corps','Mèche']:['High','Close','Open','Low','Body','Wick'];
-return `<svg class="chart" viewBox="0 0 420 220"><g font-family="Arial" font-size="12" fill="#f3ead6">
-<line x1="120" y1="20" x2="120" y2="200" stroke="#22c55e" stroke-width="3"/><rect x="100" y="60" width="40" height="90" fill="#22c55e"/>
-<line x1="300" y1="20" x2="300" y2="200" stroke="#ef4444" stroke-width="3"/><rect x="280" y="60" width="40" height="90" fill="#ef4444"/>
-<text x="150" y="25">${o[0]}</text><text x="150" y="64">${o[1]}</text><text x="150" y="152">${o[2]}</text><text x="150" y="200">${o[3]}</text>
-<text x="330" y="25">${o[0]}</text><text x="330" y="64">${o[2]}</text><text x="330" y="152">${o[1]}</text><text x="330" y="200">${o[3]}</text>
-<text x="20" y="110" fill="#ffd84d">${o[4]} →</text><text x="20" y="40" fill="#ffd84d">${o[5]} →</text></g></svg>`}
-function srSVG(l){const r=l=='fr'?'RÉSISTANCE':'RESISTANCE',s='SUPPORT';
-return `<svg class="chart" viewBox="0 0 420 200"><rect x="0" y="34" width="420" height="16" fill="#ef4444" opacity=".25"/><rect x="0" y="150" width="420" height="16" fill="#22c55e" opacity=".25"/>
-<polyline points="10,140 60,50 110,150 170,48 230,152 290,46 340,120 410,30" fill="none" stroke="#ffd84d" stroke-width="3"/>
-<text x="12" y="28" fill="#ef4444" font-family="Arial" font-weight="700" font-size="13">${r}</text><text x="12" y="186" fill="#22c55e" font-family="Arial" font-weight="700" font-size="13">${s}</text></svg>`}
+/* ===================== SCHÉMAS (dessinés en SVG, s'adaptent au thème clair/sombre) ===================== */
+const L=(l,fr,en)=>l=='fr'?fr:en;
+const TX='style="fill:var(--txt)"', MU='style="fill:var(--muted)"';
+const GR='var(--green)',RD='var(--red)',GD='var(--gold)',PU='#8b5cf6',BL='#3b82f6',OR='#f59e0b';
 
+/* Générateur de bougies déterministe à partir d'un tracé de prix */
+function series(seed,pts,vol){let s=seed;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+ const cl=[];for(let k=0;k<pts.length-1;k++){const [i0,p0]=pts[k],[i1,p1]=pts[k+1];for(let i=i0;i<i1;i++)cl.push(p0+(p1-p0)*(i-i0)/(i1-i0)+(r()-.5)*vol)}cl.push(pts[pts.length-1][1]);
+ let prev=cl[0]-(r()-.5)*vol;return cl.map(c=>{const o=prev;prev=c;return [o,Math.max(o,c)+r()*vol*.6,Math.min(o,c)-r()*vol*.6,c]})}
+function sma(c,n){return c.map((_,i)=>i<n-1?null:c.slice(i-n+1,i+1).reduce((a,x)=>a+x[3],0)/n)}
+
+/* Graphique complet : bougies + lignes + zones + notes */
+function chart(o){
+ const W=760,H=o.h||360,pr=78,pt=16,pb=22,cs=o.c,n=cs.length,mn=o.min,mx=o.max,cw=(W-pr-16)/n;
+ const X=i=>12+cw*i+cw/2, Y=p=>pt+(mx-p)/(mx-mn)*(H-pt-pb), f=v=>v.toFixed(o.d??2);
+ let g='';
+ const st=o.step||(mx-mn)/6;for(let p=Math.ceil(mn/st)*st;p<=mx;p+=st)g+=`<line x1="0" x2="${W-pr}" y1="${Y(p)}" y2="${Y(p)}" stroke="var(--grid)"/><text x="${W-pr+8}" y="${Y(p)+4}" font-size="11" ${MU}>${f(p)}</text>`;
+ (o.zones||[]).forEach(z=>{g+=`<rect x="0" width="${W-pr}" y="${Y(z.p2)}" height="${Y(z.p1)-Y(z.p2)}" fill="${z.c}" opacity=".16"/>`;if(z.t)g+=`<text x="8" y="${Y(z.p2)-5}" font-size="12" font-weight="700" fill="${z.c}">${z.t}</text>`});
+ cs.forEach(([op,hi,lo,cl],i)=>{const c=cl>=op?GR:RD,x=X(i);g+=`<line x1="${x}" x2="${x}" y1="${Y(hi)}" y2="${Y(lo)}" stroke="${c}" stroke-width="1.4"/><rect x="${x-cw*.32}" width="${cw*.64}" y="${Y(Math.max(op,cl))}" height="${Math.max(1.5,Math.abs(Y(op)-Y(cl)))}" fill="${c}"/>`});
+ (o.ma||[]).forEach(m=>{const v=sma(cs,m.n);g+=`<polyline fill="none" stroke="${m.c}" stroke-width="2.5" points="${v.map((p,i)=>p==null?'':X(i)+','+Y(p)).join(' ')}"/>`});
+ (o.lines||[]).forEach(l=>{if(l.h!=null){g+=`<line x1="${l.from!=null?X(l.from):0}" x2="${W-pr}" y1="${Y(l.h)}" y2="${Y(l.h)}" stroke="${l.c}" stroke-width="2" ${l.dash?'stroke-dasharray="6 5"':''}/>`;if(l.t)g+=`<rect x="${W-pr+2}" y="${Y(l.h)-10}" width="${pr-4}" height="20" rx="5" fill="${l.c}"/><text x="${W-pr/2}" y="${Y(l.h)+4}" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">${l.t}</text>`}
+  else g+=`<line x1="${X(l.a[0])}" y1="${Y(l.a[1])}" x2="${X(l.b[0])}" y2="${Y(l.b[1])}" stroke="${l.c}" stroke-width="2.5" ${l.dash?'stroke-dasharray="6 5"':''}/>`});
+ (o.dots||[]).forEach(d=>g+=`<circle cx="${X(d[0])}" cy="${Y(d[1])}" r="5" style="fill:var(--strong)"/>`);
+ (o.notes||[]).forEach(t=>{const x=X(t.i),y=Y(t.p),bx=t.bx,by=t.by,w=t.w||190;g+=`<line x1="${x}" y1="${y}" x2="${bx+w/2}" y2="${by}" style="stroke:var(--strong)" stroke-width="1.3"/><rect x="${bx}" y="${by}" width="${w}" height="${t.h||40}" rx="7" style="fill:var(--card);stroke:var(--line)"/><text x="${bx+10}" y="${by+17}" font-size="12" font-weight="700" ${TX}>${t.t}</text>${t.s?`<text x="${bx+10}" y="${by+32}" font-size="11" ${MU}>${t.s}</text>`:''}`});
+ if(o.title)g+=`<rect x="10" y="10" width="${o.lw||250}" height="${o.lh||(30+18*(o.leg||[]).length)}" rx="8" style="fill:var(--card);stroke:var(--line)"/><text x="22" y="32" font-size="15" font-weight="800" ${TX}>${o.title}</text>`+(o.leg||[]).map((t,k)=>`<text x="22" y="${54+18*k}" font-size="12" ${t[1]?`fill="${t[1]}" font-weight="700"`:MU}>${t[0]}</text>`).join('');
+ return `<svg class="chart" viewBox="0 0 ${W} ${H}" font-family="Arial,sans-serif">${g}</svg>`;
+}
+
+/* Petites illustrations de figures de chandeliers : [o,h,l,c] sur une échelle 0–100 */
+function mini(c){const n=c.length,lo=Math.min(...c.map(k=>k[2])),hi=Math.max(...c.map(k=>k[1])),Y=v=>92-(v-lo)/(hi-lo)*84,w=26,x0=60-n*w/2;return `<svg viewBox="0 0 120 100">${c.map(([o,h,l,cl],i)=>{const x=x0+w*i+w/2,col=cl>=o?GR:RD;return `<line x1="${x}" x2="${x}" y1="${Y(h)}" y2="${Y(l)}" stroke="${col}" stroke-width="2.5"/><rect x="${x-8}" width="16" y="${Y(Math.max(o,cl))}" height="${Math.max(2.5,Math.abs(Y(o)-Y(cl)))}" fill="${col}"/>`}).join('')}</svg>`}
+function pats(l,list){return `<div class="pats">${list.map(p=>`<div class="pat">${mini(p[2])}<b>${p[0]}</b><i>${L(l,p[1][0],p[1][1])}</i></div>`).join('')}</div>`}
+
+/* Schéma « comment fonctionne un trade sur une paire » */
+function pairBox(l,b,q){return `<div class="pair"><div class="sym"><span>${b}</span>/<span>${q}</span><small>${L(l,'1ʳᵉ devise (base) · 2ᵉ devise (cotation)','1st currency (base) · 2nd currency (quote)')}</small></div>
+<div class="side buy"><b>▲ ${L(l,'Acheter la paire (BUY)','Buy the pair')}</b><strong>${L(l,`Tu achètes ${b} et vends ${q}`,`You buy ${b} and sell ${q}`)}</strong><p>${L(l,`Tu penses que ${b} va se renforcer face à ${q}.`,`You expect ${b} to strengthen against ${q}.`)}</p></div>
+<div class="side sell"><b>▼ ${L(l,'Vendre la paire (SELL)','Sell the pair')}</b><strong>${L(l,`Tu vends ${b} et achètes ${q}`,`You sell ${b} and buy ${q}`)}</strong><p>${L(l,`Tu penses que ${b} va s'affaiblir face à ${q}.`,`You expect ${b} to weaken against ${q}.`)}</p></div></div>`}
+
+/* Anatomie d'une bougie */
+function candleSVG(l){const o=L(l,['Plus haut','Clôture','Ouverture','Plus bas','Corps','Mèche'],['High','Close','Open','Low','Body','Wick']);
+return `<svg class="chart" viewBox="0 0 420 220" font-family="Arial"><g font-size="12" ${TX}>
+<line x1="120" y1="20" x2="120" y2="200" stroke="${GR}" stroke-width="3"/><rect x="100" y="60" width="40" height="90" fill="${GR}"/>
+<line x1="300" y1="20" x2="300" y2="200" stroke="${RD}" stroke-width="3"/><rect x="280" y="60" width="40" height="90" fill="${RD}"/>
+<text x="150" y="25">${o[0]}</text><text x="150" y="64">${o[1]}</text><text x="150" y="152">${o[2]}</text><text x="150" y="200">${o[3]}</text>
+<text x="330" y="25">${o[0]}</text><text x="330" y="64">${o[2]}</text><text x="330" y="152">${o[1]}</text><text x="330" y="200">${o[3]}</text></g>
+<g font-size="12" font-weight="700" style="fill:var(--gold2)"><text x="20" y="110">${o[4]} →</text><text x="20" y="40">${o[5]} →</text></g></svg>`}
+
+/* ---------- Graphiques d'exemple (Or, XAUUSD) ---------- */
+const C_RANGE=series(7,[[0,3790],[6,3858],[11,3802],[17,3860],[22,3805],[28,3859],[33,3770],[38,3742],[42,3800],[45,3741],[50,3820]],9);
+function chRange(l){return chart({c:C_RANGE,min:3725,max:3880,step:25,d:0,
+ lines:[{h:3860,c:'#e11d48',t:L(l,'Résist. 3 860','Resist. 3,860')},{h:3742,c:GR,t:'Support 3 742'}],
+ title:L(l,'Supports et résistances','Support and resistance'),lw:300,leg:[[L(l,'XAUUSD · graphique H4','XAUUSD · H4 chart')],[L(l,'Le prix a buté plusieurs fois sur ces niveaux','Price struggled to break these levels')]]})}
+
+const C_TREND=series(11,[[0,3800],[5,3785],[9,3772],[16,3812],[21,3800],[29,3842],[33,3832],[40,3866],[44,3860],[52,3895]],5);
+function chTrend(l){return chart({c:C_TREND,min:3760,max:3905,step:25,d:0,ma:[{n:10,c:OR}],
+ lines:[{a:[8,3768],b:[52,3866],c:PU}],dots:[[9,3769],[21,3795],[33,3822]],
+ notes:[{i:33,p:3822,bx:430,by:300,w:250,h:44,t:L(l,'Creux de plus en plus hauts','Higher lows'),s:L(l,'Le prix revient 3 fois sur la ligne et rebondit','Price pulled back to the line 3 times and bounced')}],
+ title:'XAUUSD · H1',lw:260,leg:[[L(l,'Ligne violette : ligne de tendance','Purple line: trend line'),PU],[L(l,'Ligne orange : moyenne mobile 10','Orange line: 10-period SMA'),OR]]})}
+
+const C_STEPS=series(23,[[0,3760],[5,3778],[8,3770],[16,3812],[19,3800],[24,3820],[29,3868],[33,3858],[38,3822],[40,3829]],5).slice(0,40);
+C_STEPS[38]=[3828,3830,3818.5,3821];C_STEPS[39]=[3820,3837,3819.5,3836];
+function chSteps(l){return chart({c:C_STEPS,min:3750,max:3880,step:25,d:0,ma:[{n:20,c:OR}],
+ lines:[{a:[3,3764],b:[46,3833],c:PU},{h:3820,c:BL,from:10,t:'Support 3 820'},{h:3836,c:'#6366f1',dash:1,from:39,t:L(l,'Entrée 3 836','Entry 3,836')},{h:3814,c:'#e11d48',dash:1,from:39,t:'Stop 3 814'},{h:3868,c:GR,dash:1,from:39,t:L(l,'Objectif 3 868','Target 3,868')}],
+ notes:[{i:39,p:3819.5,bx:330,by:300,w:270,h:44,t:L(l,'Signal','Signal'),s:L(l,'Avalement haussier sur le support 3 820','Bullish engulfing at 3,820 support')}],
+ title:L(l,'Analyse technique pas à pas','Technical analysis step by step'),lw:300,leg:[[L(l,'Ligne violette : tendance sous les creux','Purple line: trend under the lows'),PU],[L(l,'Ligne orange : moyenne mobile 20','Orange line: 20-period SMA'),OR]]})}
+
+const C_FLIP=series(31,[[0,3700],[12,3765],[14,3742],[20,3745],[24,3790],[30,3812],[34,3800],[42,3768],[45,3764]],6);
+function chFlip(l){return chart({c:C_FLIP,min:3690,max:3830,step:20,d:0,ma:[{n:30,c:OR}],
+ zones:[{p1:3758,p2:3770,c:BL,t:L(l,'Ancienne résistance → nouveau support','Old resistance → new support')}],lines:[{h:3764,c:BL,dash:1,t:'Support 3 764'}],
+ notes:[{i:12,p:3768,bx:40,by:120,w:200,h:28,t:L(l,'Bloqué ici (résistance)','Stopped here (resistance)')},{i:44,p:3762,bx:440,by:300,w:220,h:28,t:L(l,'Retour sur le support','Pulled back to support')}],
+ title:'XAUUSD · H4',lw:240,leg:[[L(l,'Ligne orange : moyenne mobile 30','Orange line: 30-period SMA'),OR],[L(l,'Zone bleue : résistance devenue support','Blue zone: resistance turned support'),BL]]})}
+
+const C_CHAN=series(41,[[0,3770],[5,3800],[9,3784],[15,3818],[19,3802],[25,3836],[29,3820],[35,3854],[39,3838],[44,3870]],4);
+function chChannel(l){return chart({c:C_CHAN,min:3755,max:3885,step:25,d:0,
+ lines:[{a:[0,3765],b:[44,3836],c:PU},{a:[0,3797],b:[44,3870],c:PU,dash:1}],
+ title:L(l,'Canal haussier','Rising channel'),lw:270,leg:[[L(l,'Ligne pleine : tendance (creux)','Solid line: trend line (lows)'),PU],[L(l,'Pointillés : ligne parallèle (sommets)','Dashed: parallel line (highs)'),PU]]})}
+
+const C_FIB=series(53,[[0,3740],[3,3735],[16,3860],[20,3845],[25,3795],[28,3789],[34,3842]],5);
+function chFib(l){const lo=3732,hi=3862,lv=[[0,''],[.236,'23,6 %'],[.382,'38,2 %'],[.5,'50 %'],[.618,'61,8 %'],[1,'100 %']];
+ return chart({c:C_FIB,min:3720,max:3875,step:25,d:0,
+  lines:lv.map(([r,t])=>({h:hi-(hi-lo)*r,c:r==.618||r==.5?GD:'#94a3b8',dash:1,from:3,t:t||'0 %'})),
+  notes:[{i:27,p:3789,bx:330,by:300,w:280,h:44,t:L(l,'Le prix corrige jusqu\'à ~50–61,8 %','Price pulls back to ~50–61.8%'),s:L(l,'…puis repart dans le sens de la tendance','…then resumes the trend')}],
+  title:L(l,'Retracement de Fibonacci','Fibonacci retracement'),lw:270,leg:[[L(l,'Tracé du creux (3 732) au sommet (3 862)','Drawn from low (3,732) to high (3,862)')]]})}
+function srSVG(l){return chRange(l)}

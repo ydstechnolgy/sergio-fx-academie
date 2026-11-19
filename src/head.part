@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SERGIO FX ACADÉMIE – Formation trading débutant</title>
 <meta name="description" content="Formation gratuite d'initiation au trading Forex et Or pour débutants – SERGIO FX ACADÉMIE.">
+<script>try{var t=localStorage.getItem("sfx_theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
-:root{--bg:#0b0906;--bg2:#15110a;--card:#1b160d;--line:#3a2e14;--gold:#f5b301;--gold2:#ffd84d;--txt:#f3ead6;--muted:#b9ad90;--green:#22c55e;--red:#ef4444}
+:root{--bg:#0b0906;--bg2:#15110a;--card:#1b160d;--line:#3a2e14;--gold:#f5b301;--gold2:#ffd84d;--txt:#f3ead6;--muted:#b9ad90;--green:#22c55e;--red:#ef4444;--strong:#fff;--hdr:rgba(11,9,6,.92);--th:#241c0d;--track:#2b2415;--glow:#3a2600;--chartbg:#120e07;--grid:rgba(255,204,85,.08);--ctabg:linear-gradient(135deg,#2a1d04,#120d05);--h1a:#fffbe6;--h1b:#ffd84d;--h1c:#f5b301;--box:#1b160d}
+html[data-theme=light]{--bg:#faf7f0;--bg2:#fff;--card:#fff;--line:#e6dbc1;--gold:#e0a100;--gold2:#a86f00;--txt:#221b0c;--muted:#6e6350;--green:#16a34a;--red:#dc2626;--strong:#14100a;--hdr:rgba(250,247,240,.94);--th:#f6ecd2;--track:#ece3cd;--glow:#ffe9b0;--chartbg:#fffdf8;--grid:rgba(120,90,20,.10);--ctabg:linear-gradient(135deg,#fff4d6,#fffaf0);--h1a:#a86f00;--h1b:#d99a00;--h1c:#7a4f00;--box:#fff}
+.theme{background:none;border:1px solid var(--gold);color:var(--gold2);border-radius:30px;width:36px;height:30px;cursor:pointer;font-size:15px;line-height:1}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
 a{color:var(--gold2)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 18px;width:100%}
-header{position:sticky;top:0;z-index:10;background:rgba(11,9,6,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:10;background:var(--hdr);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:900;letter-spacing:1px;font-size:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--strong);font-weight:900;letter-spacing:1px;font-size:18px}
 .brand .logo{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0,#f5c542 40%,#a86f00);display:grid;place-items:center;color:#2a1a00;font-weight:900;box-shadow:0 0 14px rgba(255,190,40,.5)}
 .brand b{color:var(--gold)}
 .nav-r{display:flex;gap:8px;align-items:center}
@@ -25,10 +28,10 @@ header{position:sticky;top:0;z-index:10;background:rgba(11,9,6,.92);backdrop-fil
 .btn.ghost{background:none;color:var(--gold2);border:1.5px solid var(--gold)}
 .btn.sm{padding:7px 14px;font-size:13px}
 main{flex:1}
-.hero{padding:70px 0 50px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#3a2600 0%,transparent 65%)}
+.hero{padding:70px 0 50px;text-align:center;background:radial-gradient(ellipse at 50% 0%,var(--glow) 0%,transparent 65%)}
 .hero .badge{width:150px;margin:0 auto 18px}
 .hero h1{font-size:clamp(30px,6vw,52px);line-height:1.1;font-weight:900}
-.hero h1 span{background:linear-gradient(180deg,#fffbe6,#ffd84d 40%,#f5b301 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 span{background:linear-gradient(180deg,var(--h1a),var(--h1b) 40%,var(--h1c) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--muted);max-width:640px;margin:16px auto 26px;font-size:17px}
 .stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:14px}
 .stats b{display:block;color:var(--gold2);font-size:24px}
@@ -38,9 +41,9 @@ h2.sec{font-size:28px;font-weight:900;margin:40px 0 20px}
 .lv:hover{border-color:var(--gold);transform:translateY(-2px)}
 .lv svg{flex:none;width:86px;height:86px}
 .lv small{color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase}
-.lv h3{font-size:21px;margin:2px 0 6px;color:#fff}
+.lv h3{font-size:21px;margin:2px 0 6px;color:var(--strong)}
 .lv p{color:var(--muted);font-size:14px}
-.bar{height:8px;border-radius:8px;background:#2b2415;margin-top:12px;overflow:hidden}
+.bar{height:8px;border-radius:8px;background:var(--track);margin-top:12px;overflow:hidden}
 .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green));width:0}
 .lv.soon{opacity:.5;pointer-events:none}
 .lvhead{display:flex;gap:28px;align-items:center;padding:50px 0 30px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
@@ -55,7 +58,7 @@ h2.sec{font-size:28px;font-weight:900;margin:40px 0 20px}
 .outline li{position:relative;padding:0 0 22px 26px}
 .outline li:before{content:"";position:absolute;left:-11px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
 .outline li.done:before{background:var(--green);border-color:var(--green)}
-.outline a{color:#fff;text-decoration:none;font-weight:700;font-size:17px}
+.outline a{color:var(--strong);text-decoration:none;font-weight:700;font-size:17px}
 .outline a:hover{color:var(--gold2)}
 .outline p{color:var(--muted);font-size:14px;margin-top:3px}
 .lesson{max-width:760px;margin:0 auto;padding:40px 0 60px}
@@ -72,34 +75,45 @@ h2.sec{font-size:28px;font-weight:900;margin:40px 0 20px}
 .box.tip{border-left:4px solid var(--green)}
 .box.warn{border-left:4px solid var(--red)}
 .box.ex{border-left:4px solid var(--gold)}
-.box b.t{display:block;margin-bottom:4px;color:#fff}
+.box b.t{display:block;margin-bottom:4px;color:var(--strong)}
 table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
 th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
-th{background:#241c0d;color:var(--gold2)}
+th{background:var(--th);color:var(--gold2)}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;flex-wrap:wrap}
 .done-btn{margin-top:30px}
-.cta{background:linear-gradient(135deg,#2a1d04,#120d05);border:1px solid var(--gold);border-radius:22px;padding:30px;text-align:center;margin:20px 0 60px}
+.cta{background:var(--ctabg);border:1px solid var(--gold);border-radius:22px;padding:30px;text-align:center;margin:20px 0 60px}
 .cta h3{font-size:24px;margin-bottom:8px}
 .cta p{color:var(--muted);margin-bottom:18px}
 .cta .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}
 footer .wrap{display:flex;flex-direction:column;gap:8px}
-svg.chart{width:100%;height:auto;background:#120e07;border-radius:14px;border:1px solid var(--line);margin:10px 0 18px}
+svg.chart{width:100%;height:auto;background:var(--chartbg);border-radius:14px;border:1px solid var(--line);margin:10px 0 18px}
 .chap{margin-bottom:26px}
 .chap-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
 .chap-h .num{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(180deg,#ffd84d,#f5b301);color:#1a0f00;font-weight:900;font-size:20px;display:grid;place-items:center}
-.chap-h h3{font-size:22px;color:#fff;line-height:1.2}
+.chap-h h3{font-size:22px;color:var(--strong);line-height:1.2}
 .chap-h p{color:var(--muted);font-size:14px}
 .toc{display:flex;flex-direction:column;gap:6px;margin-top:22px;position:sticky;top:84px}
 .toc a{color:var(--muted);text-decoration:none;font-size:14px;padding:6px 10px;border-left:2px solid var(--line)}
 .toc a:hover{color:var(--gold2);border-color:var(--gold)}
 @media(max-width:760px){.toc{position:static}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.pair .sym{grid-column:1/-1;text-align:center;font-weight:900;font-size:22px}.pair .sym span{display:inline-block;border:2px solid var(--gold);border-radius:10px;padding:4px 12px;margin:0 6px}
+.pair .sym small{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:6px}
+.pair .side{border-radius:14px;padding:16px;border:2px solid}.pair .buy{border-color:var(--green)}.pair .sell{border-color:var(--red)}
+.pair .side b{display:block;font-size:17px;margin-bottom:4px}.pair .buy b{color:var(--green)}.pair .sell b{color:var(--red)}
+.pair .side p{margin:0;color:var(--muted);font-size:14px}
+.steps{counter-reset:s;list-style:none;margin:16px 0!important}.steps li{counter-increment:s;position:relative;padding:10px 0 10px 52px;border-bottom:1px solid var(--line)}
+.steps li:before{content:counter(s);position:absolute;left:0;top:8px;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#1a0f00;font-weight:900;display:grid;place-items:center}
+.pats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:16px 0}
+.pat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:13px}
+.pat svg{width:100%;height:110px}.pat b{display:block;font-size:14px;color:var(--strong)}.pat i{font-style:normal;color:var(--muted)}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#/"><span class="logo">S</span><span>SERGIO <b>FX</b> ACADÉMIE</span></a>
-<div class="nav-r"><div class="lang"><button data-l="fr">FR</button><button data-l="en">EN</button></div></div>
+<div class="nav-r"><button class="theme" id="theme" aria-label="Thème clair / sombre">☀️</button><div class="lang"><button data-l="fr">FR</button><button data-l="en">EN</button></div></div>
 </div></header>
 <main id="app"></main>
 <footer><div class="wrap">

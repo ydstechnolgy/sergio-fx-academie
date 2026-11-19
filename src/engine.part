@@ -1,6 +1,8 @@
 /* ===================== ASSEMBLAGE DES NIVEAUX ===================== */
 const LV1={n:1,icon:"coins",t:{fr:"Les bases du Forex",en:"Forex basics"},d:{fr:"Tu pars de zéro ? 10 chapitres pour comprendre le marché des devises, les ordres, la marge, la gestion du risque et MetaTrader 5.",en:"Starting from zero? 10 chapters to understand the currency market, orders, margin, risk management and MetaTrader 5."},chapters:[...CH_A,...CH_B,...CH_C]};
-const COURSE=[LV1,...LV23];
+LV3.chapters[4].lessons=[OLD3.lessons[3]];LV3.chapters[5].lessons=[OLD3.lessons[4]];
+LV3.chapters[4].lessons.forEach(x=>delete x.id);LV3.chapters[5].lessons.forEach(x=>delete x.id);
+const COURSE=[LV1,LV2,LV3];
 COURSE.forEach(c=>{
  if(!c.chapters)c.chapters=[{t:c.t,d:c.d,lessons:c.lessons}];
  c.chapters.forEach((ch,ci)=>ch.lessons.forEach((x,li)=>{if(!x.id)x.id=`${c.n}-${ci+1}-${li+1}`;x.ch=ch;x.chi=ci+1}));
@@ -56,6 +58,8 @@ function render(){
 }
 document.querySelectorAll('.lang button').forEach(x=>x.onclick=()=>{LANG=x.dataset.l;save();render()});
 window.addEventListener('hashchange',()=>{render();scrollTo(0,0)});
+const thB=document.getElementById('theme');const setTh=()=>{thB.textContent=document.documentElement.dataset.theme=='light'?'🌙':'☀️'};setTh();
+thB.onclick=()=>{const d=document.documentElement;d.dataset.theme=d.dataset.theme=='light'?'dark':'light';try{localStorage.setItem('sfx_theme',d.dataset.theme)}catch(e){};setTh()};
 document.getElementById('yr').textContent=new Date().getFullYear();
 render();
 </script>

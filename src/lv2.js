@@ -1,5 +1,4 @@
-const LV23=[
-{n:2,icon:"hand",t:{fr:"Brokers et analyse",en:"Brokers and analysis"},d:{fr:"Choisir un bon broker et découvrir les façons d'analyser les marchés.",en:"Choose a good broker and discover the ways to analyse the markets."},
+const LV2={n:2,icon:"hand",t:{fr:"Brokers et analyse",en:"Brokers and analysis"},d:{fr:"Choisir un bon broker et découvrir les façons d'analyser les marchés.",en:"Choose a good broker and discover the ways to analyse the markets."},
 lessons:[
 {id:"2-1",t:{fr:"Bien choisir son broker",en:"Choosing a broker"},s:{fr:"Les critères qui comptent vraiment.",en:"The criteria that really matter."},
 b:{fr:`<p>Ton broker garde ton argent et exécute tes ordres. Le choisir est donc une décision importante.</p>
@@ -58,8 +57,8 @@ ${candleSVG('en')}
 <ul><li><b>Green candle</b> (bullish): close is higher than open.</li><li><b>Red candle</b> (bearish): close is lower than open.</li><li>The <b>body</b> = the gap between open and close. The <b>wicks</b> = the extremes reached.</li></ul>
 <h2>Timeframes</h2>
 <p>Each candle can represent 1 minute (M1), 5 minutes (M5), 1 hour (H1), 1 day (D1)… In our lives we often use small timeframes (M1, M3, M5) to enter, and larger ones (H1, H4) for the overall direction.</p>`}}
-]},
-{n:3,icon:"candle",t:{fr:"L'analyse technique",en:"Technical analysis"},d:{fr:"Le guide du débutant pour lire un graphique : niveaux clés, bougies, Fibonacci et indicateurs.",en:"The beginner's guide to reading a chart: key levels, candles, Fibonacci and indicators."},
+]};
+const OLD3={n:3,icon:"candle",t:{fr:"L'analyse technique",en:"Technical analysis"},d:{fr:"Le guide du débutant pour lire un graphique : niveaux clés, bougies, Fibonacci et indicateurs.",en:"The beginner's guide to reading a chart: key levels, candles, Fibonacci and indicators."},
 lessons:[
 {id:"3-1",t:{fr:"Supports et résistances",en:"Support and resistance"},s:{fr:"Les zones où le prix réagit.",en:"The zones where price reacts."},
 b:{fr:`<p>Les supports et résistances sont les bases de l'analyse technique. Ce sont des <b>zones</b> où le prix a déjà réagi dans le passé et risque de réagir à nouveau.</p>
@@ -117,7 +116,8 @@ en:`<p>Price never moves in a straight line: it advances, pulls back a little (a
 <p>The <b>127.2%</b> and <b>161.8%</b> levels help estimate where to place a target (Take Profit) when price moves on.</p>
 <div class="box warn"><b class="t">Warning</b>Fibonacci is not magic. It shows possible zones, not certainties. Always use a Stop Loss.</div>`}},
 {id:"3-4",t:{fr:"Les moyennes mobiles",en:"Moving averages"},s:{fr:"Voir la tendance d'un coup d'œil.",en:"See the trend at a glance."},
-b:{fr:`<p>Une <b>moyenne mobile</b> calcule le prix moyen sur un certain nombre de bougies et le trace sous forme de ligne. Elle « lisse » le graphique pour mieux voir la tendance.</p>
+b:{fr:`${chTrend('fr')}
+<p>Une <b>moyenne mobile</b> calcule le prix moyen sur un certain nombre de bougies et le trace sous forme de ligne. Elle « lisse » le graphique pour mieux voir la tendance.</p>
 <h2>Les deux types principaux</h2>
 <ul><li><b>SMA</b> (moyenne mobile simple) : toutes les bougies comptent autant.</li><li><b>EMA</b> (moyenne mobile exponentielle) : les bougies récentes comptent plus. Elle réagit plus vite.</li></ul>
 <h2>Les réglages courants</h2>
@@ -125,7 +125,8 @@ b:{fr:`<p>Une <b>moyenne mobile</b> calcule le prix moyen sur un certain nombre 
 <h2>Comment les lire</h2>
 <ul><li>Prix <b>au-dessus</b> de la moyenne et moyenne qui monte : tendance haussière, on cherche plutôt des achats.</li><li>Prix <b>en dessous</b> et moyenne qui descend : tendance baissière, on cherche plutôt des ventes.</li><li>Quand une moyenne courte croise une moyenne longue, cela peut signaler un changement de tendance.</li></ul>
 <div class="box tip"><b class="t">Astuce</b>En tendance, les moyennes mobiles servent souvent de support ou de résistance « dynamique ».</div>`,
-en:`<p>A <b>moving average</b> calculates the average price over a number of candles and plots it as a line. It "smooths" the chart to show the trend more clearly.</p>
+en:`${chTrend('en')}
+<p>A <b>moving average</b> calculates the average price over a number of candles and plots it as a line. It "smooths" the chart to show the trend more clearly.</p>
 <h2>The two main types</h2>
 <ul><li><b>SMA</b> (simple moving average): every candle counts equally.</li><li><b>EMA</b> (exponential moving average): recent candles count more. It reacts faster.</li></ul>
 <h2>Common settings</h2>
@@ -154,5 +155,4 @@ en:`<p>Indicators are calculations based on price. They help confirm an idea, bu
 <h2>Mistakes to avoid</h2>
 <ul><li>Putting 10 indicators on the chart: too much information = confusion.</li><li>Buying just because RSI is below 30: in a strong trend it can stay "oversold" for a long time.</li><li>Forgetting key zones: the indicator confirms, the level decides.</li></ul>
 <div class="box tip"><b class="t">Our advice</b>Master support/resistance and candles first. Then add one or two indicators at most.</div>`}}
-]}
-];
+]};

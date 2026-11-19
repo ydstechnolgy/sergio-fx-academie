@@ -34,6 +34,7 @@ en:`<p>In Forex, you trade countries' money. When you buy a currency, you are in
 <div class="box tip"><b class="t">To start</b>Focus on few assets. At SERGIO FX we focus on Gold (XAUUSD): get to know one market well rather than chasing 20 pairs.</div>`}},
 {t:{fr:"Acheter et vendre une paire de devises",en:"Buying and selling currency pairs"},s:{fr:"Chaque trade achète une devise et en vend une autre.",en:"Every trade buys one currency and sells another."},
 b:{fr:`<p>Sur le Forex, les devises sont toujours cotées <b>par paires</b> : EUR/USD, GBP/JPY, USD/CAD… Chaque trade achète une devise et vend l'autre en même temps.</p>
+${pairBox('fr','GBP','USD')}
 <h2>Lire une paire</h2>
 <p>Dans <b>EUR/USD = 1,0850</b> : 1 euro (devise de base) vaut 1,0850 dollar (devise de cotation).</p>
 <h2>BUY ou SELL</h2>
@@ -43,6 +44,7 @@ b:{fr:`<p>Sur le Forex, les devises sont toujours cotées <b>par paires</b> : EU
 <div class="box ex"><b class="t">Exemple sur l'Or</b>SELL XAUUSD à 3 870, puis l'or descend à 3 860 : tu as gagné 10 $ par once (100 pips). S'il était monté à 3 880, tu aurais perdu la même chose.</div>
 <p>Tu n'as pas besoin de posséder la devise pour la vendre : avec un broker, vendre et acheter sont aussi simples l'un que l'autre.</p>`,
 en:`<p>In Forex, currencies are always quoted <b>in pairs</b>: EUR/USD, GBP/JPY, USD/CAD… Every trade buys one currency and sells the other at the same time.</p>
+${pairBox('en','GBP','USD')}
 <h2>Reading a pair</h2>
 <p>In <b>EUR/USD = 1.0850</b>: 1 euro (base currency) is worth 1.0850 dollars (quote currency).</p>
 <h2>BUY or SELL</h2>
