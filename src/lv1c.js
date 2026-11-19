@@ -1,6 +1,6 @@
 const CH_C=[
 /* ---------- CHAPITRE 7 ---------- */
-{t:{fr:"Pourquoi trader le Forex ?",en:"Why trade Forex?"},d:{fr:"Les avantages, les vrais risques et les arnaques.",en:"The advantages, the real risks and the scams."},
+{t:{fr:"Pourquoi trader le Forex ?",en:"Why trade Forex?"},d:{fr:"Les avantages et les vrais risques.",en:"The advantages and the real risks."},
 lessons:[
 {t:{fr:"Les avantages",en:"The advantages"},s:{fr:"Ce qui attire autant de traders.",en:"What attracts so many traders."},
 b:{fr:`<ul><li><b>Un marché immense et liquide</b> : on entre et on sort facilement, avec des frais faibles.</li><li><b>Ouvert 24 h/24 en semaine</b> : tu peux trader avant ou après ton travail ou tes cours.</li><li><b>Gagner à la hausse comme à la baisse</b> : un SELL est aussi simple qu'un BUY.</li><li><b>Petit capital de départ</b> : on peut commencer avec quelques dizaines de dollars en micro lots.</li><li><b>Compte démo gratuit</b> : on s'entraîne avec de l'argent virtuel.</li><li><b>Tout depuis ton téléphone</b> : MT5 fonctionne sur Android et iPhone.</li><li><b>Beaucoup de ressources</b> : formations, calendrier, communauté.</li></ul>
@@ -11,16 +11,7 @@ en:`<ul><li><b>A huge, liquid market</b>: easy to get in and out, with low costs
 b:{fr:`<ul><li><b>La majorité des débutants perdent de l'argent.</b> Les brokers régulés en Europe doivent d'ailleurs afficher le pourcentage de clients qui perdent : il est souvent supérieur à 70 %.</li><li><b>L'effet de levier</b> multiplie les pertes autant que les gains.</li><li><b>La volatilité</b> : l'Or peut bouger de 20 $ en quelques minutes pendant une annonce.</li><li><b>Les émotions</b> : la peur fait sortir trop tôt, l'avidité fait rester trop longtemps, la colère fait « revenge trader ».</li><li><b>Les frais</b> : spread, commissions et swap grignotent les petits gains.</li></ul>
 <div class="box warn"><b class="t">Règle de base</b>Ne trade qu'avec de l'argent que tu peux te permettre de perdre. Jamais l'argent du loyer, de la nourriture ou des études. Jamais d'argent emprunté.</div>`,
 en:`<ul><li><b>Most beginners lose money.</b> Regulated brokers in Europe must even display the share of clients who lose: it's often over 70%.</li><li><b>Leverage</b> magnifies losses as much as gains.</li><li><b>Volatility</b>: Gold can move $20 in minutes during news.</li><li><b>Emotions</b>: fear makes you exit too early, greed makes you stay too long, anger makes you "revenge trade".</li><li><b>Costs</b>: spread, commissions and swap eat into small gains.</li></ul>
-<div class="box warn"><b class="t">Basic rule</b>Only trade money you can afford to lose. Never rent, food or school money. Never borrowed money.</div>`}},
-{t:{fr:"Les arnaques à éviter",en:"Scams to avoid"},s:{fr:"Reconnaître les pièges avant de tomber dedans.",en:"Spot the traps before you fall in."},
-b:{fr:`<h2>Les signaux d'alerte</h2>
-<ul><li>« <b>Gains garantis</b> », « 30 % par semaine », « zéro risque » : ça n'existe pas.</li><li>Quelqu'un qui te demande de lui <b>envoyer de l'argent</b> pour qu'il « trade pour toi ».</li><li>Quelqu'un qui demande tes <b>identifiants</b> ou ton mot de passe de compte.</li><li>Des captures de gains impossibles à vérifier, des voitures et des liasses de billets.</li><li>Des « robots miracles » vendus très cher.</li><li>Des brokers <b>non régulés</b>, ou qui bloquent les retraits.</li><li>La pression : « offre limitée, paie maintenant ».</li></ul>
-<div class="box tip"><b class="t">Bonnes pratiques</b>Ton argent reste toujours sur <b>ton</b> compte, à <b>ton</b> nom, chez un broker régulé. Tu gardes tes identifiants pour toi. Tu vérifies avant de payer quoi que ce soit.</div>
-<p>Chez SERGIO FX : on ne te demandera jamais tes identifiants ni de nous envoyer ton capital.</p>`,
-en:`<h2>Warning signs</h2>
-<ul><li>"<b>Guaranteed profits</b>", "30% a week", "zero risk": these don't exist.</li><li>Someone asking you to <b>send them money</b> so they can "trade for you".</li><li>Someone asking for your account <b>login</b> or password.</li><li>Unverifiable profit screenshots, cars and stacks of cash.</li><li>"Miracle robots" sold at high prices.</li><li><b>Unregulated</b> brokers, or ones that block withdrawals.</li><li>Pressure: "limited offer, pay now".</li></ul>
-<div class="box tip"><b class="t">Good practice</b>Your money always stays in <b>your</b> account, in <b>your</b> name, with a regulated broker. Keep your login to yourself. Check before paying for anything.</div>
-<p>At SERGIO FX: we will never ask for your login or for you to send us your capital.</p>`}}
+<div class="box warn"><b class="t">Basic rule</b>Only trade money you can afford to lose. Never rent, food or school money. Never borrowed money.</div>`}}
 ]},
 /* ---------- CHAPITRE 8 ---------- */
 {t:{fr:"Marge et effet de levier",en:"Margin and leverage"},d:{fr:"Comprendre ton compte de marge pour ne pas le brûler.",en:"Understand your margin account so you don't blow it."},
