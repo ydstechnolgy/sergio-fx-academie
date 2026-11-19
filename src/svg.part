@@ -1,0 +1,13 @@
+/* ===================== SCHÉMAS ===================== */
+function candleSVG(l){const o=l=='fr'?['Plus haut','Clôture','Ouverture','Plus bas','Corps','Mèche']:['High','Close','Open','Low','Body','Wick'];
+return `<svg class="chart" viewBox="0 0 420 220"><g font-family="Arial" font-size="12" fill="#f3ead6">
+<line x1="120" y1="20" x2="120" y2="200" stroke="#22c55e" stroke-width="3"/><rect x="100" y="60" width="40" height="90" fill="#22c55e"/>
+<line x1="300" y1="20" x2="300" y2="200" stroke="#ef4444" stroke-width="3"/><rect x="280" y="60" width="40" height="90" fill="#ef4444"/>
+<text x="150" y="25">${o[0]}</text><text x="150" y="64">${o[1]}</text><text x="150" y="152">${o[2]}</text><text x="150" y="200">${o[3]}</text>
+<text x="330" y="25">${o[0]}</text><text x="330" y="64">${o[2]}</text><text x="330" y="152">${o[1]}</text><text x="330" y="200">${o[3]}</text>
+<text x="20" y="110" fill="#ffd84d">${o[4]} →</text><text x="20" y="40" fill="#ffd84d">${o[5]} →</text></g></svg>`}
+function srSVG(l){const r=l=='fr'?'RÉSISTANCE':'RESISTANCE',s='SUPPORT';
+return `<svg class="chart" viewBox="0 0 420 200"><rect x="0" y="34" width="420" height="16" fill="#ef4444" opacity=".25"/><rect x="0" y="150" width="420" height="16" fill="#22c55e" opacity=".25"/>
+<polyline points="10,140 60,50 110,150 170,48 230,152 290,46 340,120 410,30" fill="none" stroke="#ffd84d" stroke-width="3"/>
+<text x="12" y="28" fill="#ef4444" font-family="Arial" font-weight="700" font-size="13">${r}</text><text x="12" y="186" fill="#22c55e" font-family="Arial" font-weight="700" font-size="13">${s}</text></svg>`}
+

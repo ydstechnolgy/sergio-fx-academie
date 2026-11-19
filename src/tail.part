@@ -1,0 +1,62 @@
+/* ===================== SCHÉMAS ===================== */
+function candleSVG(l){const o=l=='fr'?['Plus haut','Clôture','Ouverture','Plus bas','Corps','Mèche']:['High','Close','Open','Low','Body','Wick'];
+return `<svg class="chart" viewBox="0 0 420 220"><g font-family="Arial" font-size="12" fill="#f3ead6">
+<line x1="120" y1="20" x2="120" y2="200" stroke="#22c55e" stroke-width="3"/><rect x="100" y="60" width="40" height="90" fill="#22c55e"/>
+<line x1="300" y1="20" x2="300" y2="200" stroke="#ef4444" stroke-width="3"/><rect x="280" y="60" width="40" height="90" fill="#ef4444"/>
+<text x="150" y="25">${o[0]}</text><text x="150" y="64">${o[1]}</text><text x="150" y="152">${o[2]}</text><text x="150" y="200">${o[3]}</text>
+<text x="330" y="25">${o[0]}</text><text x="330" y="64">${o[2]}</text><text x="330" y="152">${o[1]}</text><text x="330" y="200">${o[3]}</text>
+<text x="20" y="110" fill="#ffd84d">${o[4]} →</text><text x="20" y="40" fill="#ffd84d">${o[5]} →</text></g></svg>`}
+function srSVG(l){const r=l=='fr'?'RÉSISTANCE':'RESISTANCE',s='SUPPORT';
+return `<svg class="chart" viewBox="0 0 420 200"><rect x="0" y="34" width="420" height="16" fill="#ef4444" opacity=".25"/><rect x="0" y="150" width="420" height="16" fill="#22c55e" opacity=".25"/>
+<polyline points="10,140 60,50 110,150 170,48 230,152 290,46 340,120 410,30" fill="none" stroke="#ffd84d" stroke-width="3"/>
+<text x="12" y="28" fill="#ef4444" font-family="Arial" font-weight="700" font-size="13">${r}</text><text x="12" y="186" fill="#22c55e" font-family="Arial" font-weight="700" font-size="13">${s}</text></svg>`}
+
+/* ===================== MOTEUR DU SITE ===================== */
+let LANG='fr';try{LANG=localStorage.getItem('sfx_lang')||'fr'}catch(e){}
+let DONE={};try{DONE=JSON.parse(localStorage.getItem('sfx_done')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('sfx_done',JSON.stringify(DONE));localStorage.setItem('sfx_lang',LANG)}catch(e){}};
+const T=k=>UI[LANG][k];
+const all=COURSE.flatMap(c=>c.lessons.map(x=>({...x,lv:c})));
+const pct=c=>Math.round(100*c.lessons.filter(x=>DONE[x.id]).length/c.lessons.length);
+const cta=()=>`<div class="cta"><h3>${T('ctaT')}</h3><p>${T('ctaP')}</p><div class="row"><a class="btn" href="${HFM}" target="_blank" rel="noopener">${T('ctaB1')}</a><a class="btn ghost" href="${WA}" target="_blank" rel="noopener">${T('ctaB2')}</a></div></div>`;
+
+function home(){
+ const n=all.length;
+ return `<section class="hero"><div class="wrap"><div class="badge">${badge('coins')}</div>
+ <h1>${T('heroT')}</h1><p>${T('heroP')}</p>
+ <a class="btn" href="#/level/1">${T('start')} →</a>
+ <div class="stats"><div><b>${COURSE.length}</b>${T('statN')}</div><div><b>${n}</b>${T('statL')}</div><div><b>FR / EN</b>${T('statF')}</div></div></div></section>
+ <div class="wrap"><h2 class="sec">${T('levels')}</h2><div class="levels">
+ ${COURSE.map(c=>`<a class="lv" href="#/level/${c.n}">${badge(c.icon)}<div><small>${T('level')} ${c.n}</small><h3>${c.t[LANG]}</h3><p>${c.d[LANG]}</p><p style="margin-top:6px;font-size:13px">${c.lessons.length} ${T('lessons')} · ${pct(c)}% ${T('complete')}</p><div class="bar"><i style="width:${pct(c)}%"></i></div></div></a>`).join('')}
+ <div class="lv soon">${badge('coins')}<div><small>${T('level')} ${COURSE.length+1}</small><h3>${T('soon')}</h3></div></div>
+ </div>${cta()}</div>`;
+}
+function level(n){
+ const c=COURSE.find(x=>x.n==n);if(!c)return home();
+ return `<div class="wrap"><div class="lvhead">${badge(c.icon)}<div><small style="color:var(--muted)">${T('level')} ${c.n} ${T('of')} ${COURSE.length}</small><h1>${c.t[LANG]}</h1><p>${c.d[LANG]}</p><a class="btn" href="#/lesson/${c.lessons[0].id}">${T('startLv')} →</a></div></div>
+ <div class="grid2"><div class="prog"><h4>${T('progress')}</h4><div class="pct">${pct(c)}%</div><div class="bar"><i style="width:${pct(c)}%"></i></div></div>
+ <div class="outline"><h4>${T('outline')}</h4><ol>${c.lessons.map(x=>`<li class="${DONE[x.id]?'done':''}"><a href="#/lesson/${x.id}">${x.t[LANG]}</a><p>${x.s[LANG]}</p></li>`).join('')}</ol></div></div>${cta()}</div>`;
+}
+function lesson(id){
+ const i=all.findIndex(x=>x.id==id);if(i<0)return home();const x=all[i],p=all[i-1],nx=all[i+1];
+ return `<div class="wrap"><article class="lesson"><div class="crumb"><a href="#/">${T('home')}</a> › <a href="#/level/${x.lv.n}">${T('level')} ${x.lv.n} · ${x.lv.t[LANG]}</a></div>
+ <h1>${x.t[LANG]}</h1><p class="lead">${x.s[LANG]}</p>${x.b[LANG]}
+ <button class="btn ${DONE[x.id]?'ghost':''} done-btn" onclick="toggleDone('${x.id}')">${DONE[x.id]?T('isDone'):T('markDone')}</button>
+ <div class="pager">${p?`<a class="btn ghost sm" href="#/lesson/${p.id}">${T('prev')}</a>`:`<span></span>`}${nx?`<a class="btn sm" href="#/lesson/${nx.id}">${T('next')}</a>`:`<a class="btn sm" href="#/level/${x.lv.n}">${T('backLv')}</a>`}</div>
+ </article>${cta()}</div>`;
+}
+function toggleDone(id){DONE[id]=!DONE[id];if(!DONE[id])delete DONE[id];save();render()}
+function render(){
+ const h=location.hash.replace('#','')||'/';const [,a,b]=h.split('/');
+ document.documentElement.lang=LANG;
+ document.getElementById('app').innerHTML=a=='level'?level(b):a=='lesson'?lesson(b):home();
+ document.getElementById('disc').textContent=T('disc');
+ document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x.dataset.l==LANG));
+}
+document.querySelectorAll('.lang button').forEach(x=>x.onclick=()=>{LANG=x.dataset.l;save();render()});
+window.addEventListener('hashchange',()=>{render();scrollTo(0,0)});
+document.getElementById('yr').textContent=new Date().getFullYear();
+render();
+</script>
+</body>
+</html>

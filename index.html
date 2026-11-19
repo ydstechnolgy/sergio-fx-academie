@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SERGIO FX ACADÉMIE – Formation trading débutant</title>
+<meta name="description" content="Formation gratuite d'initiation au trading Forex et Or pour débutants – SERGIO FX ACADÉMIE.">
+<style>
+:root{--bg:#0b0906;--bg2:#15110a;--card:#1b160d;--line:#3a2e14;--gold:#f5b301;--gold2:#ffd84d;--txt:#f3ead6;--muted:#b9ad90;--green:#22c55e;--red:#ef4444}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--gold2)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px;width:100%}
+header{position:sticky;top:0;z-index:10;background:rgba(11,9,6,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:900;letter-spacing:1px;font-size:18px}
+.brand .logo{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0,#f5c542 40%,#a86f00);display:grid;place-items:center;color:#2a1a00;font-weight:900;box-shadow:0 0 14px rgba(255,190,40,.5)}
+.brand b{color:var(--gold)}
+.nav-r{display:flex;gap:8px;align-items:center}
+.lang{display:flex;border:1px solid var(--gold);border-radius:30px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--gold2);font-weight:800;padding:6px 12px;cursor:pointer;font-size:13px}
+.lang button.on{background:var(--gold);color:#1a0f00}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a0f00;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:40px;border:0;cursor:pointer;font-size:15px}
+.btn.ghost{background:none;color:var(--gold2);border:1.5px solid var(--gold)}
+.btn.sm{padding:7px 14px;font-size:13px}
+main{flex:1}
+.hero{padding:70px 0 50px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#3a2600 0%,transparent 65%)}
+.hero .badge{width:150px;margin:0 auto 18px}
+.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.1;font-weight:900}
+.hero h1 span{background:linear-gradient(180deg,#fffbe6,#ffd84d 40%,#f5b301 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:640px;margin:16px auto 26px;font-size:17px}
+.stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:14px}
+.stats b{display:block;color:var(--gold2);font-size:24px}
+h2.sec{font-size:28px;font-weight:900;margin:40px 0 20px}
+.levels{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding-bottom:40px}
+.lv{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;gap:18px;align-items:flex-start;text-decoration:none;color:inherit;transition:.2s}
+.lv:hover{border-color:var(--gold);transform:translateY(-2px)}
+.lv svg{flex:none;width:86px;height:86px}
+.lv small{color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.lv h3{font-size:21px;margin:2px 0 6px;color:#fff}
+.lv p{color:var(--muted);font-size:14px}
+.bar{height:8px;border-radius:8px;background:#2b2415;margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green));width:0}
+.lv.soon{opacity:.5;pointer-events:none}
+.lvhead{display:flex;gap:28px;align-items:center;padding:50px 0 30px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.lvhead svg{width:150px;height:150px;flex:none}
+.lvhead h1{font-size:40px;font-weight:900;line-height:1.1}
+.lvhead p{color:var(--muted);margin:8px 0 16px;max-width:560px}
+.grid2{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:34px 0 60px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr;gap:20px}}
+.prog h4,.outline h4{font-size:22px;margin-bottom:14px}
+.prog .pct{font-size:42px;font-weight:900;color:var(--gold2)}
+.outline ol{list-style:none;border-left:2px solid var(--line);margin-left:14px}
+.outline li{position:relative;padding:0 0 22px 26px}
+.outline li:before{content:"";position:absolute;left:-11px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
+.outline li.done:before{background:var(--green);border-color:var(--green)}
+.outline a{color:#fff;text-decoration:none;font-weight:700;font-size:17px}
+.outline a:hover{color:var(--gold2)}
+.outline p{color:var(--muted);font-size:14px;margin-top:3px}
+.lesson{max-width:760px;margin:0 auto;padding:40px 0 60px}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:14px}
+.crumb a{color:var(--muted)}
+.lesson h1{font-size:clamp(28px,5vw,40px);line-height:1.15;font-weight:900;margin-bottom:10px}
+.lesson .lead{color:var(--muted);font-size:18px;margin-bottom:28px}
+.lesson h2{font-size:24px;margin:30px 0 10px;color:var(--gold2)}
+.lesson h3{font-size:19px;margin:22px 0 8px}
+.lesson p{margin:0 0 14px}
+.lesson ul,.lesson ol{margin:0 0 16px 22px}
+.lesson li{margin-bottom:6px}
+.box{border-radius:14px;padding:16px 18px;margin:20px 0;border:1px solid var(--line);background:var(--card)}
+.box.tip{border-left:4px solid var(--green)}
+.box.warn{border-left:4px solid var(--red)}
+.box.ex{border-left:4px solid var(--gold)}
+.box b.t{display:block;margin-bottom:4px;color:#fff}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+th{background:#241c0d;color:var(--gold2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;flex-wrap:wrap}
+.done-btn{margin-top:30px}
+.cta{background:linear-gradient(135deg,#2a1d04,#120d05);border:1px solid var(--gold);border-radius:22px;padding:30px;text-align:center;margin:20px 0 60px}
+.cta h3{font-size:24px;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:18px}
+.cta .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+svg.chart{width:100%;height:auto;background:#120e07;border-radius:14px;border:1px solid var(--line);margin:10px 0 18px}
+.chap{margin-bottom:26px}
+.chap-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.chap-h .num{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(180deg,#ffd84d,#f5b301);color:#1a0f00;font-weight:900;font-size:20px;display:grid;place-items:center}
+.chap-h h3{font-size:22px;color:#fff;line-height:1.2}
+.chap-h p{color:var(--muted);font-size:14px}
+.toc{display:flex;flex-direction:column;gap:6px;margin-top:22px;position:sticky;top:84px}
+.toc a{color:var(--muted);text-decoration:none;font-size:14px;padding:6px 10px;border-left:2px solid var(--line)}
+.toc a:hover{color:var(--gold2);border-color:var(--gold)}
+@media(max-width:760px){.toc{position:static}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#/"><span class="logo">S</span><span>SERGIO <b>FX</b> ACADÉMIE</span></a>
+<div class="nav-r"><div class="lang"><button data-l="fr">FR</button><button data-l="en">EN</button></div></div>
+</div></header>
+<main id="app"></main>
+<footer><div class="wrap">
+<div id="disc"></div>
+<div>© <span id="yr"></span> SERGIO FX ACADÉMIE · <a href="https://wa.me/22879867879" target="_blank" rel="noopener">WhatsApp +228 79 86 78 79</a></div>
+</div></footer>
+
+<script>
+/* ===================== TEXTES DE L'INTERFACE ===================== */
+const UI={
+fr:{tag:"Formation gratuite",heroT:'Apprends le trading <span>pas à pas</span>',heroP:"Une formation simple, en français, pour comprendre le Forex et l'Or depuis zéro. Avance à ton rythme, leçon par leçon.",start:"Commencer la formation",levels:"Les niveaux",level:"Niveau",of:"sur",lessons:"leçons",startLv:"Commencer",progress:"Ta progression",outline:"Programme",prev:"← Leçon précédente",next:"Leçon suivante →",markDone:"✓ J'ai terminé cette leçon",isDone:"✓ Leçon terminée",home:"Accueil",soon:"Bientôt disponible",ctaT:"Prêt à passer à la pratique ?",ctaP:"Ouvre ton compte chez notre broker et rejoins le groupe VIP : signaux sur l'Or et accompagnement.",ctaB1:"Ouvrir un compte HFM",ctaB2:"Me contacter sur WhatsApp",backLv:"← Retour au niveau",disc:"⚠️ Le trading comporte un risque élevé de perte en capital. Ce contenu est éducatif et ne constitue pas un conseil en investissement. Ne trade jamais avec de l'argent que tu ne peux pas te permettre de perdre.",statL:"leçons",statN:"niveaux",statF:"100 % gratuit",complete:"terminées"},
+en:{tag:"Free course",heroT:'Learn trading <span>step by step</span>',heroP:"A simple course to understand Forex and Gold from scratch. Go at your own pace, one lesson at a time.",start:"Start the course",levels:"Levels",level:"Level",of:"of",lessons:"lessons",startLv:"Start",progress:"Your progress",outline:"Course outline",prev:"← Previous lesson",next:"Next lesson →",markDone:"✓ I've finished this lesson",isDone:"✓ Lesson completed",home:"Home",soon:"Coming soon",ctaT:"Ready to practise?",ctaP:"Open your account with our broker and join the VIP group: Gold signals and coaching.",ctaB1:"Open an HFM account",ctaB2:"Contact me on WhatsApp",backLv:"← Back to level",disc:"⚠️ Trading carries a high risk of losing capital. This content is educational and is not investment advice. Never trade with money you cannot afford to lose.",statL:"lessons",statN:"levels",statF:"100% free",complete:"completed"}
+};
+const HFM="https://www.hfm.com/sv/fr/?refid=30492261", WA="https://wa.me/22879867879";
+
+/* ===================== BADGES (SVG) ===================== */
+function badge(icon){
+ const ic={
+  coins:'<g fill="#f5b301" stroke="#1a0f00" stroke-width="2"><circle cx="52" cy="56" r="13"/><circle cx="72" cy="50" r="13"/><circle cx="62" cy="68" r="13"/></g><g fill="#1a0f00" font-weight="900" font-size="12" text-anchor="middle" font-family="Arial"><text x="52" y="60">$</text><text x="72" y="54">€</text><text x="62" y="72">£</text></g>',
+  hand:'<path d="M38 64 l14-12 10 6 10-6 12 12 -12 10 -10-6 -10 6z" fill="#f5b301" stroke="#1a0f00" stroke-width="2"/><text x="62" y="46" fill="#ffd84d" font-size="13" font-weight="900" text-anchor="middle" font-family="Arial">¥ £ $</text>',
+  candle:'<g stroke="#1a0f00" stroke-width="2"><line x1="50" y1="38" x2="50" y2="84" stroke="#22c55e"/><rect x="44" y="48" width="12" height="24" fill="#22c55e"/><line x1="74" y1="36" x2="74" y2="82" stroke="#ef4444"/><rect x="68" y="44" width="12" height="20" fill="#ef4444"/></g>'
+ }[icon];
+ return `<svg viewBox="0 0 124 124"><defs><linearGradient id="gd${icon}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe680"/><stop offset="1" stop-color="#b87400"/></linearGradient></defs>
+ <path d="M62 8 L106 22 V60 C106 88 86 106 62 116 C38 106 18 88 18 60 V22 Z" fill="#1b160d" stroke="url(#gd${icon})" stroke-width="5"/>
+ <path d="M62 18 L96 29 V60 C96 82 81 96 62 104 C43 96 28 82 28 60 V29 Z" fill="#2a2010"/>${ic}
+ <g fill="#f5b301"><circle cx="40" cy="98" r="0"/></g></svg>`;
+}
+
+/* ===================== CONTENU DE LA FORMATION =====================
+   Pour ajouter une leçon : copier un bloc { id, t:{fr,en}, s:{fr,en}, b:{fr,en} } dans "lessons".
+   Pour ajouter un niveau : copier un bloc de niveau complet.                                   */
+const CH_A=[
+/* ---------- CHAPITRE 1 ---------- */
+{t:{fr:"C'est quoi le Forex ?",en:"What is Forex?"},d:{fr:"Le plus grand marché financier du monde et comment on y participe.",en:"The world's largest financial market and how to take part in it."},
+lessons:[
+{t:{fr:"C'est quoi le trading Forex ?",en:"What is Forex trading?"},s:{fr:"Comment fonctionne le marché des devises et les risques à connaître.",en:"How the currency market works and the risks to know."},
+b:{fr:`<p>Le <b>Forex</b> (de l'anglais <i>Foreign Exchange</i>, « échange de devises ») est le marché où l'on échange une monnaie contre une autre. Quand tu changes des francs CFA en euros pour voyager, tu fais une opération de change. Le Forex, c'est la même chose… à l'échelle mondiale.</p>
+<h2>Trader, c'est quoi ?</h2>
+<p>Le trader ne change pas de l'argent pour voyager : il cherche à <b>profiter des variations de prix</b>. Il achète une devise s'il pense qu'elle va prendre de la valeur, ou la vend s'il pense qu'elle va en perdre.</p>
+<div class="box ex"><b class="t">Exemple simple</b>Tu achètes de l'euro contre du dollar quand 1 € = 1,08 $. Quelques heures plus tard, 1 € = 1,09 $. L'euro a pris de la valeur : tu revends avec un gain.</div>
+<h2>Un marché sans bourse centrale</h2>
+<p>Contrairement aux actions, le Forex n'a pas de bâtiment central. Les échanges se font <b>électroniquement</b> entre banques, institutions et brokers du monde entier. On dit que c'est un marché « de gré à gré » (OTC).</p>
+<div class="box warn"><b class="t">Le risque dès le départ</b>Les prix peuvent aller contre toi. Avec l'effet de levier (chapitre 8), une petite variation peut causer une grosse perte. On apprend d'abord, on pratique en démo, puis on trade petit.</div>`,
+en:`<p><b>Forex</b> (short for <i>Foreign Exchange</i>) is the market where one currency is exchanged for another. When you swap money before a trip, you make a currency exchange. Forex is the same thing… on a global scale.</p>
+<h2>What is trading?</h2>
+<p>A trader doesn't exchange money to travel: they try to <b>profit from price changes</b>. They buy a currency if they think it will gain value, or sell it if they think it will lose value.</p>
+<div class="box ex"><b class="t">Simple example</b>You buy euros against dollars when €1 = $1.08. A few hours later €1 = $1.09. The euro gained value: you sell back at a profit.</div>
+<h2>A market with no central exchange</h2>
+<p>Unlike stocks, Forex has no central building. Trading happens <b>electronically</b> between banks, institutions and brokers worldwide. It's called an "over-the-counter" (OTC) market.</p>
+<div class="box warn"><b class="t">Risk from day one</b>Prices can move against you. With leverage (chapter 8), a small move can cause a big loss. Learn first, practise on demo, then trade small.</div>`}},
+{t:{fr:"Qu'est-ce qu'on échange sur le Forex ?",en:"What is traded in Forex?"},s:{fr:"Les devises les plus tradées et pourquoi.",en:"The most traded currencies and why."},
+b:{fr:`<p>Sur le Forex, on échange l'argent des pays. Quand tu achètes une devise, tu paries en quelque sorte sur la santé de l'économie de ce pays face à une autre.</p>
+<h2>Les 8 devises principales</h2>
+<table><tr><th>Code</th><th>Devise</th><th>Surnom</th></tr>
+<tr><td>USD</td><td>Dollar américain</td><td>Greenback</td></tr><tr><td>EUR</td><td>Euro</td><td>Fiber</td></tr><tr><td>JPY</td><td>Yen japonais</td><td>Yen</td></tr><tr><td>GBP</td><td>Livre sterling</td><td>Cable (avec USD)</td></tr><tr><td>CHF</td><td>Franc suisse</td><td>Swissy</td></tr><tr><td>CAD</td><td>Dollar canadien</td><td>Loonie</td></tr><tr><td>AUD</td><td>Dollar australien</td><td>Aussie</td></tr><tr><td>NZD</td><td>Dollar néo-zélandais</td><td>Kiwi</td></tr></table>
+<h2>Pourquoi le dollar est partout</h2>
+<p>Le <b>dollar américain</b> est présent dans la grande majorité des échanges. C'est la monnaie de réserve mondiale : le pétrole, l'or et beaucoup de matières premières sont cotés en dollars. Quand le dollar bouge, presque tout le marché bouge.</p>
+<div class="box tip"><b class="t">Pour débuter</b>Concentre-toi sur peu d'actifs. Chez SERGIO FX, on se concentre sur l'Or (XAUUSD) : on apprend à bien le connaître plutôt que de courir après 20 paires.</div>`,
+en:`<p>In Forex, you trade countries' money. When you buy a currency, you are in a way betting on the health of that country's economy against another.</p>
+<h2>The 8 main currencies</h2>
+<table><tr><th>Code</th><th>Currency</th><th>Nickname</th></tr>
+<tr><td>USD</td><td>US dollar</td><td>Greenback</td></tr><tr><td>EUR</td><td>Euro</td><td>Fiber</td></tr><tr><td>JPY</td><td>Japanese yen</td><td>Yen</td></tr><tr><td>GBP</td><td>British pound</td><td>Cable (with USD)</td></tr><tr><td>CHF</td><td>Swiss franc</td><td>Swissy</td></tr><tr><td>CAD</td><td>Canadian dollar</td><td>Loonie</td></tr><tr><td>AUD</td><td>Australian dollar</td><td>Aussie</td></tr><tr><td>NZD</td><td>New Zealand dollar</td><td>Kiwi</td></tr></table>
+<h2>Why the dollar is everywhere</h2>
+<p>The <b>US dollar</b> is on one side of the vast majority of trades. It's the world's reserve currency: oil, gold and many commodities are priced in dollars. When the dollar moves, almost the whole market moves.</p>
+<div class="box tip"><b class="t">To start</b>Focus on few assets. At SERGIO FX we focus on Gold (XAUUSD): get to know one market well rather than chasing 20 pairs.</div>`}},
+{t:{fr:"Acheter et vendre une paire de devises",en:"Buying and selling currency pairs"},s:{fr:"Chaque trade achète une devise et en vend une autre.",en:"Every trade buys one currency and sells another."},
+b:{fr:`<p>Sur le Forex, les devises sont toujours cotées <b>par paires</b> : EUR/USD, GBP/JPY, USD/CAD… Chaque trade achète une devise et vend l'autre en même temps.</p>
+<h2>Lire une paire</h2>
+<p>Dans <b>EUR/USD = 1,0850</b> : 1 euro (devise de base) vaut 1,0850 dollar (devise de cotation).</p>
+<h2>BUY ou SELL</h2>
+<table><tr><th>Action</th><th>Ce que tu fais</th><th>Tu gagnes si…</th></tr>
+<tr><td>🟢 BUY EUR/USD</td><td>Tu achètes l'euro, tu vends le dollar</td><td>l'euro monte face au dollar</td></tr>
+<tr><td>🔴 SELL EUR/USD</td><td>Tu vends l'euro, tu achètes le dollar</td><td>l'euro baisse face au dollar</td></tr></table>
+<div class="box ex"><b class="t">Exemple sur l'Or</b>SELL XAUUSD à 3 870, puis l'or descend à 3 860 : tu as gagné 10 $ par once (100 pips). S'il était monté à 3 880, tu aurais perdu la même chose.</div>
+<p>Tu n'as pas besoin de posséder la devise pour la vendre : avec un broker, vendre et acheter sont aussi simples l'un que l'autre.</p>`,
+en:`<p>In Forex, currencies are always quoted <b>in pairs</b>: EUR/USD, GBP/JPY, USD/CAD… Every trade buys one currency and sells the other at the same time.</p>
+<h2>Reading a pair</h2>
+<p>In <b>EUR/USD = 1.0850</b>: 1 euro (base currency) is worth 1.0850 dollars (quote currency).</p>
+<h2>BUY or SELL</h2>
+<table><tr><th>Action</th><th>What you do</th><th>You profit if…</th></tr>
+<tr><td>🟢 BUY EUR/USD</td><td>Buy euros, sell dollars</td><td>the euro rises against the dollar</td></tr>
+<tr><td>🔴 SELL EUR/USD</td><td>Sell euros, buy dollars</td><td>the euro falls against the dollar</td></tr></table>
+<div class="box ex"><b class="t">Gold example</b>SELL XAUUSD at 3,870, then gold drops to 3,860: you made $10 per ounce (100 pips). If it had risen to 3,880, you would have lost the same.</div>
+<p>You don't need to own a currency to sell it: with a broker, selling is as easy as buying.</p>`}},
+{t:{fr:"La taille du marché et la liquidité",en:"Market size and liquidity"},s:{fr:"Pourquoi un marché immense, c'est des frais plus bas.",en:"Why a huge market means lower costs."},
+b:{fr:`<p>Le Forex est le plus grand marché financier du monde : <b>près de 10 000 milliards de dollars échangés chaque jour</b> selon l'enquête de la Banque des règlements internationaux (2025). C'est bien plus que toutes les bourses d'actions réunies.</p>
+<h2>C'est quoi la liquidité ?</h2>
+<p>Un marché est <b>liquide</b> quand il y a toujours beaucoup d'acheteurs et de vendeurs. Tu peux entrer et sortir rapidement, au prix affiché, sans attendre.</p>
+<h2>Pourquoi ça compte pour toi</h2>
+<ul><li><b>Spread plus faible</b> : plus une paire est liquide, plus l'écart entre prix d'achat et de vente est petit. EUR/USD a en général l'un des spreads les plus bas.</li><li><b>Moins de « glissement »</b> : ton ordre est exécuté au prix prévu.</li><li><b>Difficile à manipuler</b> : un seul acteur ne peut pas facilement contrôler le prix.</li></ul>
+<div class="box warn"><b class="t">Attention</b>La liquidité baisse la nuit, pendant les jours fériés et juste avant une grosse annonce. Les spreads s'élargissent alors : évite de trader dans ces moments.</div>`,
+en:`<p>Forex is the largest financial market in the world: <b>close to 10 trillion dollars traded every day</b> according to the Bank for International Settlements survey (2025). That's far more than all stock markets combined.</p>
+<h2>What is liquidity?</h2>
+<p>A market is <b>liquid</b> when there are always many buyers and sellers. You can get in and out quickly, at the displayed price, without waiting.</p>
+<h2>Why it matters to you</h2>
+<ul><li><b>Lower spread</b>: the more liquid a pair, the smaller the gap between buy and sell price. EUR/USD usually has one of the lowest spreads.</li><li><b>Less slippage</b>: your order fills at the expected price.</li><li><b>Hard to manipulate</b>: a single player can't easily control the price.</li></ul>
+<div class="box warn"><b class="t">Watch out</b>Liquidity drops at night, on holidays and just before big news. Spreads widen then: avoid trading at those times.</div>`}},
+{t:{fr:"Les façons de trader les devises",en:"Ways to trade currencies"},s:{fr:"Spot, CFD, futures, options : les différences.",en:"Spot, CFDs, futures, options: the differences."},
+b:{fr:`<p>Il existe plusieurs façons de participer au marché des devises.</p>
+<table><tr><th>Méthode</th><th>Principe</th><th>Pour qui ?</th></tr>
+<tr><td><b>Spot</b></td><td>Échange de devises au prix du moment</td><td>Banques, entreprises</td></tr>
+<tr><td><b>CFD</b></td><td>Contrat qui suit le prix, sans posséder la devise. On gagne ou perd la différence.</td><td>Traders particuliers (c'est ce que proposent HFM et la plupart des brokers)</td></tr>
+<tr><td><b>Futures</b></td><td>Contrat standard pour acheter/vendre à une date future, sur une bourse</td><td>Institutions, traders avancés</td></tr>
+<tr><td><b>Options</b></td><td>Droit (pas obligation) d'acheter ou vendre à un prix fixé</td><td>Traders avancés</td></tr>
+<tr><td><b>ETF</b></td><td>Fonds coté en bourse qui suit une devise ou un panier</td><td>Investisseurs long terme</td></tr></table>
+<h2>Le CFD, ce que tu vas utiliser</h2>
+<p>Quand tu trades l'Or ou EUR/USD sur MT5 avec ton broker, tu trades des <b>CFD</b> (contrats sur la différence). Tu ne reçois jamais d'or ni d'euros : tu encaisses (ou payes) la différence entre ton prix d'entrée et ton prix de sortie.</p>
+<div class="box tip"><b class="t">Avantages du CFD</b>Petit capital, BUY ou SELL en un clic, levier disponible. <b>Inconvénient</b> : le levier augmente aussi les pertes, et il y a des frais de nuit (swap).</div>`,
+en:`<p>There are several ways to take part in the currency market.</p>
+<table><tr><th>Method</th><th>How it works</th><th>For whom?</th></tr>
+<tr><td><b>Spot</b></td><td>Exchanging currencies at the current price</td><td>Banks, companies</td></tr>
+<tr><td><b>CFD</b></td><td>A contract that tracks the price without owning the currency. You win or lose the difference.</td><td>Retail traders (what HFM and most brokers offer)</td></tr>
+<tr><td><b>Futures</b></td><td>Standard contract to buy/sell at a future date, on an exchange</td><td>Institutions, advanced traders</td></tr>
+<tr><td><b>Options</b></td><td>The right (not obligation) to buy or sell at a set price</td><td>Advanced traders</td></tr>
+<tr><td><b>ETF</b></td><td>Exchange-traded fund tracking a currency or basket</td><td>Long-term investors</td></tr></table>
+<h2>CFDs: what you'll use</h2>
+<p>When you trade Gold or EUR/USD on MT5 with your broker, you are trading <b>CFDs</b> (contracts for difference). You never receive gold or euros: you collect (or pay) the difference between your entry and exit price.</p>
+<div class="box tip"><b class="t">CFD pros</b>Small capital, BUY or SELL in one click, leverage available. <b>Con</b>: leverage also magnifies losses, and there are overnight fees (swap).</div>`}}
+]},
+/* ---------- CHAPITRE 2 ---------- */
+{t:{fr:"Les paires de devises",en:"Currency pairs"},d:{fr:"Les familles de paires, les prix et l'Or.",en:"Pair families, prices and Gold."},
+lessons:[
+{t:{fr:"Paires majeures, croisées et exotiques",en:"Major, cross and exotic pairs"},s:{fr:"Les trois familles de paires.",en:"The three families of pairs."},
+b:{fr:`<h2>Les paires majeures</h2>
+<p>Elles contiennent toutes le <b>dollar américain</b> et une autre grande devise. Ce sont les plus échangées, avec les spreads les plus bas.</p>
+<p>EUR/USD · USD/JPY · GBP/USD · USD/CHF · AUD/USD · USD/CAD · NZD/USD</p>
+<h2>Les paires croisées (crosses)</h2>
+<p>Deux grandes devises <b>sans le dollar</b> : EUR/GBP, EUR/JPY, GBP/JPY, AUD/JPY… Elles bougent bien mais ont souvent un spread un peu plus élevé.</p>
+<h2>Les paires exotiques</h2>
+<p>Une grande devise contre la monnaie d'un pays émergent : USD/ZAR (rand sud-africain), USD/TRY (livre turque), USD/MXN… Elles peuvent faire de très gros mouvements, avec des <b>spreads larges</b> et une liquidité plus faible.</p>
+<div class="box tip"><b class="t">Conseil débutant</b>Évite les exotiques au début. Reste sur l'Or et une ou deux paires majeures.</div>`,
+en:`<h2>Major pairs</h2>
+<p>They all include the <b>US dollar</b> and another big currency. They're the most traded, with the lowest spreads.</p>
+<p>EUR/USD · USD/JPY · GBP/USD · USD/CHF · AUD/USD · USD/CAD · NZD/USD</p>
+<h2>Cross pairs</h2>
+<p>Two big currencies <b>without the dollar</b>: EUR/GBP, EUR/JPY, GBP/JPY, AUD/JPY… They move well but often have a slightly higher spread.</p>
+<h2>Exotic pairs</h2>
+<p>A major currency against an emerging-market currency: USD/ZAR (South African rand), USD/TRY (Turkish lira), USD/MXN… They can make very large moves, with <b>wide spreads</b> and lower liquidity.</p>
+<div class="box tip"><b class="t">Beginner tip</b>Avoid exotics at first. Stick with Gold and one or two major pairs.</div>`}},
+{t:{fr:"Devise de base et devise de cotation",en:"Base and quote currency"},s:{fr:"Lire correctement un prix.",en:"Read a price correctly."},
+b:{fr:`<p>Dans chaque paire, la première devise est la <b>devise de base</b> et la seconde la <b>devise de cotation</b>.</p>
+<div class="box ex"><b class="t">GBP/USD = 1,2700</b>1 livre sterling (base) = 1,2700 dollar (cotation).<br>Le prix te dit combien d'unités de la devise de cotation il faut pour acheter <b>une</b> unité de la devise de base.</div>
+<h2>Quand le prix monte</h2>
+<p>Si GBP/USD passe de 1,2700 à 1,2750 : la <b>livre s'est renforcée</b> (ou le dollar s'est affaibli). Il faut plus de dollars pour une livre.</p>
+<h2>Quand le prix baisse</h2>
+<p>Si GBP/USD passe de 1,2700 à 1,2650 : la livre s'est affaiblie (ou le dollar s'est renforcé).</p>
+<h2>Dans quelle devise est mon gain ?</h2>
+<p>Ton gain ou ta perte est calculé dans la <b>devise de cotation</b>, puis converti dans la devise de ton compte. Sur XAUUSD, EUR/USD ou GBP/USD, c'est directement en dollars.</p>`,
+en:`<p>In every pair, the first currency is the <b>base currency</b> and the second is the <b>quote currency</b>.</p>
+<div class="box ex"><b class="t">GBP/USD = 1.2700</b>1 British pound (base) = 1.2700 dollars (quote).<br>The price tells you how many units of the quote currency it takes to buy <b>one</b> unit of the base currency.</div>
+<h2>When the price rises</h2>
+<p>If GBP/USD goes from 1.2700 to 1.2750: the <b>pound strengthened</b> (or the dollar weakened). It takes more dollars to buy one pound.</p>
+<h2>When the price falls</h2>
+<p>If GBP/USD goes from 1.2700 to 1.2650: the pound weakened (or the dollar strengthened).</p>
+<h2>What currency is my profit in?</h2>
+<p>Your profit or loss is calculated in the <b>quote currency</b>, then converted to your account currency. On XAUUSD, EUR/USD or GBP/USD it is directly in dollars.</p>`}},
+{t:{fr:"Prix Bid, prix Ask et spread",en:"Bid, Ask and spread"},s:{fr:"Les deux prix affichés et le coût d'un trade.",en:"The two displayed prices and the cost of a trade."},
+b:{fr:`<p>Sur MT5, chaque actif affiche <b>deux prix</b> :</p>
+<ul><li><b>Bid</b> (vente) : le prix auquel tu peux <b>vendre</b>.</li><li><b>Ask</b> (achat) : le prix auquel tu peux <b>acheter</b>. Il est toujours un peu plus haut.</li></ul>
+<div class="box ex"><b class="t">Exemple</b>XAUUSD : Bid 3 865,20 / Ask 3 865,50. Le <b>spread</b> = 0,30 $, soit 3 pips.</div>
+<h2>Pourquoi le spread compte</h2>
+<p>Le spread est la principale rémunération du broker. Dès que tu ouvres un trade, tu es en perte du montant du spread. Le prix doit d'abord « rattraper » ce coût avant que tu sois en gain.</p>
+<h2>Quand le spread s'élargit</h2>
+<ul><li>Pendant les grosses annonces économiques.</li><li>À l'ouverture du marché le lundi et la nuit (faible liquidité).</li><li>Sur les paires exotiques.</li></ul>
+<div class="box tip"><b class="t">Astuce</b>Un BUY s'ouvre au prix Ask et se ferme au Bid. Un SELL s'ouvre au Bid et se ferme à l'Ask. Ton Stop Loss sur un SELL est donc touché quand l'<b>Ask</b> l'atteint.</div>`,
+en:`<p>On MT5, every asset shows <b>two prices</b>:</p>
+<ul><li><b>Bid</b>: the price at which you can <b>sell</b>.</li><li><b>Ask</b>: the price at which you can <b>buy</b>. It's always slightly higher.</li></ul>
+<div class="box ex"><b class="t">Example</b>XAUUSD: Bid 3,865.20 / Ask 3,865.50. The <b>spread</b> = $0.30, i.e. 3 pips.</div>
+<h2>Why the spread matters</h2>
+<p>The spread is the broker's main income. As soon as you open a trade, you're down by the spread. Price must first "cover" that cost before you're in profit.</p>
+<h2>When the spread widens</h2>
+<ul><li>During big economic news.</li><li>At the Monday open and at night (low liquidity).</li><li>On exotic pairs.</li></ul>
+<div class="box tip"><b class="t">Tip</b>A BUY opens at the Ask and closes at the Bid. A SELL opens at the Bid and closes at the Ask. So your Stop Loss on a SELL is hit when the <b>Ask</b> reaches it.</div>`}},
+{t:{fr:"L'Or (XAUUSD) et les autres actifs",en:"Gold (XAUUSD) and other assets"},s:{fr:"Ce qu'on peut trader en plus des devises.",en:"What you can trade besides currencies."},
+b:{fr:`<h2>L'Or, notre actif principal</h2>
+<p><b>XAUUSD</b> = le prix d'une once d'or en dollars. L'or est considéré comme une <b>valeur refuge</b> : en période de crise ou d'inquiétude, les investisseurs l'achètent pour protéger leur argent.</p>
+<ul><li>Il bouge souvent de <b>20 à 50 $ par jour</b>, parfois beaucoup plus : de belles opportunités, mais un risque élevé.</li><li>Il réagit fortement au <b>dollar</b> et aux <b>taux de la Fed</b> : dollar fort → or souvent en baisse, et inversement.</li><li>1 lot standard = 100 onces. Un mouvement de 1 $ = 100 $ de gain/perte par lot, soit <b>1 $ pour 0,01 lot</b>.</li></ul>
+<h2>Les autres actifs disponibles chez un broker</h2>
+<table><tr><th>Famille</th><th>Exemples</th></tr>
+<tr><td>Métaux</td><td>Or (XAUUSD), Argent (XAGUSD)</td></tr>
+<tr><td>Indices</td><td>US30 (Dow Jones), NAS100 (Nasdaq), GER40</td></tr>
+<tr><td>Énergie</td><td>Pétrole (USOIL, UKOIL)</td></tr>
+<tr><td>Crypto</td><td>BTCUSD, ETHUSD</td></tr></table>
+<div class="box warn"><b class="t">Attention</b>Chaque actif a sa propre taille de contrat et sa propre volatilité. Vérifie toujours la valeur d'un mouvement avant de choisir ta taille de lot.</div>`,
+en:`<h2>Gold, our main asset</h2>
+<p><b>XAUUSD</b> = the price of one ounce of gold in dollars. Gold is seen as a <b>safe haven</b>: in times of crisis or worry, investors buy it to protect their money.</p>
+<ul><li>It often moves <b>$20 to $50 a day</b>, sometimes much more: great opportunities, but high risk.</li><li>It reacts strongly to the <b>dollar</b> and <b>Fed rates</b>: strong dollar → gold often falls, and vice versa.</li><li>1 standard lot = 100 ounces. A $1 move = $100 profit/loss per lot, i.e. <b>$1 for 0.01 lot</b>.</li></ul>
+<h2>Other assets available at a broker</h2>
+<table><tr><th>Family</th><th>Examples</th></tr>
+<tr><td>Metals</td><td>Gold (XAUUSD), Silver (XAGUSD)</td></tr>
+<tr><td>Indices</td><td>US30 (Dow Jones), NAS100 (Nasdaq), GER40</td></tr>
+<tr><td>Energy</td><td>Oil (USOIL, UKOIL)</td></tr>
+<tr><td>Crypto</td><td>BTCUSD, ETHUSD</td></tr></table>
+<div class="box warn"><b class="t">Watch out</b>Each asset has its own contract size and volatility. Always check what a move is worth before choosing your lot size.</div>`}}
+]},
+/* ---------- CHAPITRE 3 ---------- */
+{t:{fr:"Comment on gagne et on perd",en:"How you win and lose money"},d:{fr:"Pips, lots et calculs de gains.",en:"Pips, lots and profit calculations."},
+lessons:[
+{t:{fr:"Le pip et le pipette",en:"Pip and pipette"},s:{fr:"L'unité qui mesure les mouvements de prix.",en:"The unit that measures price moves."},
+b:{fr:`<p>Le <b>pip</b> (<i>percentage in point</i>) est l'unité standard pour mesurer un mouvement de prix.</p>
+<table><tr><th>Actif</th><th>1 pip =</th><th>Exemple</th></tr>
+<tr><td>EUR/USD, GBP/USD…</td><td>0,0001 (4ᵉ décimale)</td><td>1,0850 → 1,0870 = <b>20 pips</b></td></tr>
+<tr><td>USD/JPY, EUR/JPY…</td><td>0,01 (2ᵉ décimale)</td><td>150,20 → 150,50 = <b>30 pips</b></td></tr>
+<tr><td>Or (XAUUSD)</td><td>0,10 $ (usage courant)</td><td>3 860 → 3 865 = <b>50 pips</b></td></tr></table>
+<h2>Le pipette</h2>
+<p>La plupart des brokers affichent un chiffre de plus : la <b>pipette</b>, qui vaut <b>1/10 de pip</b>. Dans EUR/USD = 1,08505, le dernier « 5 » est une pipette.</p>
+<div class="box tip"><b class="t">Sur l'Or</b>Certains traders comptent 1 pip = 0,01 $ ou 1 pip = 1 $. Chez SERGIO FX, on utilise la convention la plus répandue : <b>1 $ de mouvement = 10 pips</b>. L'important est d'utiliser toujours la même.</div>`,
+en:`<p>A <b>pip</b> (<i>percentage in point</i>) is the standard unit for measuring a price move.</p>
+<table><tr><th>Asset</th><th>1 pip =</th><th>Example</th></tr>
+<tr><td>EUR/USD, GBP/USD…</td><td>0.0001 (4th decimal)</td><td>1.0850 → 1.0870 = <b>20 pips</b></td></tr>
+<tr><td>USD/JPY, EUR/JPY…</td><td>0.01 (2nd decimal)</td><td>150.20 → 150.50 = <b>30 pips</b></td></tr>
+<tr><td>Gold (XAUUSD)</td><td>$0.10 (common usage)</td><td>3,860 → 3,865 = <b>50 pips</b></td></tr></table>
+<h2>The pipette</h2>
+<p>Most brokers show one extra digit: the <b>pipette</b>, worth <b>1/10 of a pip</b>. In EUR/USD = 1.08505, the last "5" is a pipette.</p>
+<div class="box tip"><b class="t">On Gold</b>Some traders count 1 pip = $0.01 or 1 pip = $1. At SERGIO FX we use the most common convention: <b>a $1 move = 10 pips</b>. What matters is to always use the same one.</div>`}},
+{t:{fr:"Les lots",en:"Lots"},s:{fr:"Standard, mini et micro : la taille de ta position.",en:"Standard, mini and micro: your position size."},
+b:{fr:`<p>Le <b>lot</b> indique la quantité que tu trades. Sur MT5, tu le choisis dans la case « Volume ».</p>
+<table><tr><th>Lot</th><th>Volume MT5</th><th>Forex (unités)</th><th>Or (onces)</th></tr>
+<tr><td>Standard</td><td>1,00</td><td>100 000</td><td>100</td></tr>
+<tr><td>Mini</td><td>0,10</td><td>10 000</td><td>10</td></tr>
+<tr><td>Micro</td><td>0,01</td><td>1 000</td><td>1</td></tr></table>
+<p>Plus le lot est gros, plus chaque pip vaut d'argent : en gain comme en perte.</p>
+<div class="box ex"><b class="t">Sur l'Or</b>Avec <b>0,01 lot</b>, un mouvement de 1 $ (10 pips) = <b>1 $</b> de gain ou de perte.<br>Avec <b>0,10 lot</b> = 10 $. Avec <b>1,00 lot</b> = 100 $.</div>
+<div class="box warn"><b class="t">Erreur classique</b>Choisir son lot « au feeling ». Le lot se calcule à partir du risque et du Stop Loss (chapitre 9).</div>`,
+en:`<p>The <b>lot</b> tells how much you trade. On MT5 you choose it in the "Volume" box.</p>
+<table><tr><th>Lot</th><th>MT5 volume</th><th>Forex (units)</th><th>Gold (ounces)</th></tr>
+<tr><td>Standard</td><td>1.00</td><td>100,000</td><td>100</td></tr>
+<tr><td>Mini</td><td>0.10</td><td>10,000</td><td>10</td></tr>
+<tr><td>Micro</td><td>0.01</td><td>1,000</td><td>1</td></tr></table>
+<p>The bigger the lot, the more money each pip is worth: in profit and in loss.</p>
+<div class="box ex"><b class="t">On Gold</b>With <b>0.01 lot</b>, a $1 move (10 pips) = <b>$1</b> profit or loss.<br>With <b>0.10 lot</b> = $10. With <b>1.00 lot</b> = $100.</div>
+<div class="box warn"><b class="t">Classic mistake</b>Choosing your lot "by feel". Lot size is calculated from your risk and Stop Loss (chapter 9).</div>`}},
+{t:{fr:"Calculer la valeur d'un pip",en:"Calculating pip value"},s:{fr:"Combien rapporte 1 pip selon ton lot.",en:"How much 1 pip is worth for your lot."},
+b:{fr:`<h2>Paires qui finissent par USD (EUR/USD, GBP/USD…)</h2>
+<p>C'est le cas le plus simple : la valeur d'un pip est fixe.</p>
+<table><tr><th>Lot</th><th>Valeur d'1 pip</th></tr><tr><td>1,00</td><td>10 $</td></tr><tr><td>0,10</td><td>1 $</td></tr><tr><td>0,01</td><td>0,10 $</td></tr></table>
+<h2>Autres paires : la formule</h2>
+<div class="box ex"><b class="t">Valeur du pip = (taille du pip ÷ prix) × nombre d'unités</b>USD/JPY à 150,00, 1 lot standard :<br>(0,01 ÷ 150) × 100 000 = <b>6,67 $</b> par pip.</div>
+<h2>L'Or</h2>
+<table><tr><th>Lot</th><th>1 pip (0,10 $)</th><th>1 $ de mouvement</th></tr><tr><td>1,00</td><td>10 $</td><td>100 $</td></tr><tr><td>0,10</td><td>1 $</td><td>10 $</td></tr><tr><td>0,01</td><td>0,10 $</td><td>1 $</td></tr></table>
+<div class="box tip"><b class="t">Bonne nouvelle</b>Tu n'as pas besoin de tout calculer à la main : MT5 affiche ton gain/perte en direct, et de nombreux calculateurs de pip gratuits existent en ligne. Mais comprendre la logique t'évitera des erreurs de lot.</div>`,
+en:`<h2>Pairs ending in USD (EUR/USD, GBP/USD…)</h2>
+<p>The simplest case: pip value is fixed.</p>
+<table><tr><th>Lot</th><th>Value of 1 pip</th></tr><tr><td>1.00</td><td>$10</td></tr><tr><td>0.10</td><td>$1</td></tr><tr><td>0.01</td><td>$0.10</td></tr></table>
+<h2>Other pairs: the formula</h2>
+<div class="box ex"><b class="t">Pip value = (pip size ÷ price) × number of units</b>USD/JPY at 150.00, 1 standard lot:<br>(0.01 ÷ 150) × 100,000 = <b>$6.67</b> per pip.</div>
+<h2>Gold</h2>
+<table><tr><th>Lot</th><th>1 pip ($0.10)</th><th>$1 move</th></tr><tr><td>1.00</td><td>$10</td><td>$100</td></tr><tr><td>0.10</td><td>$1</td><td>$10</td></tr><tr><td>0.01</td><td>$0.10</td><td>$1</td></tr></table>
+<div class="box tip"><b class="t">Good news</b>You don't have to calculate everything by hand: MT5 shows your profit/loss live, and many free pip calculators exist online. But understanding the logic will save you from lot-size mistakes.</div>`}},
+{t:{fr:"Calculer un gain ou une perte",en:"Calculating profit or loss"},s:{fr:"Des exemples chiffrés, pas à pas.",en:"Worked examples, step by step."},
+b:{fr:`<div class="box ex"><b class="t">Exemple 1 – BUY sur EUR/USD</b>Entrée : 1,0850 · Sortie : 1,0890 · Lot : 0,10<br>Mouvement : 1,0890 − 1,0850 = 40 pips<br>Valeur du pip à 0,10 lot : 1 $<br>Résultat : 40 × 1 $ = <b>+40 $</b></div>
+<div class="box ex"><b class="t">Exemple 2 – SELL sur l'Or</b>Entrée : 3 871,75 · Sortie (TP) : 3 860,05 · Lot : 0,05<br>Mouvement : 3 871,75 − 3 860,05 = 11,70 $ = 117 pips<br>Valeur d'1 $ à 0,05 lot : 5 $<br>Résultat : 11,70 × 5 $ = <b>+58,50 $</b></div>
+<div class="box ex"><b class="t">Exemple 3 – Stop Loss touché</b>BUY Or à 3 861,55 · SL : 3 858,02 · Lot : 0,10<br>Mouvement contre toi : 3,53 $ = 35 pips<br>Valeur d'1 $ à 0,10 lot : 10 $<br>Résultat : 3,53 × 10 $ = <b>−35,30 $</b></div>
+<h2>N'oublie pas les frais</h2>
+<p>Le résultat réel tient aussi compte du <b>spread</b>, d'éventuelles <b>commissions</b> et du <b>swap</b> si tu gardes le trade la nuit.</p>`,
+en:`<div class="box ex"><b class="t">Example 1 – BUY EUR/USD</b>Entry: 1.0850 · Exit: 1.0890 · Lot: 0.10<br>Move: 1.0890 − 1.0850 = 40 pips<br>Pip value at 0.10 lot: $1<br>Result: 40 × $1 = <b>+$40</b></div>
+<div class="box ex"><b class="t">Example 2 – SELL Gold</b>Entry: 3,871.75 · Exit (TP): 3,860.05 · Lot: 0.05<br>Move: 3,871.75 − 3,860.05 = $11.70 = 117 pips<br>Value of $1 at 0.05 lot: $5<br>Result: 11.70 × $5 = <b>+$58.50</b></div>
+<div class="box ex"><b class="t">Example 3 – Stop Loss hit</b>BUY Gold at 3,861.55 · SL: 3,858.02 · Lot: 0.10<br>Move against you: $3.53 = 35 pips<br>Value of $1 at 0.10 lot: $10<br>Result: 3.53 × $10 = <b>−$35.30</b></div>
+<h2>Don't forget costs</h2>
+<p>The real result also includes the <b>spread</b>, any <b>commissions</b> and the <b>swap</b> if you hold the trade overnight.</p>`}}
+]}
+];
+
+const CH_B=[
+/* ---------- CHAPITRE 4 ---------- */
+{t:{fr:"Les ordres de trading",en:"Trading orders"},d:{fr:"Entrer, sortir et protéger ses trades.",en:"Enter, exit and protect your trades."},
+lessons:[
+{t:{fr:"L'ordre au marché",en:"Market order"},s:{fr:"Entrer tout de suite, au prix actuel.",en:"Enter now, at the current price."},
+b:{fr:`<p>Un <b>ordre au marché</b> est exécuté <b>immédiatement</b> au meilleur prix disponible.</p>
+<ul><li><b>BUY</b> au marché : tu achètes au prix <b>Ask</b>.</li><li><b>SELL</b> au marché : tu vends au prix <b>Bid</b>.</li></ul>
+<h2>Quand l'utiliser</h2>
+<p>Quand le prix est déjà dans ta zone d'entrée et que tu veux être dans le mouvement tout de suite. C'est souvent le cas quand un signal dit « SELL GOLD NOW ».</p>
+<h2>Le glissement (slippage)</h2>
+<p>Pendant les mouvements très rapides (annonces), ton ordre peut être exécuté quelques pips plus loin que le prix affiché. C'est le <b>slippage</b>. Il peut être en ta faveur ou contre toi.</p>
+<div class="box tip"><b class="t">Sur MT5</b>Nouvel ordre → Type : <b>Exécution au marché</b> → règle Volume, SL et TP → <b>Vendre</b> ou <b>Acheter</b>.</div>`,
+en:`<p>A <b>market order</b> is filled <b>immediately</b> at the best available price.</p>
+<ul><li><b>BUY</b> at market: you buy at the <b>Ask</b> price.</li><li><b>SELL</b> at market: you sell at the <b>Bid</b> price.</li></ul>
+<h2>When to use it</h2>
+<p>When price is already in your entry zone and you want to be in the move right away. That's often the case when a signal says "SELL GOLD NOW".</p>
+<h2>Slippage</h2>
+<p>During very fast moves (news), your order may fill a few pips away from the displayed price. That's <b>slippage</b>. It can be in your favour or against you.</p>
+<div class="box tip"><b class="t">On MT5</b>New order → Type: <b>Market execution</b> → set Volume, SL and TP → <b>Sell</b> or <b>Buy</b>.</div>`}},
+{t:{fr:"Les ordres en attente",en:"Pending orders"},s:{fr:"Buy Limit, Sell Limit, Buy Stop, Sell Stop.",en:"Buy Limit, Sell Limit, Buy Stop, Sell Stop."},
+b:{fr:`<p>Un <b>ordre en attente</b> ne s'exécute que si le prix atteint le niveau que tu as choisi. Pratique pour ne pas rester devant l'écran.</p>
+<table><tr><th>Ordre</th><th>Placé…</th><th>Idée</th></tr>
+<tr><td>🟢 <b>Buy Limit</b></td><td>sous le prix actuel</td><td>« J'achète si le prix redescend sur mon support. »</td></tr>
+<tr><td>🔴 <b>Sell Limit</b></td><td>au-dessus du prix actuel</td><td>« Je vends si le prix remonte sur ma résistance. »</td></tr>
+<tr><td>🟢 <b>Buy Stop</b></td><td>au-dessus du prix actuel</td><td>« J'achète si le prix casse ce niveau vers le haut. »</td></tr>
+<tr><td>🔴 <b>Sell Stop</b></td><td>sous le prix actuel</td><td>« Je vends si le prix casse ce niveau vers le bas. »</td></tr></table>
+<div class="box ex"><b class="t">Exemple</b>L'or est à 3 865 et le coach repère une zone de vente vers 3 871. Tu places un <b>Sell Limit à 3 871</b> avec ton SL et ton TP. Si le prix monte jusqu'à 3 871, ton ordre se déclenche tout seul.</div>
+<div class="box tip"><b class="t">À retenir</b><b>Limit</b> = je veux un meilleur prix (retour sur une zone). <b>Stop</b> = je veux confirmer la cassure.</div>`,
+en:`<p>A <b>pending order</b> only fills if price reaches the level you chose. Handy when you can't stay in front of the screen.</p>
+<table><tr><th>Order</th><th>Placed…</th><th>Idea</th></tr>
+<tr><td>🟢 <b>Buy Limit</b></td><td>below current price</td><td>"I buy if price drops back to my support."</td></tr>
+<tr><td>🔴 <b>Sell Limit</b></td><td>above current price</td><td>"I sell if price rises back to my resistance."</td></tr>
+<tr><td>🟢 <b>Buy Stop</b></td><td>above current price</td><td>"I buy if price breaks this level upward."</td></tr>
+<tr><td>🔴 <b>Sell Stop</b></td><td>below current price</td><td>"I sell if price breaks this level downward."</td></tr></table>
+<div class="box ex"><b class="t">Example</b>Gold is at 3,865 and the coach spots a sell zone around 3,871. You place a <b>Sell Limit at 3,871</b> with your SL and TP. If price rises to 3,871, your order triggers by itself.</div>
+<div class="box tip"><b class="t">Remember</b><b>Limit</b> = I want a better price (return to a zone). <b>Stop</b> = I want to confirm the breakout.</div>`}},
+{t:{fr:"Stop Loss et Take Profit",en:"Stop Loss and Take Profit"},s:{fr:"Les deux protections de chaque trade.",en:"The two safeguards of every trade."},
+b:{fr:`<h2>Le Stop Loss (SL)</h2>
+<p>Le niveau où ton trade se ferme automatiquement <b>en perte</b> si le marché va contre toi. Il limite les dégâts.</p>
+<ul><li>BUY : le SL est <b>sous</b> le prix d'entrée.</li><li>SELL : le SL est <b>au-dessus</b> du prix d'entrée.</li><li>Place-le là où ton idée n'est plus valable (au-delà de la zone, pas au hasard).</li></ul>
+<h2>Le Take Profit (TP)</h2>
+<p>Le niveau où ton trade se ferme automatiquement <b>en gain</b>. Il évite de regarder un trade gagnant se transformer en perte.</p>
+<h2>TP1, TP2, TP3</h2>
+<p>Certains traders sortent en plusieurs fois : une partie au TP1, une autre au TP2, etc. Après le TP1, on remonte souvent le SL au prix d'entrée (« <b>break-even</b> ») pour ne plus pouvoir perdre sur ce trade.</p>
+<div class="box warn"><b class="t">Règle non négociable</b>Pas de trade sans Stop Loss. Et on ne recule jamais son SL pour « laisser respirer » un trade perdant.</div>`,
+en:`<h2>Stop Loss (SL)</h2>
+<p>The level where your trade closes automatically <b>at a loss</b> if the market goes against you. It limits the damage.</p>
+<ul><li>BUY: the SL is <b>below</b> the entry price.</li><li>SELL: the SL is <b>above</b> the entry price.</li><li>Place it where your idea is no longer valid (beyond the zone, not at random).</li></ul>
+<h2>Take Profit (TP)</h2>
+<p>The level where your trade closes automatically <b>in profit</b>. It stops a winning trade from turning into a loss.</p>
+<h2>TP1, TP2, TP3</h2>
+<p>Some traders exit in steps: part at TP1, part at TP2, and so on. After TP1, the SL is often moved to the entry price ("<b>break-even</b>") so the trade can no longer lose.</p>
+<div class="box warn"><b class="t">Non-negotiable rule</b>No trade without a Stop Loss. And never move your SL further away to "give room" to a losing trade.</div>`}},
+{t:{fr:"Le Trailing Stop",en:"Trailing Stop"},s:{fr:"Un Stop Loss qui suit le prix.",en:"A Stop Loss that follows price."},
+b:{fr:`<p>Le <b>Trailing Stop</b> (stop suiveur) déplace automatiquement ton Stop Loss quand le prix va dans ton sens. Il garde toujours la même distance avec le prix, mais <b>ne recule jamais</b>.</p>
+<div class="box ex"><b class="t">Exemple</b>BUY Or à 3 860 avec un trailing de 50 pips (5 $).<br>Le prix monte à 3 870 → ton SL monte à 3 865.<br>Le prix monte à 3 880 → ton SL monte à 3 875.<br>Le prix redescend → ton SL reste à 3 875 : tu sécurises au moins +15 $ par once.</div>
+<h2>Avantages et limites</h2>
+<ul><li>✅ Protège les gains dans les grosses tendances.</li><li>✅ Pas besoin de surveiller en permanence.</li><li>❌ Dans un marché agité, il peut te faire sortir trop tôt.</li><li>❌ Sur MT5, le trailing ne fonctionne que si ta plateforme reste <b>ouverte et connectée</b>.</li></ul>
+<div class="box tip"><b class="t">Sur MT5 (PC)</b>Clic droit sur le trade ouvert → <b>Trailing stop</b> → choisis la distance.</div>`,
+en:`<p>A <b>Trailing Stop</b> automatically moves your Stop Loss when price goes your way. It keeps the same distance from price, but <b>never moves back</b>.</p>
+<div class="box ex"><b class="t">Example</b>BUY Gold at 3,860 with a 50-pip ($5) trailing stop.<br>Price rises to 3,870 → your SL moves to 3,865.<br>Price rises to 3,880 → your SL moves to 3,875.<br>Price falls back → your SL stays at 3,875: you lock in at least +$15 per ounce.</div>
+<h2>Pros and limits</h2>
+<ul><li>✅ Protects profits in big trends.</li><li>✅ No need to watch all the time.</li><li>❌ In a choppy market it can take you out too early.</li><li>❌ On MT5, trailing only works while your platform stays <b>open and connected</b>.</li></ul>
+<div class="box tip"><b class="t">On MT5 (PC)</b>Right-click the open trade → <b>Trailing stop</b> → choose the distance.</div>`}}
+]},
+/* ---------- CHAPITRE 5 ---------- */
+{t:{fr:"Quand trader ?",en:"When to trade?"},d:{fr:"Les sessions, les chevauchements et les annonces.",en:"Sessions, overlaps and news."},
+lessons:[
+{t:{fr:"Les 4 sessions (heure de Lomé)",en:"The 4 sessions (GMT)"},s:{fr:"Un marché ouvert 24 h/24 du lundi au vendredi.",en:"A market open 24 hours, Monday to Friday."},
+b:{fr:`<p>Le Forex ouvre le <b>dimanche soir</b> (vers 22:00, heure de Lomé) et ferme le <b>vendredi soir</b> (vers 22:00). Entre les deux, il tourne sans arrêt en suivant les grandes places financières.</p>
+<table><tr><th>Session</th><th>Ouverture</th><th>Fermeture</th><th>Caractère</th></tr>
+<tr><td>🇦🇺 Sydney</td><td>22:00</td><td>07:00</td><td>Calme</td></tr>
+<tr><td>🇯🇵 Tokyo</td><td>00:00</td><td>09:00</td><td>Calme à moyen, actif sur le yen</td></tr>
+<tr><td>🇬🇧 Londres</td><td>08:00</td><td>17:00</td><td>Très actif</td></tr>
+<tr><td>🇺🇸 New York</td><td>13:00</td><td>22:00</td><td>Très actif jusqu'à ~17:00</td></tr></table>
+<p><i>Horaires d'hiver (novembre à mars). En été, les sessions de Londres et New York commencent une heure plus tôt.</i></p>
+<div class="box ex"><b class="t">Chez SERGIO FX</b>Session 1 : <b>08:00 – 11:30</b> (Londres) · Session 2 : <b>13:30 – 16:30</b> (US).</div>`,
+en:`<p>Forex opens on <b>Sunday evening</b> (around 22:00 GMT) and closes on <b>Friday evening</b> (around 22:00). In between, it runs non-stop following the major financial centres.</p>
+<table><tr><th>Session</th><th>Open</th><th>Close</th><th>Character</th></tr>
+<tr><td>🇦🇺 Sydney</td><td>22:00</td><td>07:00</td><td>Quiet</td></tr>
+<tr><td>🇯🇵 Tokyo</td><td>00:00</td><td>09:00</td><td>Quiet to medium, active on yen</td></tr>
+<tr><td>🇬🇧 London</td><td>08:00</td><td>17:00</td><td>Very active</td></tr>
+<tr><td>🇺🇸 New York</td><td>13:00</td><td>22:00</td><td>Very active until ~17:00</td></tr></table>
+<p><i>Winter hours (November to March). In summer, the London and New York sessions start one hour earlier.</i></p>
+<div class="box ex"><b class="t">At SERGIO FX</b>Session 1: <b>08:00 – 11:30</b> (London) · Session 2: <b>13:30 – 16:30</b> (US).</div>`}},
+{t:{fr:"Les chevauchements de sessions",en:"Session overlaps"},s:{fr:"Les heures où le marché bouge le plus.",en:"The hours when the market moves most."},
+b:{fr:`<p>Quand deux grandes sessions sont ouvertes en même temps, il y a plus de traders, plus de volume… et plus de mouvement.</p>
+<h2>Londres + New York (13:00 – 17:00)</h2>
+<p>Le chevauchement le plus important de la journée. Les grandes annonces américaines tombent souvent à <b>13:30</b>. C'est souvent là que l'Or fait ses plus gros mouvements.</p>
+<h2>Tokyo + Londres (08:00 – 09:00)</h2>
+<p>Plus court et moins actif, mais l'ouverture de Londres peut lancer la tendance de la journée.</p>
+<h2>Ce que ça veut dire pour toi</h2>
+<ul><li>Plus de mouvement = plus d'opportunités, mais aussi des Stop Loss touchés plus vite.</li><li>Les spreads sont généralement plus bas pendant ces périodes actives.</li><li>En dehors, le prix fait souvent du « range » (il tourne en rond).</li></ul>`,
+en:`<p>When two major sessions are open at the same time, there are more traders, more volume… and more movement.</p>
+<h2>London + New York (13:00 – 17:00)</h2>
+<p>The most important overlap of the day. Major US news is often released at <b>13:30 GMT</b>. Gold often makes its biggest moves here.</p>
+<h2>Tokyo + London (08:00 – 09:00)</h2>
+<p>Shorter and less active, but the London open can set the day's trend.</p>
+<h2>What it means for you</h2>
+<ul><li>More movement = more opportunities, but Stop Losses also get hit faster.</li><li>Spreads are usually lower during these active periods.</li><li>Outside them, price often ranges (moves sideways).</li></ul>`}},
+{t:{fr:"Le calendrier économique",en:"The economic calendar"},s:{fr:"Les annonces qui font exploser le marché.",en:"The news that makes the market explode."},
+b:{fr:`<p>Le <b>calendrier économique</b> liste les publications prévues de la semaine (inflation, emploi, taux…), avec leur heure et leur niveau d'impact. Chaque matin, nous publions celles du jour dans le groupe.</p>
+<h2>Les annonces à fort impact sur l'Or</h2>
+<table><tr><th>Annonce</th><th>Ce qu'elle mesure</th><th>Quand (heure de Lomé, hiver)</th></tr>
+<tr><td><b>NFP</b> (emploi US)</td><td>Créations d'emplois aux États-Unis</td><td>1ᵉʳ vendredi du mois, 13:30</td></tr>
+<tr><td><b>CPI</b> (inflation)</td><td>Hausse des prix</td><td>Mi-mois, 13:30</td></tr>
+<tr><td><b>Décision de la Fed (FOMC)</b></td><td>Taux d'intérêt américains</td><td>8 fois par an, 19:00</td></tr>
+<tr><td><b>Ventes au détail</b></td><td>Consommation des ménages</td><td>Mi-mois, 13:30</td></tr>
+<tr><td><b>Discours</b> (Fed, BCE…)</td><td>Indices sur la politique future</td><td>Variable</td></tr></table>
+<div class="box warn"><b class="t">Pendant l'annonce</b>Spread qui s'élargit, prix qui fait des allers-retours violents, slippage. Les débutants devraient éviter d'ouvrir un trade quelques minutes avant et après.</div>
+<p>Sites utiles : Forex Factory, Investing.com (calendrier économique).</p>`,
+en:`<p>The <b>economic calendar</b> lists the week's scheduled releases (inflation, jobs, rates…), with their time and impact level. Every morning we post the day's events in the group.</p>
+<h2>High-impact news for Gold</h2>
+<table><tr><th>Release</th><th>What it measures</th><th>When (GMT, winter)</th></tr>
+<tr><td><b>NFP</b> (US jobs)</td><td>US job creation</td><td>1st Friday of the month, 13:30</td></tr>
+<tr><td><b>CPI</b> (inflation)</td><td>Rising prices</td><td>Mid-month, 13:30</td></tr>
+<tr><td><b>Fed decision (FOMC)</b></td><td>US interest rates</td><td>8 times a year, 19:00</td></tr>
+<tr><td><b>Retail sales</b></td><td>Household spending</td><td>Mid-month, 13:30</td></tr>
+<tr><td><b>Speeches</b> (Fed, ECB…)</td><td>Hints about future policy</td><td>Varies</td></tr></table>
+<div class="box warn"><b class="t">During the release</b>Wider spreads, violent back-and-forth moves, slippage. Beginners should avoid opening a trade a few minutes before and after.</div>
+<p>Useful sites: Forex Factory, Investing.com (economic calendar).</p>`}},
+{t:{fr:"Les meilleurs et les pires moments",en:"Best and worst times to trade"},s:{fr:"Organiser ta journée de trading.",en:"Plan your trading day."},
+b:{fr:`<h2>✅ Les bons moments</h2>
+<ul><li>Ouverture de <b>Londres</b> (08:00 – 11:00).</li><li>Chevauchement <b>Londres + New York</b> (13:30 – 16:30), hors minutes d'annonce.</li><li>Du <b>mardi au jeudi</b> : souvent les jours les plus réguliers.</li></ul>
+<h2>❌ Les moments à éviter</h2>
+<ul><li>Juste avant et après une grosse annonce (NFP, CPI, Fed).</li><li>La nuit et la session asiatique, pour l'Or (peu de volume, spreads plus larges).</li><li>Le <b>lundi matin</b> (marché qui démarre) et le <b>vendredi après-midi</b> (les gros acteurs ferment leurs positions).</li><li>Les jours fériés américains ou anglais.</li><li>Quand tu es fatigué, énervé ou que tu veux « te refaire » après une perte.</li></ul>
+<div class="box tip"><b class="t">Routine conseillée</b>07:00 : lire le calendrier du jour · 08:00 : session Londres · 11:30 : pause · 13:30 : session US · 16:30 : on arrête et on note ses trades dans un journal.</div>`,
+en:`<h2>✅ Good times</h2>
+<ul><li>The <b>London</b> open (08:00 – 11:00 GMT).</li><li>The <b>London + New York</b> overlap (13:30 – 16:30), outside news minutes.</li><li><b>Tuesday to Thursday</b>: often the most consistent days.</li></ul>
+<h2>❌ Times to avoid</h2>
+<ul><li>Just before and after big news (NFP, CPI, Fed).</li><li>Night and the Asian session, for Gold (low volume, wider spreads).</li><li><b>Monday morning</b> (market warming up) and <b>Friday afternoon</b> (big players closing positions).</li><li>US or UK public holidays.</li><li>When you're tired, angry or trying to "win it back" after a loss.</li></ul>
+<div class="box tip"><b class="t">Suggested routine</b>07:00: read the day's calendar · 08:00: London session · 11:30: break · 13:30: US session · 16:30: stop and log your trades in a journal.</div>`}}
+]},
+/* ---------- CHAPITRE 6 ---------- */
+{t:{fr:"Qui trade le Forex ?",en:"Who trades Forex?"},d:{fr:"Les acteurs du marché et ta place parmi eux.",en:"Market players and your place among them."},
+lessons:[
+{t:{fr:"Banques centrales et institutions",en:"Central banks and institutions"},s:{fr:"Les acteurs qui font les grands mouvements.",en:"The players who make the big moves."},
+b:{fr:`<h2>Les banques centrales</h2>
+<p>Fed (États-Unis), BCE (zone euro), Banque d'Angleterre, Banque du Japon… Elles fixent les <b>taux d'intérêt</b> et pilotent l'économie. Une hausse des taux attire les capitaux et renforce souvent la devise ; une baisse l'affaiblit. Leurs annonces font bouger tout le marché, et l'Or en particulier.</p>
+<h2>Les grandes banques</h2>
+<p>Elles échangent des volumes énormes entre elles sur le <b>marché interbancaire</b> et fournissent les prix aux autres acteurs.</p>
+<h2>Les fonds et les entreprises</h2>
+<ul><li><b>Fonds d'investissement</b> : spéculent ou protègent leurs placements contre les variations de change.</li><li><b>Entreprises</b> : changent des devises pour payer leurs fournisseurs ou rapatrier leurs ventes à l'étranger.</li></ul>
+<div class="box tip"><b class="t">Pourquoi c'est utile</b>Les zones où ces gros acteurs achètent ou vendent laissent des traces sur le graphique. Les repérer, c'est le cœur de notre travail en live.</div>`,
+en:`<h2>Central banks</h2>
+<p>The Fed (US), ECB (euro area), Bank of England, Bank of Japan… They set <b>interest rates</b> and steer the economy. A rate hike attracts capital and often strengthens the currency; a cut weakens it. Their announcements move the whole market, and Gold in particular.</p>
+<h2>Big banks</h2>
+<p>They trade huge volumes with each other on the <b>interbank market</b> and supply prices to other players.</p>
+<h2>Funds and companies</h2>
+<ul><li><b>Investment funds</b>: speculate or protect their investments against currency swings.</li><li><b>Companies</b>: exchange currencies to pay suppliers or bring foreign sales home.</li></ul>
+<div class="box tip"><b class="t">Why it's useful</b>The zones where these big players buy or sell leave footprints on the chart. Spotting them is the core of our live work.</div>`}},
+{t:{fr:"Le rôle du broker",en:"The broker's role"},s:{fr:"L'intermédiaire entre toi et le marché.",en:"The middleman between you and the market."},
+b:{fr:`<p>En tant que particulier, tu ne peux pas aller directement sur le marché interbancaire. Le <b>broker</b> (courtier) fait le lien.</p>
+<h2>Ce que fait le broker</h2>
+<ul><li>Il t'ouvre un <b>compte de trading</b> et garde ton argent.</li><li>Il te donne une <b>plateforme</b> (MetaTrader 5, application mobile).</li><li>Il affiche les <b>prix</b> et exécute tes <b>ordres</b>.</li><li>Il te propose un <b>effet de levier</b>.</li></ul>
+<h2>Comment il gagne de l'argent</h2>
+<p>Principalement via le <b>spread</b>, parfois des <b>commissions</b> par lot, et le <b>swap</b> sur les positions gardées la nuit.</p>
+<h2>Les points de vigilance</h2>
+<ul><li>Vérifie qu'il est <b>régulé</b> par une autorité financière.</li><li>Teste un petit <b>retrait</b> au début pour vérifier que tout fonctionne.</li><li>Ne donne jamais tes identifiants à quelqu'un qui promet de « gérer ton compte ».</li></ul>
+<div class="box ex"><b class="t">Notre broker</b>Nous utilisons <b>HFM (HF Markets)</b>. Le lien d'inscription et le guide sont disponibles en bas de cette page.</div>`,
+en:`<p>As an individual you can't go straight to the interbank market. The <b>broker</b> is the link.</p>
+<h2>What the broker does</h2>
+<ul><li>Opens a <b>trading account</b> for you and holds your money.</li><li>Gives you a <b>platform</b> (MetaTrader 5, mobile app).</li><li>Shows <b>prices</b> and executes your <b>orders</b>.</li><li>Offers you <b>leverage</b>.</li></ul>
+<h2>How it makes money</h2>
+<p>Mainly through the <b>spread</b>, sometimes <b>commissions</b> per lot, and the <b>swap</b> on positions held overnight.</p>
+<h2>Things to watch</h2>
+<ul><li>Check it is <b>regulated</b> by a financial authority.</li><li>Test a small <b>withdrawal</b> early to check everything works.</li><li>Never give your login to someone promising to "manage your account".</li></ul>
+<div class="box ex"><b class="t">Our broker</b>We use <b>HFM (HF Markets)</b>. The sign-up link and guide are at the bottom of this page.</div>`}},
+{t:{fr:"Le trader particulier",en:"The retail trader"},s:{fr:"Toi : tes forces et tes faiblesses.",en:"You: your strengths and weaknesses."},
+b:{fr:`<p>Les traders particuliers représentent une petite part du volume total. On ne peut pas faire bouger le marché… mais on a des avantages.</p>
+<h2>Tes forces</h2>
+<ul><li><b>Flexibilité</b> : tu n'es pas obligé de trader tous les jours. Tu peux attendre le meilleur moment.</li><li><b>Petite taille</b> : tu entres et sors facilement, sans faire bouger le prix.</li><li><b>Pas de patron</b> : tu choisis ta méthode et ton rythme.</li></ul>
+<h2>Tes faiblesses</h2>
+<ul><li><b>Les émotions</b> : peur, avidité, envie de se refaire.</li><li><b>Le manque de formation</b> : beaucoup commencent sans comprendre le levier.</li><li><b>Le surtrading</b> : prendre trop de trades, trop gros.</li></ul>
+<div class="box tip"><b class="t">Le profil qui réussit</b>Il apprend, s'entraîne en démo, suit un plan, risque peu par trade, tient un journal et accepte les pertes comme faisant partie du métier.</div>`,
+en:`<p>Retail traders are a small part of total volume. We can't move the market… but we have advantages.</p>
+<h2>Your strengths</h2>
+<ul><li><b>Flexibility</b>: you don't have to trade every day. You can wait for the best moment.</li><li><b>Small size</b>: you get in and out easily without moving price.</li><li><b>No boss</b>: you choose your method and pace.</li></ul>
+<h2>Your weaknesses</h2>
+<ul><li><b>Emotions</b>: fear, greed, the urge to win it back.</li><li><b>Lack of training</b>: many start without understanding leverage.</li><li><b>Overtrading</b>: too many trades, too big.</li></ul>
+<div class="box tip"><b class="t">The profile that succeeds</b>Learns, practises on demo, follows a plan, risks little per trade, keeps a journal and accepts losses as part of the job.</div>`}}
+]}
+];
+
+const CH_C=[
+/* ---------- CHAPITRE 7 ---------- */
+{t:{fr:"Pourquoi trader le Forex ?",en:"Why trade Forex?"},d:{fr:"Les avantages, les vrais risques et les arnaques.",en:"The advantages, the real risks and the scams."},
+lessons:[
+{t:{fr:"Les avantages",en:"The advantages"},s:{fr:"Ce qui attire autant de traders.",en:"What attracts so many traders."},
+b:{fr:`<ul><li><b>Un marché immense et liquide</b> : on entre et on sort facilement, avec des frais faibles.</li><li><b>Ouvert 24 h/24 en semaine</b> : tu peux trader avant ou après ton travail ou tes cours.</li><li><b>Gagner à la hausse comme à la baisse</b> : un SELL est aussi simple qu'un BUY.</li><li><b>Petit capital de départ</b> : on peut commencer avec quelques dizaines de dollars en micro lots.</li><li><b>Compte démo gratuit</b> : on s'entraîne avec de l'argent virtuel.</li><li><b>Tout depuis ton téléphone</b> : MT5 fonctionne sur Android et iPhone.</li><li><b>Beaucoup de ressources</b> : formations, calendrier, communauté.</li></ul>
+<div class="box tip"><b class="t">Mais…</b>Accessible ne veut pas dire facile. Le trading est une compétence qui se travaille, comme un métier.</div>`,
+en:`<ul><li><b>A huge, liquid market</b>: easy to get in and out, with low costs.</li><li><b>Open 24 hours on weekdays</b>: trade before or after work or class.</li><li><b>Profit from rises and falls</b>: a SELL is as simple as a BUY.</li><li><b>Small starting capital</b>: start with a few tens of dollars in micro lots.</li><li><b>Free demo account</b>: practise with virtual money.</li><li><b>Everything from your phone</b>: MT5 runs on Android and iPhone.</li><li><b>Plenty of resources</b>: courses, calendar, community.</li></ul>
+<div class="box tip"><b class="t">But…</b>Accessible doesn't mean easy. Trading is a skill you work on, like a profession.</div>`}},
+{t:{fr:"Les risques réels",en:"The real risks"},s:{fr:"Ce que personne ne te dit sur les réseaux.",en:"What nobody tells you on social media."},
+b:{fr:`<ul><li><b>La majorité des débutants perdent de l'argent.</b> Les brokers régulés en Europe doivent d'ailleurs afficher le pourcentage de clients qui perdent : il est souvent supérieur à 70 %.</li><li><b>L'effet de levier</b> multiplie les pertes autant que les gains.</li><li><b>La volatilité</b> : l'Or peut bouger de 20 $ en quelques minutes pendant une annonce.</li><li><b>Les émotions</b> : la peur fait sortir trop tôt, l'avidité fait rester trop longtemps, la colère fait « revenge trader ».</li><li><b>Les frais</b> : spread, commissions et swap grignotent les petits gains.</li></ul>
+<div class="box warn"><b class="t">Règle de base</b>Ne trade qu'avec de l'argent que tu peux te permettre de perdre. Jamais l'argent du loyer, de la nourriture ou des études. Jamais d'argent emprunté.</div>`,
+en:`<ul><li><b>Most beginners lose money.</b> Regulated brokers in Europe must even display the share of clients who lose: it's often over 70%.</li><li><b>Leverage</b> magnifies losses as much as gains.</li><li><b>Volatility</b>: Gold can move $20 in minutes during news.</li><li><b>Emotions</b>: fear makes you exit too early, greed makes you stay too long, anger makes you "revenge trade".</li><li><b>Costs</b>: spread, commissions and swap eat into small gains.</li></ul>
+<div class="box warn"><b class="t">Basic rule</b>Only trade money you can afford to lose. Never rent, food or school money. Never borrowed money.</div>`}},
+{t:{fr:"Les arnaques à éviter",en:"Scams to avoid"},s:{fr:"Reconnaître les pièges avant de tomber dedans.",en:"Spot the traps before you fall in."},
+b:{fr:`<h2>Les signaux d'alerte</h2>
+<ul><li>« <b>Gains garantis</b> », « 30 % par semaine », « zéro risque » : ça n'existe pas.</li><li>Quelqu'un qui te demande de lui <b>envoyer de l'argent</b> pour qu'il « trade pour toi ».</li><li>Quelqu'un qui demande tes <b>identifiants</b> ou ton mot de passe de compte.</li><li>Des captures de gains impossibles à vérifier, des voitures et des liasses de billets.</li><li>Des « robots miracles » vendus très cher.</li><li>Des brokers <b>non régulés</b>, ou qui bloquent les retraits.</li><li>La pression : « offre limitée, paie maintenant ».</li></ul>
+<div class="box tip"><b class="t">Bonnes pratiques</b>Ton argent reste toujours sur <b>ton</b> compte, à <b>ton</b> nom, chez un broker régulé. Tu gardes tes identifiants pour toi. Tu vérifies avant de payer quoi que ce soit.</div>
+<p>Chez SERGIO FX : on ne te demandera jamais tes identifiants ni de nous envoyer ton capital.</p>`,
+en:`<h2>Warning signs</h2>
+<ul><li>"<b>Guaranteed profits</b>", "30% a week", "zero risk": these don't exist.</li><li>Someone asking you to <b>send them money</b> so they can "trade for you".</li><li>Someone asking for your account <b>login</b> or password.</li><li>Unverifiable profit screenshots, cars and stacks of cash.</li><li>"Miracle robots" sold at high prices.</li><li><b>Unregulated</b> brokers, or ones that block withdrawals.</li><li>Pressure: "limited offer, pay now".</li></ul>
+<div class="box tip"><b class="t">Good practice</b>Your money always stays in <b>your</b> account, in <b>your</b> name, with a regulated broker. Keep your login to yourself. Check before paying for anything.</div>
+<p>At SERGIO FX: we will never ask for your login or for you to send us your capital.</p>`}}
+]},
+/* ---------- CHAPITRE 8 ---------- */
+{t:{fr:"Marge et effet de levier",en:"Margin and leverage"},d:{fr:"Comprendre ton compte de marge pour ne pas le brûler.",en:"Understand your margin account so you don't blow it."},
+lessons:[
+{t:{fr:"Le levier expliqué simplement",en:"Leverage made simple"},s:{fr:"Contrôler une grosse position avec peu d'argent.",en:"Control a big position with little money."},
+b:{fr:`<p>L'<b>effet de levier</b> permet d'ouvrir une position plus grosse que l'argent présent sur ton compte. Le broker « prête » la différence.</p>
+<table><tr><th>Levier</th><th>Avec 100 $, tu contrôles…</th></tr><tr><td>1:50</td><td>5 000 $</td></tr><tr><td>1:100</td><td>10 000 $</td></tr><tr><td>1:500</td><td>50 000 $</td></tr></table>
+<h2>Une arme à double tranchant</h2>
+<div class="box ex"><b class="t">Exemple</b>Compte de 100 $. Tu ouvres 0,10 lot sur l'Or (10 onces ≈ 38 600 $ de valeur). Un mouvement de 10 $ contre toi = <b>−100 $</b> : ton compte est vidé.<br>Avec 0,01 lot, le même mouvement = −10 $.</div>
+<p>Le levier ne change pas ton analyse. Il change <b>la taille de tes gains et de tes pertes</b>. Un levier élevé n'est pas dangereux en soi : c'est la <b>taille de lot</b> trop grosse qui l'est.</p>
+<div class="box tip"><b class="t">Conseil</b>Choisis ta taille de lot avec la règle du 1 % (chapitre 9), pas en fonction du levier disponible.</div>`,
+en:`<p><b>Leverage</b> lets you open a position larger than the money in your account. The broker "lends" the difference.</p>
+<table><tr><th>Leverage</th><th>With $100 you control…</th></tr><tr><td>1:50</td><td>$5,000</td></tr><tr><td>1:100</td><td>$10,000</td></tr><tr><td>1:500</td><td>$50,000</td></tr></table>
+<h2>A double-edged sword</h2>
+<div class="box ex"><b class="t">Example</b>$100 account. You open 0.10 lot on Gold (10 ounces ≈ $38,600 of value). A $10 move against you = <b>−$100</b>: your account is wiped.<br>With 0.01 lot, the same move = −$10.</div>
+<p>Leverage doesn't change your analysis. It changes <b>the size of your wins and losses</b>. High leverage isn't dangerous in itself: an oversized <b>lot</b> is.</p>
+<div class="box tip"><b class="t">Tip</b>Choose your lot size with the 1% rule (chapter 9), not based on the leverage available.</div>`}},
+{t:{fr:"Marge, marge libre, niveau de marge",en:"Margin, free margin, margin level"},s:{fr:"Les chiffres en bas de ton écran MT5.",en:"The numbers at the bottom of your MT5 screen."},
+b:{fr:`<table><tr><th>Terme MT5</th><th>Signification</th></tr>
+<tr><td><b>Solde (Balance)</b></td><td>L'argent sur ton compte, sans les trades ouverts.</td></tr>
+<tr><td><b>Capitaux propres (Equity)</b></td><td>Solde + gains/pertes des trades ouverts. C'est ce que vaut vraiment ton compte à l'instant.</td></tr>
+<tr><td><b>Marge</b></td><td>L'argent bloqué par le broker pour garder tes positions ouvertes.</td></tr>
+<tr><td><b>Marge libre</b></td><td>Equity − Marge. Ce qui reste pour encaisser des pertes ou ouvrir d'autres trades.</td></tr>
+<tr><td><b>Niveau de marge</b></td><td>(Equity ÷ Marge) × 100 %.</td></tr></table>
+<div class="box ex"><b class="t">Exemple</b>Solde : 500 $. Tu ouvres un trade qui demande 40 $ de marge. Il est en perte de −60 $.<br>Equity = 440 $ · Marge libre = 400 $ · Niveau de marge = 440 ÷ 40 = <b>1 100 %</b>.</div>
+<p>Plus le niveau de marge est élevé, plus tu es en sécurité. S'il baisse trop, le broker intervient (leçon suivante).</p>`,
+en:`<table><tr><th>MT5 term</th><th>Meaning</th></tr>
+<tr><td><b>Balance</b></td><td>The money in your account, excluding open trades.</td></tr>
+<tr><td><b>Equity</b></td><td>Balance + open trades' profit/loss. What your account is really worth right now.</td></tr>
+<tr><td><b>Margin</b></td><td>Money the broker locks to keep your positions open.</td></tr>
+<tr><td><b>Free margin</b></td><td>Equity − Margin. What's left to absorb losses or open other trades.</td></tr>
+<tr><td><b>Margin level</b></td><td>(Equity ÷ Margin) × 100%.</td></tr></table>
+<div class="box ex"><b class="t">Example</b>Balance: $500. You open a trade requiring $40 margin. It's at −$60.<br>Equity = $440 · Free margin = $400 · Margin level = 440 ÷ 40 = <b>1,100%</b>.</div>
+<p>The higher the margin level, the safer you are. If it drops too far, the broker steps in (next lesson).</p>`}},
+{t:{fr:"Appel de marge et Stop Out",en:"Margin call and Stop Out"},s:{fr:"Quand le broker ferme tes positions.",en:"When the broker closes your positions."},
+b:{fr:`<h2>L'appel de marge (Margin Call)</h2>
+<p>Quand ton niveau de marge descend sous un certain seuil (souvent autour de <b>50 % à 100 %</b> selon le broker), tu reçois un avertissement : ton compte est en danger.</p>
+<h2>Le Stop Out</h2>
+<p>Si le niveau de marge continue de baisser jusqu'au seuil de <b>Stop Out</b> (souvent entre <b>20 % et 50 %</b>), le broker <b>ferme automatiquement tes positions</b>, en commençant par la plus perdante. C'est pour éviter que ton compte passe en négatif.</p>
+<div class="box warn"><b class="t">Comment l'éviter</b><ul><li>Toujours un Stop Loss.</li><li>Petite taille de lot (règle du 1 %).</li><li>Pas trop de trades ouverts en même temps.</li><li>Ne jamais ajouter des positions sur un trade perdant pour « faire la moyenne ».</li></ul></div>
+<p>Les seuils exacts dépendent de ton broker et de ton type de compte : vérifie-les dans les conditions de ton compte HFM.</p>`,
+en:`<h2>Margin Call</h2>
+<p>When your margin level drops below a certain threshold (often around <b>50% to 100%</b> depending on the broker), you get a warning: your account is in danger.</p>
+<h2>Stop Out</h2>
+<p>If the margin level keeps falling to the <b>Stop Out</b> threshold (often between <b>20% and 50%</b>), the broker <b>automatically closes your positions</b>, starting with the biggest loser. This stops your account going negative.</p>
+<div class="box warn"><b class="t">How to avoid it</b><ul><li>Always use a Stop Loss.</li><li>Small lot size (1% rule).</li><li>Not too many trades open at once.</li><li>Never add to a losing trade to "average down".</li></ul></div>
+<p>Exact thresholds depend on your broker and account type: check them in your HFM account conditions.</p>`}},
+{t:{fr:"Le swap (frais de nuit)",en:"Swap (overnight fees)"},s:{fr:"Ce que coûte un trade gardé la nuit.",en:"What a trade held overnight costs."},
+b:{fr:`<p>Si tu gardes une position ouverte après la clôture de la journée de trading (vers 22:00, heure de Lomé), le broker applique un <b>swap</b> : des frais (ou parfois un petit crédit) liés à la différence de taux d'intérêt entre les deux devises.</p>
+<ul><li>Le swap peut être <b>négatif</b> (tu payes) ou <b>positif</b> (tu reçois), selon la paire et le sens (BUY ou SELL).</li><li>Sur l'Or, le swap est généralement négatif dans les deux sens.</li><li>Le <b>mercredi</b>, le swap est souvent compté <b>trois fois</b> pour couvrir le week-end.</li></ul>
+<div class="box tip"><b class="t">Pour nous</b>Nos trades sont pris et fermés pendant les sessions de la journée : le swap nous concerne peu. Mais si tu gardes une position plusieurs jours, vérifie le swap dans les spécifications du symbole sur MT5 (clic droit → Spécifications).</div>
+<p>Certains brokers proposent des comptes <b>sans swap</b> (« islamiques ») sur demande.</p>`,
+en:`<p>If you keep a position open past the end of the trading day (around 22:00 GMT), the broker applies a <b>swap</b>: a fee (or sometimes a small credit) based on the interest-rate difference between the two currencies.</p>
+<ul><li>Swap can be <b>negative</b> (you pay) or <b>positive</b> (you receive), depending on the pair and direction (BUY or SELL).</li><li>On Gold, swap is usually negative both ways.</li><li>On <b>Wednesday</b>, swap is often charged <b>three times</b> to cover the weekend.</li></ul>
+<div class="box tip"><b class="t">For us</b>Our trades are opened and closed during the day's sessions: swap barely affects us. But if you hold a position for days, check the swap in the symbol specifications on MT5 (right-click → Specification).</div>
+<p>Some brokers offer <b>swap-free</b> ("Islamic") accounts on request.</p>`}}
+]},
+/* ---------- CHAPITRE 9 ---------- */
+{t:{fr:"La gestion du risque",en:"Risk management"},d:{fr:"La compétence n°1 pour durer dans le trading.",en:"The number-one skill to last in trading."},
+lessons:[
+{t:{fr:"La règle du 1 %",en:"The 1% rule"},s:{fr:"Ne jamais risquer plus de 1 % par trade.",en:"Never risk more than 1% per trade."},
+b:{fr:`<p>La règle la plus simple et la plus puissante : <b>ne risque jamais plus de 1 % (maximum 2 %) de ton capital sur un seul trade</b>. Le « risque », c'est ce que tu perds si ton Stop Loss est touché.</p>
+<table><tr><th>Capital</th><th>Risque max à 1 %</th></tr><tr><td>100 $</td><td>1 $</td></tr><tr><td>500 $</td><td>5 $</td></tr><tr><td>1 000 $</td><td>10 $</td></tr></table>
+<h2>Pourquoi ça marche</h2>
+<p>Même les meilleurs traders enchaînent des pertes. Avec 1 % par trade, <b>10 pertes de suite</b> ne te font perdre qu'environ 10 % du compte. Avec 10 % par trade, 10 pertes te font perdre près des deux tiers.</p>
+<div class="box tip"><b class="t">Le but</b>Rester dans la partie assez longtemps pour que ta méthode fonctionne. Un compte qui survit peut grandir ; un compte vidé, non.</div>`,
+en:`<p>The simplest and most powerful rule: <b>never risk more than 1% (2% max) of your capital on a single trade</b>. "Risk" is what you lose if your Stop Loss is hit.</p>
+<table><tr><th>Capital</th><th>Max risk at 1%</th></tr><tr><td>$100</td><td>$1</td></tr><tr><td>$500</td><td>$5</td></tr><tr><td>$1,000</td><td>$10</td></tr></table>
+<h2>Why it works</h2>
+<p>Even the best traders have losing streaks. At 1% per trade, <b>10 losses in a row</b> cost you only about 10% of the account. At 10% per trade, 10 losses cost you nearly two thirds.</p>
+<div class="box tip"><b class="t">The goal</b>Stay in the game long enough for your method to work. An account that survives can grow; a blown account can't.</div>`}},
+{t:{fr:"Calculer sa taille de lot",en:"Calculating your lot size"},s:{fr:"À partir de ton risque et de ton Stop Loss.",en:"From your risk and your Stop Loss."},
+b:{fr:`<div class="box ex"><b class="t">La formule</b>Taille de lot = Montant risqué ÷ (Distance du SL en pips × Valeur d'1 pip pour 1 lot)</div>
+<h2>Exemple sur l'Or</h2>
+<p>Capital 500 $, risque 1 % = <b>5 $</b>. Entrée 3 868,30, SL 3 878,15 → distance 9,85 $ = <b>98,5 pips</b>.<br>Valeur d'1 pip pour 1 lot sur l'Or = 10 $.<br>Lot = 5 ÷ (98,5 × 10) = 0,005 → arrondi au minimum <b>0,01</b> (risque réel ≈ 9,85 $, soit 2 %).</p>
+<div class="box warn"><b class="t">Leçon</b>Avec un petit compte et un SL large sur l'Or, même 0,01 lot peut dépasser 1 %. Dans ce cas, soit tu acceptes 2 % max, soit tu passes ton tour.</div>
+<h2>Exemple sur EUR/USD</h2>
+<p>Capital 1 000 $, risque 1 % = <b>10 $</b>. SL à 20 pips. Valeur d'1 pip pour 1 lot = 10 $.<br>Lot = 10 ÷ (20 × 10) = <b>0,05 lot</b>.</p>
+<p>Astuce : de nombreux calculateurs de taille de position gratuits existent en ligne, et certaines applis le font automatiquement.</p>`,
+en:`<div class="box ex"><b class="t">The formula</b>Lot size = Amount at risk ÷ (SL distance in pips × Value of 1 pip for 1 lot)</div>
+<h2>Gold example</h2>
+<p>Capital $500, 1% risk = <b>$5</b>. Entry 3,868.30, SL 3,878.15 → distance $9.85 = <b>98.5 pips</b>.<br>Value of 1 pip for 1 lot on Gold = $10.<br>Lot = 5 ÷ (98.5 × 10) = 0.005 → rounded up to the minimum <b>0.01</b> (real risk ≈ $9.85, i.e. 2%).</p>
+<div class="box warn"><b class="t">Lesson</b>With a small account and a wide SL on Gold, even 0.01 lot can exceed 1%. In that case, either accept 2% max, or skip the trade.</div>
+<h2>EUR/USD example</h2>
+<p>Capital $1,000, 1% risk = <b>$10</b>. SL of 20 pips. Value of 1 pip for 1 lot = $10.<br>Lot = 10 ÷ (20 × 10) = <b>0.05 lot</b>.</p>
+<p>Tip: many free position-size calculators exist online, and some apps do it automatically.</p>`}},
+{t:{fr:"Le ratio risque/rendement",en:"Risk/reward ratio"},s:{fr:"Gagner plus que ce qu'on risque.",en:"Win more than you risk."},
+b:{fr:`<p>Le <b>ratio risque/rendement</b> (R:R) compare ce que tu risques (distance au SL) à ce que tu peux gagner (distance au TP).</p>
+<div class="box ex"><b class="t">Exemple</b>SELL Or à 3 868,30 · SL 3 878,15 (risque 9,85 $) · TP 3 834,90 (gain 33,40 $).<br>R:R = 33,40 ÷ 9,85 ≈ <b>1:3,4</b>.</div>
+<h2>Pourquoi c'est puissant</h2>
+<table><tr><th>R:R</th><th>Taux de réussite minimum pour ne pas perdre</th></tr><tr><td>1:1</td><td>50 %</td></tr><tr><td>1:2</td><td>33 %</td></tr><tr><td>1:3</td><td>25 %</td></tr></table>
+<p>Avec un R:R de 1:2, sur 10 trades à 1 % de risque : 4 gagnants (+8 %) et 6 perdants (−6 %) = <b>+2 %</b>. Tu peux te tromper plus souvent que tu as raison… et gagner quand même.</p>
+<div class="box tip"><b class="t">À retenir</b>Vise au moins <b>1:2</b>. Un trade où tu risques 10 $ pour en gagner 5 doit être une exception, pas la règle.</div>`,
+en:`<p>The <b>risk/reward ratio</b> (R:R) compares what you risk (distance to SL) with what you can win (distance to TP).</p>
+<div class="box ex"><b class="t">Example</b>SELL Gold at 3,868.30 · SL 3,878.15 (risk $9.85) · TP 3,834.90 (gain $33.40).<br>R:R = 33.40 ÷ 9.85 ≈ <b>1:3.4</b>.</div>
+<h2>Why it's powerful</h2>
+<table><tr><th>R:R</th><th>Minimum win rate to break even</th></tr><tr><td>1:1</td><td>50%</td></tr><tr><td>1:2</td><td>33%</td></tr><tr><td>1:3</td><td>25%</td></tr></table>
+<p>With a 1:2 R:R over 10 trades at 1% risk: 4 winners (+8%) and 6 losers (−6%) = <b>+2%</b>. You can be wrong more often than right… and still make money.</p>
+<div class="box tip"><b class="t">Remember</b>Aim for at least <b>1:2</b>. A trade risking $10 to make $5 should be the exception, not the rule.</div>`}}
+]},
+/* ---------- CHAPITRE 10 ---------- */
+{t:{fr:"Premiers pas sur MetaTrader 5",en:"First steps on MetaTrader 5"},d:{fr:"Installer, lire l'écran et passer ton premier ordre.",en:"Install, read the screen and place your first order."},
+lessons:[
+{t:{fr:"Installer MT5 et se connecter",en:"Install MT5 and log in"},s:{fr:"Relier l'application à ton compte HFM.",en:"Connect the app to your HFM account."},
+b:{fr:`<ol><li>Télécharge <b>MetaTrader 5</b> (éditeur : MetaQuotes) sur le Play Store, l'App Store ou depuis l'espace client HFM pour PC.</li><li>Ouvre l'application → <b>Paramètres</b> (ou menu ☰) → <b>Nouveau compte</b> → <b>Se connecter à un compte existant</b>.</li><li>Cherche le serveur de ton broker : tape <b>HFM</b> ou <b>HF Markets</b>, puis choisis le serveur indiqué dans l'email reçu à l'ouverture de ton compte (serveur <b>Demo</b> pour un compte démo, <b>Live</b> pour un compte réel).</li><li>Entre ton <b>identifiant</b> (numéro de compte MT5) et ton <b>mot de passe</b>.</li><li>Appuie sur <b>Connexion</b>. Ton solde s'affiche dans l'onglet Trade.</li></ol>
+<div class="box tip"><b class="t">Commence par un compte démo</b>Dans ton espace HFM, crée un compte démo MT5 gratuit. Tu t'entraînes dans les mêmes conditions, sans risquer d'argent réel.</div>
+<div class="box warn"><b class="t">Sécurité</b>Ne partage jamais ton mot de passe principal. Si un coach doit voir ton compte, donne uniquement le mot de passe « investisseur » (lecture seule).</div>`,
+en:`<ol><li>Download <b>MetaTrader 5</b> (publisher: MetaQuotes) from the Play Store, App Store or the HFM client area for PC.</li><li>Open the app → <b>Settings</b> (or ☰ menu) → <b>New account</b> → <b>Login to an existing account</b>.</li><li>Search for your broker's server: type <b>HFM</b> or <b>HF Markets</b>, then pick the server shown in the email you got when opening your account (<b>Demo</b> server for a demo account, <b>Live</b> for a real account).</li><li>Enter your <b>login</b> (MT5 account number) and <b>password</b>.</li><li>Tap <b>Login</b>. Your balance appears in the Trade tab.</li></ol>
+<div class="box tip"><b class="t">Start with a demo account</b>In your HFM area, create a free MT5 demo account. You practise in the same conditions without risking real money.</div>
+<div class="box warn"><b class="t">Security</b>Never share your main password. If a coach needs to see your account, only give the "investor" password (read-only).</div>`}},
+{t:{fr:"Lire l'écran de MT5",en:"Reading the MT5 screen"},s:{fr:"Cotations, graphique, Trade et Historique.",en:"Quotes, chart, Trade and History."},
+b:{fr:`<p>Sur l'application mobile, MT5 a 4 onglets principaux en bas de l'écran :</p>
+<table><tr><th>Onglet</th><th>À quoi il sert</th></tr>
+<tr><td><b>Cotations</b></td><td>La liste des actifs avec leurs prix Bid et Ask. Appuie sur <b>+</b> pour ajouter XAUUSD si besoin.</td></tr>
+<tr><td><b>Graphique</b></td><td>Le graphique en bougies. Change l'unité de temps (M1, M5, H1…) et ajoute des indicateurs.</td></tr>
+<tr><td><b>Trade</b></td><td>Tes positions ouvertes, ton Solde, ton Equity, ta Marge et ta Marge libre.</td></tr>
+<tr><td><b>Historique</b></td><td>Tous tes trades fermés, avec le résultat de chacun.</td></tr></table>
+<h2>Sur le graphique</h2>
+<ul><li>Pince avec deux doigts pour zoomer.</li><li>Appuie sur l'icône <b>f</b> pour ajouter un indicateur.</li><li>Appuie sur l'icône d'horloge (ou en haut) pour changer l'unité de temps.</li></ul>
+<div class="box tip"><b class="t">Conseil</b>Garde ta liste de cotations courte : XAUUSD et une ou deux paires suffisent pour débuter.</div>`,
+en:`<p>On the mobile app, MT5 has 4 main tabs at the bottom of the screen:</p>
+<table><tr><th>Tab</th><th>What it's for</th></tr>
+<tr><td><b>Quotes</b></td><td>The list of assets with their Bid and Ask prices. Tap <b>+</b> to add XAUUSD if needed.</td></tr>
+<tr><td><b>Chart</b></td><td>The candlestick chart. Change the timeframe (M1, M5, H1…) and add indicators.</td></tr>
+<tr><td><b>Trade</b></td><td>Your open positions, Balance, Equity, Margin and Free margin.</td></tr>
+<tr><td><b>History</b></td><td>All your closed trades, with each result.</td></tr></table>
+<h2>On the chart</h2>
+<ul><li>Pinch with two fingers to zoom.</li><li>Tap the <b>f</b> icon to add an indicator.</li><li>Tap the clock icon (or the top bar) to change the timeframe.</li></ul>
+<div class="box tip"><b class="t">Tip</b>Keep your quotes list short: XAUUSD and one or two pairs are enough to start.</div>`}},
+{t:{fr:"Passer son premier ordre en démo",en:"Placing your first demo order"},s:{fr:"Pas à pas, avec SL et TP.",en:"Step by step, with SL and TP."},
+b:{fr:`<ol><li>Va dans <b>Cotations</b>, appuie sur <b>XAUUSD</b> → <b>Trade</b> (ou nouvel ordre).</li><li>Choisis le type : <b>Exécution au marché</b> (entrée immédiate) ou un ordre en attente (Buy Limit, Sell Limit…).</li><li>Règle le <b>Volume</b> : commence par <b>0,01</b>.</li><li>Entre ton <b>Stop Loss</b> et ton <b>Take Profit</b>.</li><li>Appuie sur <b>Vendre</b> (SELL) ou <b>Acheter</b> (BUY).</li><li>Le trade apparaît dans l'onglet <b>Trade</b> avec son gain/perte en direct.</li></ol>
+<h2>Modifier ou fermer</h2>
+<ul><li><b>Modifier</b> SL/TP : appui long sur le trade → Modifier la position.</li><li><b>Fermer</b> : appui long → Clôturer la position (ou glisser selon la version).</li></ul>
+<div class="box ex"><b class="t">Exercice</b>Recopie en démo un signal du groupe (entrée, SL, TP) avec 0,01 lot, et observe comment le trade évolue. Fais-le 20 fois avant de passer en réel.</div>`,
+en:`<ol><li>Go to <b>Quotes</b>, tap <b>XAUUSD</b> → <b>Trade</b> (or new order).</li><li>Choose the type: <b>Market execution</b> (instant entry) or a pending order (Buy Limit, Sell Limit…).</li><li>Set the <b>Volume</b>: start with <b>0.01</b>.</li><li>Enter your <b>Stop Loss</b> and <b>Take Profit</b>.</li><li>Tap <b>Sell</b> or <b>Buy</b>.</li><li>The trade appears in the <b>Trade</b> tab with its live profit/loss.</li></ol>
+<h2>Modify or close</h2>
+<ul><li><b>Modify</b> SL/TP: long-press the trade → Modify position.</li><li><b>Close</b>: long-press → Close position (or swipe, depending on version).</li></ul>
+<div class="box ex"><b class="t">Exercise</b>Copy a group signal (entry, SL, TP) on demo with 0.01 lot and watch how the trade evolves. Do it 20 times before going live.</div>`}},
+{t:{fr:"Lire son historique de trades",en:"Reading your trade history"},s:{fr:"Analyser ses résultats pour progresser.",en:"Analyse your results to improve."},
+b:{fr:`<p>L'onglet <b>Historique</b> montre tous tes trades fermés. En haut, tu peux filtrer par période : aujourd'hui, semaine, mois, ou dates personnalisées.</p>
+<h2>Ce que tu y trouves</h2>
+<ul><li>Pour chaque trade : actif, BUY/SELL, volume, prix d'entrée et de sortie, résultat.</li><li>En bas : <b>Profit</b> total, <b>Dépôts</b>, <b>Retraits</b>, <b>Swap</b>, <b>Commission</b> et <b>Solde</b>.</li></ul>
+<h2>Tenir un journal de trading</h2>
+<p>Pour progresser, note chaque trade dans un journal (cahier, Excel ou application) :</p>
+<ul><li>Date, heure, actif, BUY/SELL</li><li>Raison de l'entrée (zone, bougie, signal)</li><li>SL, TP, lot, résultat</li><li>Ton émotion pendant le trade</li><li>Ce que tu ferais différemment</li></ul>
+<div class="box tip"><b class="t">Le vrai secret</b>Après 20 ou 30 trades, relis ton journal. Tu verras tes erreurs qui reviennent (trop gros lot, trade pendant les news, SL déplacé…) et tu sauras exactement quoi corriger.</div>`,
+en:`<p>The <b>History</b> tab shows all your closed trades. At the top you can filter by period: today, week, month or custom dates.</p>
+<h2>What you'll find</h2>
+<ul><li>For each trade: asset, BUY/SELL, volume, entry and exit price, result.</li><li>At the bottom: total <b>Profit</b>, <b>Deposits</b>, <b>Withdrawals</b>, <b>Swap</b>, <b>Commission</b> and <b>Balance</b>.</li></ul>
+<h2>Keep a trading journal</h2>
+<p>To improve, log every trade in a journal (notebook, Excel or an app):</p>
+<ul><li>Date, time, asset, BUY/SELL</li><li>Reason for entry (zone, candle, signal)</li><li>SL, TP, lot, result</li><li>How you felt during the trade</li><li>What you'd do differently</li></ul>
+<div class="box tip"><b class="t">The real secret</b>After 20 or 30 trades, reread your journal. You'll see your recurring mistakes (lot too big, trading the news, moving the SL…) and know exactly what to fix.</div>`}}
+]}
+];
+
+const LV23=[
+{n:2,icon:"hand",t:{fr:"Brokers et analyse",en:"Brokers and analysis"},d:{fr:"Choisir un bon broker et découvrir les façons d'analyser les marchés.",en:"Choose a good broker and discover the ways to analyse the markets."},
+lessons:[
+{id:"2-1",t:{fr:"Bien choisir son broker",en:"Choosing a broker"},s:{fr:"Les critères qui comptent vraiment.",en:"The criteria that really matter."},
+b:{fr:`<p>Ton broker garde ton argent et exécute tes ordres. Le choisir est donc une décision importante.</p>
+<h2>Les critères à vérifier</h2>
+<ul><li><b>La régulation</b> : le broker doit être enregistré auprès d'une autorité financière (FCA au Royaume-Uni, CySEC à Chypre, FSCA en Afrique du Sud…). Vérifie le numéro de licence sur le site de l'autorité.</li><li><b>Les frais</b> : spread, commissions, frais de nuit (swap).</li><li><b>La plateforme</b> : MetaTrader 5 est la plus utilisée, sur PC et téléphone.</li><li><b>Dépôts et retraits</b> : moyens disponibles chez toi (Mobile Money, carte, crypto…) et rapidité des retraits.</li><li><b>Le service client</b> : disponible et en français si possible.</li><li><b>Le compte démo</b> : pour t'entraîner gratuitement.</li></ul>
+<h2>Les types de comptes</h2>
+<p>La plupart des brokers proposent plusieurs comptes : certains avec un spread plus large mais sans commission, d'autres avec un spread très faible et une petite commission. Pour débuter, un compte standard suffit.</p>
+<div class="box ex"><b class="t">Notre broker</b>À SERGIO FX, nous utilisons <b>HFM (HF Markets)</b>. Le guide d'inscription étape par étape est disponible auprès de l'équipe.</div>
+<div class="box warn"><b class="t">Méfiance</b>Un broker non régulé, des bonus trop beaux ou des retraits qui traînent sont des signaux d'alerte.</div>`,
+en:`<p>Your broker holds your money and executes your orders. Choosing one is an important decision.</p>
+<h2>Criteria to check</h2>
+<ul><li><b>Regulation</b>: the broker must be registered with a financial authority (FCA in the UK, CySEC in Cyprus, FSCA in South Africa…). Check the licence number on the authority's website.</li><li><b>Costs</b>: spread, commissions, overnight fees (swap).</li><li><b>Platform</b>: MetaTrader 5 is the most widely used, on PC and phone.</li><li><b>Deposits and withdrawals</b>: methods available in your country (Mobile Money, card, crypto…) and how fast withdrawals are.</li><li><b>Customer support</b>: available, ideally in your language.</li><li><b>Demo account</b>: to practise for free.</li></ul>
+<h2>Account types</h2>
+<p>Most brokers offer several accounts: some with a wider spread and no commission, others with a very tight spread and a small commission. To start, a standard account is enough.</p>
+<div class="box ex"><b class="t">Our broker</b>At SERGIO FX we use <b>HFM (HF Markets)</b>. A step-by-step sign-up guide is available from the team.</div>
+<div class="box warn"><b class="t">Red flags</b>An unregulated broker, bonuses that look too good or slow withdrawals are warning signs.</div>`}},
+{id:"2-2",t:{fr:"Les 3 types d'analyse",en:"The 3 types of analysis"},s:{fr:"Technique, fondamentale et sentiment.",en:"Technical, fundamental and sentiment."},
+b:{fr:`<p>Pour décider d'acheter ou de vendre, les traders utilisent trois grandes familles d'analyse. Les meilleurs les combinent.</p>
+<h2>1. L'analyse technique</h2>
+<p>Elle étudie le <b>graphique des prix</b> : tendances, supports et résistances, chandeliers, indicateurs. L'idée : l'histoire a tendance à se répéter, et le prix reflète déjà toute l'information disponible. C'est l'analyse que nous utilisons le plus en live.</p>
+<h2>2. L'analyse fondamentale</h2>
+<p>Elle étudie l'<b>économie</b> : taux d'intérêt, inflation, emploi, croissance, décisions des banques centrales. Exemple : si la Fed laisse entendre qu'elle va baisser ses taux, le dollar a tendance à baisser… et l'Or à monter.</p>
+<h2>3. L'analyse du sentiment</h2>
+<p>Elle cherche à savoir si la majorité des traders est plutôt <b>acheteuse ou vendeuse</b>, et à quel point elle est sûre d'elle. Quand tout le monde est du même côté, le marché peut se retourner brutalement.</p>
+<table><tr><th>Analyse</th><th>Question</th><th>Outils</th></tr><tr><td>Technique</td><td>Où le prix va-t-il réagir ?</td><td>Graphiques, indicateurs</td></tr><tr><td>Fondamentale</td><td>Pourquoi le prix bouge-t-il ?</td><td>Calendrier économique, news</td></tr><tr><td>Sentiment</td><td>Que pensent les autres traders ?</td><td>Positionnement, ambiance du marché</td></tr></table>
+<div class="box tip"><b class="t">Conseil</b>Débutant ? Commence par l'analyse technique, et consulte toujours le calendrier économique avant de trader.</div>`,
+en:`<p>To decide whether to buy or sell, traders use three main families of analysis. The best traders combine them.</p>
+<h2>1. Technical analysis</h2>
+<p>It studies the <b>price chart</b>: trends, support and resistance, candlesticks, indicators. The idea: history tends to repeat itself, and price already reflects all available information. It's the analysis we use most in our lives.</p>
+<h2>2. Fundamental analysis</h2>
+<p>It studies the <b>economy</b>: interest rates, inflation, jobs, growth, central bank decisions. Example: if the Fed hints at cutting rates, the dollar tends to fall… and Gold tends to rise.</p>
+<h2>3. Sentiment analysis</h2>
+<p>It tries to know whether most traders are <b>buying or selling</b>, and how confident they are. When everyone is on the same side, the market can reverse sharply.</p>
+<table><tr><th>Analysis</th><th>Question</th><th>Tools</th></tr><tr><td>Technical</td><td>Where will price react?</td><td>Charts, indicators</td></tr><tr><td>Fundamental</td><td>Why is price moving?</td><td>Economic calendar, news</td></tr><tr><td>Sentiment</td><td>What do other traders think?</td><td>Positioning, market mood</td></tr></table>
+<div class="box tip"><b class="t">Tip</b>Beginner? Start with technical analysis, and always check the economic calendar before trading.</div>`}},
+{id:"2-3",t:{fr:"Les types de graphiques",en:"Types of charts"},s:{fr:"Ligne, barres et chandeliers.",en:"Line, bar and candlestick."},
+b:{fr:`<p>Un graphique montre l'évolution du prix dans le temps. Il en existe trois types principaux.</p>
+<h2>Le graphique en ligne</h2>
+<p>Il relie les prix de <b>clôture</b> de chaque période. Simple et clair pour voir la tendance générale, mais il cache les détails.</p>
+<h2>Le graphique en barres (OHLC)</h2>
+<p>Chaque barre montre 4 prix : <b>Ouverture</b> (petit trait à gauche), <b>Plus haut</b> (haut de la barre), <b>Plus bas</b> (bas de la barre) et <b>Clôture</b> (petit trait à droite).</p>
+<h2>Le graphique en chandeliers japonais</h2>
+<p>Il montre les mêmes 4 prix, mais de façon beaucoup plus visuelle. C'est le plus utilisé par les traders.</p>
+${candleSVG('fr')}
+<ul><li><b>Bougie verte</b> (haussière) : la clôture est plus haute que l'ouverture.</li><li><b>Bougie rouge</b> (baissière) : la clôture est plus basse que l'ouverture.</li><li>Le <b>corps</b> = l'écart entre ouverture et clôture. Les <b>mèches</b> = les extrêmes atteints.</li></ul>
+<h2>Les unités de temps</h2>
+<p>Chaque bougie peut représenter 1 minute (M1), 5 minutes (M5), 1 heure (H1), 1 jour (D1)… En live, nous regardons souvent les petites unités (M1, M3, M5) pour entrer, et les grandes (H1, H4) pour la direction générale.</p>`,
+en:`<p>A chart shows how price changes over time. There are three main types.</p>
+<h2>Line chart</h2>
+<p>It connects the <b>closing</b> prices of each period. Simple and clear to see the overall trend, but it hides the details.</p>
+<h2>Bar chart (OHLC)</h2>
+<p>Each bar shows 4 prices: <b>Open</b> (small tick on the left), <b>High</b> (top of the bar), <b>Low</b> (bottom of the bar) and <b>Close</b> (small tick on the right).</p>
+<h2>Japanese candlestick chart</h2>
+<p>It shows the same 4 prices, but in a much more visual way. It's the one most traders use.</p>
+${candleSVG('en')}
+<ul><li><b>Green candle</b> (bullish): close is higher than open.</li><li><b>Red candle</b> (bearish): close is lower than open.</li><li>The <b>body</b> = the gap between open and close. The <b>wicks</b> = the extremes reached.</li></ul>
+<h2>Timeframes</h2>
+<p>Each candle can represent 1 minute (M1), 5 minutes (M5), 1 hour (H1), 1 day (D1)… In our lives we often use small timeframes (M1, M3, M5) to enter, and larger ones (H1, H4) for the overall direction.</p>`}}
+]},
+{n:3,icon:"candle",t:{fr:"L'analyse technique",en:"Technical analysis"},d:{fr:"Le guide du débutant pour lire un graphique : niveaux clés, bougies, Fibonacci et indicateurs.",en:"The beginner's guide to reading a chart: key levels, candles, Fibonacci and indicators."},
+lessons:[
+{id:"3-1",t:{fr:"Supports et résistances",en:"Support and resistance"},s:{fr:"Les zones où le prix réagit.",en:"The zones where price reacts."},
+b:{fr:`<p>Les supports et résistances sont les bases de l'analyse technique. Ce sont des <b>zones</b> où le prix a déjà réagi dans le passé et risque de réagir à nouveau.</p>
+${srSVG('fr')}
+<h2>Le support</h2>
+<p>Une zone <b>sous</b> le prix où les acheteurs ont été plus forts que les vendeurs : le prix a « rebondi » vers le haut. C'est comme un plancher.</p>
+<h2>La résistance</h2>
+<p>Une zone <b>au-dessus</b> du prix où les vendeurs ont repris le contrôle : le prix a été repoussé vers le bas. C'est comme un plafond.</p>
+<h2>Comment les tracer</h2>
+<ul><li>Repère les endroits où le prix s'est retourné <b>au moins deux fois</b>.</li><li>Trace une <b>zone</b> plutôt qu'une ligne parfaite : le prix dépasse souvent un peu.</li><li>Commence sur une grande unité de temps (H1, H4), puis descends.</li></ul>
+<h2>Quand un niveau casse</h2>
+<p>Quand le prix casse franchement une résistance, celle-ci devient souvent un nouveau <b>support</b> (et inversement). On appelle ça l'inversion de rôle.</p>
+<div class="box tip"><b class="t">Dans nos lives</b>Les « SELL ZONE » et « BUY ZONE » que tu vois sur nos graphiques sont des zones de résistance et de support.</div>`,
+en:`<p>Support and resistance are the basics of technical analysis. They are <b>zones</b> where price has reacted in the past and may react again.</p>
+${srSVG('en')}
+<h2>Support</h2>
+<p>A zone <b>below</b> price where buyers were stronger than sellers: price "bounced" up. Think of it as a floor.</p>
+<h2>Resistance</h2>
+<p>A zone <b>above</b> price where sellers took control: price was pushed back down. Think of it as a ceiling.</p>
+<h2>How to draw them</h2>
+<ul><li>Look for places where price turned <b>at least twice</b>.</li><li>Draw a <b>zone</b> rather than a perfect line: price often overshoots a little.</li><li>Start on a higher timeframe (H1, H4), then zoom in.</li></ul>
+<h2>When a level breaks</h2>
+<p>When price clearly breaks a resistance, it often becomes new <b>support</b> (and vice versa). This is called a role reversal.</p>
+<div class="box tip"><b class="t">In our lives</b>The "SELL ZONE" and "BUY ZONE" you see on our charts are resistance and support zones.</div>`}},
+{id:"3-2",t:{fr:"Les chandeliers japonais",en:"Japanese candlesticks"},s:{fr:"Lire les bougies et les figures clés.",en:"Read candles and key patterns."},
+b:{fr:`<p>Chaque bougie raconte la bataille entre acheteurs et vendeurs pendant une période. Certaines formes donnent des indices sur la suite.</p>
+<h2>Les bougies à connaître</h2>
+<ul><li><b>Grand corps, petites mèches</b> : un camp a dominé toute la période. Mouvement fort.</li><li><b>Doji</b> : ouverture ≈ clôture. Indécision, le marché hésite.</li><li><b>Marteau</b> : petit corps en haut, longue mèche basse. En bas d'une baisse, il montre que les acheteurs ont repoussé le prix : possible retournement haussier.</li><li><b>Étoile filante</b> : petit corps en bas, longue mèche haute. En haut d'une hausse : possible retournement baissier.</li></ul>
+<h2>Les figures à deux bougies</h2>
+<ul><li><b>Avalement haussier</b> : une bougie verte « avale » entièrement la bougie rouge précédente. Signal d'achat potentiel sur un support.</li><li><b>Avalement baissier</b> : une bougie rouge avale la bougie verte précédente. Signal de vente potentiel sur une résistance.</li></ul>
+<div class="box tip"><b class="t">La clé</b>Une figure de bougie seule ne suffit pas. Elle devient intéressante quand elle apparaît <b>sur une zone importante</b> (support, résistance).</div>`,
+en:`<p>Each candle tells the story of the battle between buyers and sellers during a period. Some shapes give clues about what comes next.</p>
+<h2>Candles to know</h2>
+<ul><li><b>Big body, small wicks</b>: one side dominated the whole period. Strong move.</li><li><b>Doji</b>: open ≈ close. Indecision, the market is hesitating.</li><li><b>Hammer</b>: small body at the top, long lower wick. At the bottom of a decline it shows buyers pushed price back: possible bullish reversal.</li><li><b>Shooting star</b>: small body at the bottom, long upper wick. At the top of a rise: possible bearish reversal.</li></ul>
+<h2>Two-candle patterns</h2>
+<ul><li><b>Bullish engulfing</b>: a green candle fully "engulfs" the previous red candle. Potential buy signal at support.</li><li><b>Bearish engulfing</b>: a red candle engulfs the previous green candle. Potential sell signal at resistance.</li></ul>
+<div class="box tip"><b class="t">The key</b>A candle pattern alone is not enough. It becomes interesting when it appears <b>at an important zone</b> (support, resistance).</div>`}},
+{id:"3-3",t:{fr:"Fibonacci",en:"Fibonacci"},s:{fr:"Trouver où le prix peut corriger.",en:"Find where price may pull back."},
+b:{fr:`<p>Le prix ne monte ou ne descend jamais en ligne droite : il avance, recule un peu (on dit qu'il « corrige » ou fait un « retracement »), puis repart. L'outil <b>Fibonacci</b> aide à estimer jusqu'où il peut reculer.</p>
+<h2>Les niveaux de retracement</h2>
+<p>Les plus utilisés : <b>23,6 % – 38,2 % – 50 % – 61,8 % – 78,6 %</b>. Les zones 50 % et 61,8 % sont souvent les plus surveillées.</p>
+<h2>Comment l'utiliser</h2>
+<ol><li>Repère un mouvement net (une impulsion).</li><li>En tendance haussière : trace l'outil du <b>plus bas vers le plus haut</b>. En tendance baissière : du <b>plus haut vers le plus bas</b>.</li><li>Observe si le prix réagit sur un niveau, surtout s'il correspond à un support ou une résistance.</li></ol>
+<div class="box ex"><b class="t">Dans nos lives</b>Quand tu vois « SELL ZONE [0,718] » ou « BUY [OTE] », il s'agit de zones de retracement que le coach utilise pour chercher une entrée dans le sens du mouvement principal.</div>
+<h2>Les extensions</h2>
+<p>Les niveaux <b>127,2 %</b> et <b>161,8 %</b> servent à estimer où placer un objectif (Take Profit) quand le prix repart.</p>
+<div class="box warn"><b class="t">Attention</b>Fibonacci n'est pas magique. Il indique des zones possibles, pas des certitudes. Toujours un Stop Loss.</div>`,
+en:`<p>Price never moves in a straight line: it advances, pulls back a little (a "retracement"), then continues. The <b>Fibonacci</b> tool helps estimate how far it may pull back.</p>
+<h2>Retracement levels</h2>
+<p>The most used: <b>23.6% – 38.2% – 50% – 61.8% – 78.6%</b>. The 50% and 61.8% zones are often the most watched.</p>
+<h2>How to use it</h2>
+<ol><li>Spot a clear move (an impulse).</li><li>In an uptrend: draw the tool from the <b>low to the high</b>. In a downtrend: from the <b>high to the low</b>.</li><li>Watch whether price reacts at a level, especially when it lines up with support or resistance.</li></ol>
+<div class="box ex"><b class="t">In our lives</b>When you see "SELL ZONE [0.718]" or "BUY [OTE]", these are retracement zones the coach uses to find an entry in the direction of the main move.</div>
+<h2>Extensions</h2>
+<p>The <b>127.2%</b> and <b>161.8%</b> levels help estimate where to place a target (Take Profit) when price moves on.</p>
+<div class="box warn"><b class="t">Warning</b>Fibonacci is not magic. It shows possible zones, not certainties. Always use a Stop Loss.</div>`}},
+{id:"3-4",t:{fr:"Les moyennes mobiles",en:"Moving averages"},s:{fr:"Voir la tendance d'un coup d'œil.",en:"See the trend at a glance."},
+b:{fr:`<p>Une <b>moyenne mobile</b> calcule le prix moyen sur un certain nombre de bougies et le trace sous forme de ligne. Elle « lisse » le graphique pour mieux voir la tendance.</p>
+<h2>Les deux types principaux</h2>
+<ul><li><b>SMA</b> (moyenne mobile simple) : toutes les bougies comptent autant.</li><li><b>EMA</b> (moyenne mobile exponentielle) : les bougies récentes comptent plus. Elle réagit plus vite.</li></ul>
+<h2>Les réglages courants</h2>
+<ul><li><b>20</b> : tendance à court terme.</li><li><b>50</b> : tendance à moyen terme.</li><li><b>200</b> : tendance de fond, très suivie par les institutions.</li></ul>
+<h2>Comment les lire</h2>
+<ul><li>Prix <b>au-dessus</b> de la moyenne et moyenne qui monte : tendance haussière, on cherche plutôt des achats.</li><li>Prix <b>en dessous</b> et moyenne qui descend : tendance baissière, on cherche plutôt des ventes.</li><li>Quand une moyenne courte croise une moyenne longue, cela peut signaler un changement de tendance.</li></ul>
+<div class="box tip"><b class="t">Astuce</b>En tendance, les moyennes mobiles servent souvent de support ou de résistance « dynamique ».</div>`,
+en:`<p>A <b>moving average</b> calculates the average price over a number of candles and plots it as a line. It "smooths" the chart to show the trend more clearly.</p>
+<h2>The two main types</h2>
+<ul><li><b>SMA</b> (simple moving average): every candle counts equally.</li><li><b>EMA</b> (exponential moving average): recent candles count more. It reacts faster.</li></ul>
+<h2>Common settings</h2>
+<ul><li><b>20</b>: short-term trend.</li><li><b>50</b>: medium-term trend.</li><li><b>200</b>: long-term trend, closely watched by institutions.</li></ul>
+<h2>How to read them</h2>
+<ul><li>Price <b>above</b> the average and the average rising: uptrend, look mainly for buys.</li><li>Price <b>below</b> and the average falling: downtrend, look mainly for sells.</li><li>When a short average crosses a long one, it may signal a change of trend.</li></ul>
+<div class="box tip"><b class="t">Tip</b>In a trend, moving averages often act as "dynamic" support or resistance.</div>`}},
+{id:"3-5",t:{fr:"Les indicateurs populaires",en:"Popular chart indicators"},s:{fr:"RSI, MACD, Bollinger, Stochastique, ATR.",en:"RSI, MACD, Bollinger, Stochastic, ATR."},
+b:{fr:`<p>Les indicateurs sont des calculs faits à partir du prix. Ils aident à confirmer une idée, mais ne doivent jamais décider à ta place.</p>
+<table><tr><th>Indicateur</th><th>À quoi il sert</th><th>Lecture simple</th></tr>
+<tr><td><b>RSI</b></td><td>Mesure la force du mouvement</td><td>Au-dessus de 70 : suracheté. En dessous de 30 : survendu.</td></tr>
+<tr><td><b>MACD</b></td><td>Suit l'élan de la tendance</td><td>Croisement des lignes = changement d'élan possible.</td></tr>
+<tr><td><b>Bandes de Bollinger</b></td><td>Mesurent la volatilité</td><td>Bandes serrées = calme avant un mouvement. Bandes larges = forte volatilité.</td></tr>
+<tr><td><b>Stochastique</b></td><td>Compare la clôture aux derniers extrêmes</td><td>Au-dessus de 80 : suracheté. En dessous de 20 : survendu.</td></tr>
+<tr><td><b>ATR</b></td><td>Mesure l'amplitude moyenne des bougies</td><td>Aide à placer un Stop Loss adapté à la volatilité.</td></tr></table>
+<h2>Les erreurs à éviter</h2>
+<ul><li>Mettre 10 indicateurs sur le graphique : trop d'informations = confusion.</li><li>Acheter juste parce que le RSI est sous 30 : en forte tendance, il peut rester « survendu » longtemps.</li><li>Oublier les zones clés : l'indicateur confirme, le niveau décide.</li></ul>
+<div class="box tip"><b class="t">Notre conseil</b>Maîtrise d'abord les supports/résistances et les bougies. Ajoute ensuite un ou deux indicateurs maximum.</div>`,
+en:`<p>Indicators are calculations based on price. They help confirm an idea, but should never decide for you.</p>
+<table><tr><th>Indicator</th><th>What it does</th><th>Simple reading</th></tr>
+<tr><td><b>RSI</b></td><td>Measures the strength of the move</td><td>Above 70: overbought. Below 30: oversold.</td></tr>
+<tr><td><b>MACD</b></td><td>Tracks trend momentum</td><td>Lines crossing = possible change in momentum.</td></tr>
+<tr><td><b>Bollinger Bands</b></td><td>Measure volatility</td><td>Tight bands = calm before a move. Wide bands = high volatility.</td></tr>
+<tr><td><b>Stochastic</b></td><td>Compares the close to recent extremes</td><td>Above 80: overbought. Below 20: oversold.</td></tr>
+<tr><td><b>ATR</b></td><td>Measures average candle range</td><td>Helps set a Stop Loss suited to volatility.</td></tr></table>
+<h2>Mistakes to avoid</h2>
+<ul><li>Putting 10 indicators on the chart: too much information = confusion.</li><li>Buying just because RSI is below 30: in a strong trend it can stay "oversold" for a long time.</li><li>Forgetting key zones: the indicator confirms, the level decides.</li></ul>
+<div class="box tip"><b class="t">Our advice</b>Master support/resistance and candles first. Then add one or two indicators at most.</div>`}}
+]}
+];
+
+/* ===================== SCHÉMAS ===================== */
+function candleSVG(l){const o=l=='fr'?['Plus haut','Clôture','Ouverture','Plus bas','Corps','Mèche']:['High','Close','Open','Low','Body','Wick'];
+return `<svg class="chart" viewBox="0 0 420 220"><g font-family="Arial" font-size="12" fill="#f3ead6">
+<line x1="120" y1="20" x2="120" y2="200" stroke="#22c55e" stroke-width="3"/><rect x="100" y="60" width="40" height="90" fill="#22c55e"/>
+<line x1="300" y1="20" x2="300" y2="200" stroke="#ef4444" stroke-width="3"/><rect x="280" y="60" width="40" height="90" fill="#ef4444"/>
+<text x="150" y="25">${o[0]}</text><text x="150" y="64">${o[1]}</text><text x="150" y="152">${o[2]}</text><text x="150" y="200">${o[3]}</text>
+<text x="330" y="25">${o[0]}</text><text x="330" y="64">${o[2]}</text><text x="330" y="152">${o[1]}</text><text x="330" y="200">${o[3]}</text>
+<text x="20" y="110" fill="#ffd84d">${o[4]} →</text><text x="20" y="40" fill="#ffd84d">${o[5]} →</text></g></svg>`}
+function srSVG(l){const r=l=='fr'?'RÉSISTANCE':'RESISTANCE',s='SUPPORT';
+return `<svg class="chart" viewBox="0 0 420 200"><rect x="0" y="34" width="420" height="16" fill="#ef4444" opacity=".25"/><rect x="0" y="150" width="420" height="16" fill="#22c55e" opacity=".25"/>
+<polyline points="10,140 60,50 110,150 170,48 230,152 290,46 340,120 410,30" fill="none" stroke="#ffd84d" stroke-width="3"/>
+<text x="12" y="28" fill="#ef4444" font-family="Arial" font-weight="700" font-size="13">${r}</text><text x="12" y="186" fill="#22c55e" font-family="Arial" font-weight="700" font-size="13">${s}</text></svg>`}
+
+/* ===================== ASSEMBLAGE DES NIVEAUX ===================== */
+const LV1={n:1,icon:"coins",t:{fr:"Les bases du Forex",en:"Forex basics"},d:{fr:"Tu pars de zéro ? 10 chapitres pour comprendre le marché des devises, les ordres, la marge, la gestion du risque et MetaTrader 5.",en:"Starting from zero? 10 chapters to understand the currency market, orders, margin, risk management and MetaTrader 5."},chapters:[...CH_A,...CH_B,...CH_C]};
+const COURSE=[LV1,...LV23];
+COURSE.forEach(c=>{
+ if(!c.chapters)c.chapters=[{t:c.t,d:c.d,lessons:c.lessons}];
+ c.chapters.forEach((ch,ci)=>ch.lessons.forEach((x,li)=>{if(!x.id)x.id=`${c.n}-${ci+1}-${li+1}`;x.ch=ch;x.chi=ci+1}));
+ c.lessons=c.chapters.flatMap(ch=>ch.lessons);
+});
+
+/* ===================== MOTEUR DU SITE ===================== */
+let LANG='fr';try{LANG=localStorage.getItem('sfx_lang')||'fr'}catch(e){}
+let DONE={};try{DONE=JSON.parse(localStorage.getItem('sfx_done')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('sfx_done',JSON.stringify(DONE));localStorage.setItem('sfx_lang',LANG)}catch(e){}};
+const T=k=>UI[LANG][k];
+const all=COURSE.flatMap(c=>c.lessons.map(x=>({...x,lv:c})));
+const pct=c=>Math.round(100*c.lessons.filter(x=>DONE[x.id]).length/c.lessons.length);
+const cta=()=>`<div class="cta"><h3>${T('ctaT')}</h3><p>${T('ctaP')}</p><div class="row"><a class="btn" href="${HFM}" target="_blank" rel="noopener">${T('ctaB1')}</a><a class="btn ghost" href="${WA}" target="_blank" rel="noopener">${T('ctaB2')}</a></div></div>`;
+const CHW={fr:"Chapitre",en:"Chapter"};
+
+function home(){
+ return `<section class="hero"><div class="wrap"><div class="badge">${badge('coins')}</div>
+ <h1>${T('heroT')}</h1><p>${T('heroP')}</p>
+ <a class="btn" href="#/level/1">${T('start')} →</a>
+ <div class="stats"><div><b>${COURSE.length}</b>${T('statN')}</div><div><b>${all.length}</b>${T('statL')}</div><div><b>FR / EN</b>${T('statF')}</div></div></div></section>
+ <div class="wrap"><h2 class="sec">${T('levels')}</h2><div class="levels">
+ ${COURSE.map(c=>`<a class="lv" href="#/level/${c.n}">${badge(c.icon)}<div><small>${T('level')} ${c.n}</small><h3>${c.t[LANG]}</h3><p>${c.d[LANG]}</p><p style="margin-top:6px;font-size:13px">${c.lessons.length} ${T('lessons')} · ${pct(c)}% ${T('complete')}</p><div class="bar"><i style="width:${pct(c)}%"></i></div></div></a>`).join('')}
+ <div class="lv soon">${badge('coins')}<div><small>${T('level')} ${COURSE.length+1}</small><h3>${T('soon')}</h3></div></div>
+ </div>${cta()}</div>`;
+}
+function level(n){
+ const c=COURSE.find(x=>x.n==n);if(!c)return home();
+ const multi=c.chapters.length>1;
+ const chapters=c.chapters.map((ch,ci)=>`<section class="chap">${multi?`<div class="chap-h"><span class="num">${ci+1}</span><div><h3>${ch.t[LANG]}</h3><p>${ch.d[LANG]}</p></div></div>`:''}
+  <ol>${ch.lessons.map(x=>`<li class="${DONE[x.id]?'done':''}"><a href="#/lesson/${x.id}">${x.t[LANG]}</a><p>${x.s[LANG]}</p></li>`).join('')}</ol></section>`).join('');
+ return `<div class="wrap"><div class="lvhead">${badge(c.icon)}<div><small style="color:var(--muted)">${T('level')} ${c.n} ${T('of')} ${COURSE.length}</small><h1>${c.t[LANG]}</h1><p>${c.d[LANG]}</p><a class="btn" href="#/lesson/${c.lessons[0].id}">${T('startLv')} →</a></div></div>
+ <div class="grid2"><div class="prog"><h4>${T('progress')}</h4><div class="pct">${pct(c)}%</div><div class="bar"><i style="width:${pct(c)}%"></i></div><p style="color:var(--muted);font-size:14px;margin-top:8px">${c.lessons.filter(x=>DONE[x.id]).length} / ${c.lessons.length} ${T('lessons')}</p>
+ ${multi?`<nav class="toc">${c.chapters.map((ch,ci)=>`<a href="#/lesson/${ch.lessons[0].id}">${ci+1}. ${ch.t[LANG]}</a>`).join('')}</nav>`:''}</div>
+ <div class="outline"><h4>${T('outline')}</h4>${chapters}</div></div>${cta()}</div>`;
+}
+function lesson(id){
+ const i=all.findIndex(x=>x.id==id);if(i<0)return home();const x=all[i],p=all[i-1],nx=all[i+1];
+ const multi=x.lv.chapters.length>1;
+ return `<div class="wrap"><article class="lesson"><div class="crumb"><a href="#/">${T('home')}</a> › <a href="#/level/${x.lv.n}">${T('level')} ${x.lv.n} · ${x.lv.t[LANG]}</a>${multi?` › ${CHW[LANG]} ${x.chi} · ${x.ch.t[LANG]}`:''}</div>
+ <h1>${x.t[LANG]}</h1><p class="lead">${x.s[LANG]}</p>${x.b[LANG]}
+ <button class="btn ${DONE[x.id]?'ghost':''} done-btn" onclick="toggleDone('${x.id}')">${DONE[x.id]?T('isDone'):T('markDone')}</button>
+ <div class="pager">${p?`<a class="btn ghost sm" href="#/lesson/${p.id}">${T('prev')}</a>`:`<span></span>`}${nx?`<a class="btn sm" href="#/lesson/${nx.id}">${T('next')}</a>`:`<a class="btn sm" href="#/level/${x.lv.n}">${T('backLv')}</a>`}</div>
+ </article>${cta()}</div>`;
+}
+function toggleDone(id){DONE[id]=!DONE[id];if(!DONE[id])delete DONE[id];save();render()}
+function render(){
+ const h=location.hash.replace('#','')||'/';const [,a,b]=h.split('/');
+ document.documentElement.lang=LANG;
+ document.getElementById('app').innerHTML=a=='level'?level(b):a=='lesson'?lesson(b):home();
+ document.getElementById('disc').textContent=T('disc');
+ document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x.dataset.l==LANG));
+}
+document.querySelectorAll('.lang button').forEach(x=>x.onclick=()=>{LANG=x.dataset.l;save();render()});
+window.addEventListener('hashchange',()=>{render();scrollTo(0,0)});
+document.getElementById('yr').textContent=new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
