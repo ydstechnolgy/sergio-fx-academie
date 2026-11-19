@@ -8,13 +8,18 @@ Site en ligne : https://ydstechnolgy.github.io/sergio-fx-academie/
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Le site complet (c'est ce fichier que GitHub Pages affiche). Il est **généré** à partir de `src/`. |
-| `src/head.part` | Design (couleurs, mise en page) et textes de l'interface FR/EN. |
-| `src/lv1a.js`, `lv1b.js`, `lv1c.js` | Niveau 1 · Les bases du Forex (chapitres 1 à 10). |
-| `src/lv2.js` | Niveau 2 (et anciennes leçons moyennes mobiles / indicateurs). |
-| `src/lv3.js` | Niveau 3 · L'analyse technique (6 chapitres). |
-| `src/svg.part` | Graphiques et schémas dessinés en SVG (s'adaptent au thème clair/sombre). |
-| `src/engine.part` | Fonctionnement du site (navigation, progression, langue). |
+| `index.html` | Le site complet, **généré** à partir de `src/` (ne pas modifier à la main). |
+| `src/head.part` | Design (thèmes clair/sombre), textes de l'interface FR/EN, badges. |
+| `src/svg.part` | Graphiques et schémas dessinés en SVG. |
+| `src/lv1a.js`, `lv1b.js`, `lv1c.js` | Niveau 1 · Les bases du Forex. |
+| `src/lv2.js` | Niveau 2 · Les outils du trader (HFM, TradingView, MT5). |
+| `src/lv3.js` | Niveau 3 · L'analyse technique. |
+| `src/lv4.js` | Niveau 4 · Structure et Top-Down Analysis. |
+| `src/lv5.js` | Niveau 5 · Gestion et psychologie. |
+| `src/lv6.js` | Niveau 6 · La pratique. |
+| `src/old.js` | Anciennes leçons réutilisées (broker, analyses, moyennes mobiles, indicateurs). |
+| `src/quiz.js` | Quiz de chaque niveau, examen final et glossaire. |
+| `src/engine.part` | Fonctionnement du site (navigation, progression, quiz, certificat). |
 | `build.sh` | Reconstruit `index.html` à partir de `src/`. |
 
 ## Sources d'information utilisées
