@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SERGIO FX ACADÉMIE – Formation trading</title>
+<meta name="description" content="Formation d'initiation au trading Forex et Or – SERGIO FX ACADÉMIE.">
+<script>try{var t=localStorage.getItem("sfx_theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#0c0a07;--panel:#14110c;--card:#1a160f;--line:#2f2716;--gold:#f5b301;--gold2:#ffd24a;--txt:#efe7d4;--muted:#a99d82;--strong:#fff;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;
+--sch:#e9ecf2;--schline:#111827;--schtxt:#111827;--schbox:rgba(79,110,220,.28);--hdr:rgba(12,10,7,.92);--th:#221c10;--glow:#3a2600;--track:#2b2415}
+html[data-theme=light]{--bg:#f7f5f0;--panel:#fff;--card:#fff;--line:#e6e0d2;--gold:#d99a00;--gold2:#9a6700;--txt:#1f1b14;--muted:#6b6354;--strong:#111;--green:#16a34a;--red:#dc2626;--hdr:rgba(247,245,240,.94);--th:#f4ecd8;--glow:#ffe8a8;--track:#ebe4d3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh;display:flex;flex-direction:column;font-size:17px}
+a{color:var(--gold2)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px;width:100%}
+header{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--strong);font-weight:900;letter-spacing:.5px;font-size:17px}
+.logo{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0,#f5c542 40%,#a86f00);display:grid;place-items:center;color:#2a1a00;font-weight:900}
+.brand b{color:var(--gold)}
+.nav-r{display:flex;gap:14px;align-items:center}
+.nav-r a{color:var(--muted);text-decoration:none;font-weight:700;font-size:15px}.nav-r a:hover{color:var(--gold2)}
+@media(max-width:640px){.nav-r a.hide{display:none}.brand span:last-child{font-size:14px}}
+.theme{background:none;border:1px solid var(--gold);color:var(--gold2);border-radius:30px;width:38px;height:32px;cursor:pointer;font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a0f00;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:40px;border:0;cursor:pointer;font-size:15px}
+html[data-theme=light] .btn{background:linear-gradient(90deg,#f5b301,#ffd24a)}
+.btn.ghost{background:none!important;color:var(--gold2);border:1.5px solid var(--gold)}
+.btn.sm{padding:8px 16px;font-size:14px}
+main{flex:1}
+/* Accueil */
+.hero{padding:70px 0 46px;text-align:center;background:radial-gradient(ellipse at 50% 0%,var(--glow) 0%,transparent 65%)}
+.hero h1{font-size:clamp(32px,6vw,54px);line-height:1.1;font-weight:900;color:var(--strong)}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--muted);max-width:660px;margin:16px auto 26px;font-size:18px}
+.stats{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:14px}.stats b{display:block;color:var(--gold2);font-size:24px}
+h2.sec{font-size:28px;font-weight:900;margin:44px 0 18px;color:var(--strong)}
+.goals{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.goal{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.goal i{font-style:normal;font-size:26px}.goal b{display:block;margin:6px 0 4px;color:var(--strong)}.goal p{color:var(--muted);font-size:15px}
+.mods{display:flex;flex-direction:column;gap:14px;padding-bottom:30px}
+.mod{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;text-decoration:none;color:inherit}
+.mod:hover{border-color:var(--gold)}
+.mod .n{width:64px;height:64px;border-radius:16px;background:var(--th);color:var(--gold2);font-weight:900;font-size:26px;display:grid;place-items:center}
+.mod h3{font-size:20px;color:var(--strong);line-height:1.25}.mod p{color:var(--muted);font-size:15px;margin-top:4px}
+.mod .pc{font-weight:800;color:var(--gold2);font-size:14px;white-space:nowrap}
+@media(max-width:640px){.mod{grid-template-columns:48px 1fr}.mod .n{width:48px;height:48px;font-size:20px}.mod .pc{grid-column:2}}
+.bar{height:8px;border-radius:8px;background:var(--track);overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green))}
+.cta{background:var(--card);border:1px solid var(--gold);border-radius:22px;padding:28px;text-align:center;margin:26px 0 50px}
+.cta h3{font-size:22px;color:var(--strong);margin-bottom:6px}.cta p{color:var(--muted);margin-bottom:16px}.cta .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+/* Cours */
+.course{display:grid;grid-template-columns:290px 1fr;gap:34px;padding-top:26px;padding-bottom:60px}
+.course>*{min-width:0}
+@media(max-width:900px){.course{grid-template-columns:1fr;gap:10px}}
+.side{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
+@media(max-width:900px){.side{position:static;max-height:none}}
+.side summary{cursor:pointer;font-weight:800;color:var(--strong);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.side summary::-webkit-details-marker{display:none}
+.side .tot{font-size:13px;color:var(--muted);margin:6px 0 10px}
+.side h5{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);margin:14px 0 4px}
+.side a{display:flex;gap:8px;align-items:flex-start;padding:6px 8px;border-radius:8px;color:var(--txt);text-decoration:none;font-size:14px;line-height:1.35}
+.side a:hover{background:var(--th)}.side a.on{background:var(--th);font-weight:800;color:var(--strong)}
+.side a i{flex:none;font-style:normal;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);margin-top:1px;font-size:11px;display:grid;place-items:center}
+.side a.ok i{background:var(--green);border-color:var(--green);color:#fff}
+.lesson{max-width:780px}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:10px}.crumb a{color:var(--muted)}
+.lesson h1{font-size:clamp(28px,4.5vw,40px);line-height:1.15;font-weight:900;color:var(--strong);margin-bottom:8px}
+.lesson .lead{color:var(--muted);font-size:19px;margin-bottom:26px}
+.lesson h2{font-size:25px;margin:36px 0 12px;color:var(--strong);padding-top:10px;border-top:1px solid var(--line)}
+.lesson h3{font-size:19px;margin:22px 0 8px;color:var(--strong)}
+.lesson p{margin:0 0 14px}
+.lesson ul,.lesson ol{margin:0 0 16px 22px}.lesson li{margin-bottom:6px}
+.box{border-radius:14px;padding:16px 18px;margin:20px 0;border:1px solid var(--line);background:var(--card)}
+.box.tip{border-left:4px solid var(--green)}.box.warn{border-left:4px solid var(--red)}.box.ex{border-left:4px solid var(--gold)}.box.key{border-left:4px solid var(--blue)}
+.box b.t{display:block;margin-bottom:4px;color:var(--strong)}
+.box ul{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}th{background:var(--th);color:var(--gold2)}
+.tw{overflow-x:auto}
+figure{margin:22px 0}figure img,figure svg{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)}
+figure.shot img{max-width:520px;margin:0 auto}
+figcaption{font-size:14px;color:var(--muted);text-align:center;margin-top:8px}
+.steps{counter-reset:s;list-style:none;margin:16px 0!important}.steps>li{counter-increment:s;position:relative;padding:10px 0 10px 50px;border-bottom:1px solid var(--line)}
+.steps>li:before{content:counter(s);position:absolute;left:0;top:9px;width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1a0f00;font-weight:900;display:grid;place-items:center;font-size:15px}
+.pats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:16px 0}
+.pat{background:var(--sch);border-radius:12px;padding:10px;text-align:center;font-size:13px;color:#111}.pat svg{width:100%;height:100px}.pat b{display:block;font-size:14px}.pat i{font-style:normal;color:#4b5563}
+.ob{max-width:460px;margin:16px auto}.ob td,.ob th{text-align:center;padding:4px}.ob .b{background:#1e3a8a;color:#fff}.ob .s{background:#e11d48;color:#fff}.ob .p{font-weight:800}
+.sig{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:14px 18px;margin:16px 0;font-family:ui-monospace,Consolas,monospace;font-size:15px;line-height:1.8}
+.check{display:flex;flex-direction:column;gap:8px;margin:16px 0}
+.check label{display:block;position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px 10px 40px;cursor:pointer}
+.check input{position:absolute;left:12px;top:13px;accent-color:var(--green);width:18px;height:18px;margin:0}
+.check label:has(input:checked){border-color:var(--green)}.check.g20{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr))}.checkres{font-weight:800;color:var(--gold2)}
+.next{margin-top:40px;padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--gold);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.next small{display:block;color:var(--muted);font-size:13px}.next b{color:var(--strong);font-size:17px}
+.prevl{display:inline-block;margin-top:14px;color:var(--muted);font-size:14px}
+.oprog{height:5px;background:var(--track);border-radius:4px;overflow:hidden;margin-bottom:18px}.oprog i{display:block;height:100%;background:var(--gold)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.pair .sym{grid-column:1/-1;text-align:center;font-weight:900;font-size:22px;color:var(--strong)}.pair .sym span{display:inline-block;border:2px solid var(--gold);border-radius:10px;padding:2px 12px;margin:0 6px}.pair .sym small{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:6px}
+.pair .side2{border-radius:14px;padding:14px;border:2px solid}.pair .buy{border-color:var(--green)}.pair .sell{border-color:var(--red)}
+.pair .side2 b{display:block;font-size:16px}.pair .buy b{color:var(--green)}.pair .sell b{color:var(--red)}.pair .side2 p{margin:4px 0 0;color:var(--muted);font-size:14.5px}
+@media(max-width:560px){.pair{grid-template-columns:1fr}}
+/* Quiz, glossaire, certificat */
+.quiz .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}.quiz .q b{display:block;margin-bottom:8px;color:var(--strong)}
+.quiz .opt{display:block;width:100%;text-align:left;background:none;border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:10px 12px;margin:6px 0;cursor:pointer;font-size:15px}
+.quiz .ok{border-color:var(--green);background:rgba(34,197,94,.12)}.quiz .ko{border-color:var(--red);background:rgba(239,68,68,.12)}.quiz .exp{color:var(--muted);font-size:14px;margin-top:6px}
+.score{font-size:40px;font-weight:900;color:var(--gold2)}
+.gl div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px}.gl b{color:var(--gold2)}
+.search{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:16px;margin:10px 0 16px}
+canvas.cert{width:100%;height:auto;border-radius:12px;margin:16px 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13px}footer .wrap{display:flex;flex-direction:column;gap:8px}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#/"><span class="logo">S</span><span>SERGIO <b>FX</b> ACADÉMIE</span></a>
+<div class="nav-r"><a href="#/" class="hide">Formation</a><a href="#/glossaire">Glossaire</a><a href="#/examen" class="hide">Examen</a><button class="theme" id="theme" aria-label="Thème clair / sombre">☀️</button></div>
+</div></header>
+<main id="app"></main>
+<footer><div class="wrap">
+<div>⚠️ Le trading comporte un risque élevé de perte en capital. Ce contenu est éducatif et ne constitue pas un conseil en investissement. Ne trade jamais avec de l'argent que tu ne peux pas te permettre de perdre.</div>
+<div>© <span id="yr"></span> SERGIO FX ACADÉMIE · <a href="https://wa.me/22879867879" target="_blank" rel="noopener">WhatsApp +228 79 86 78 79</a></div>
+</div></footer>
+<script>
+/*SCRIPT*/
+</script>
+</body>
+</html>
